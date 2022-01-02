@@ -1,0 +1,20 @@
+   ADIM-1
+    //Tanýmlamalara ilkönce Entityden baþla
+    //Bir nesne tanýmlýyoruz, tanýmlanan nesne IEntity üyesi olduðunu bilsin.
+
+
+    //ADIM-2
+    DataAccesste Context tanýmla
+    //Oluþturulan varlýk için DbSet tanýmlýyoruz.
+
+       //Adým-3 
+       DataAccess altýnda ICategoryDal isminde       
+       interface tanýmla...
+    //IEntityRepositoryden category adýna implement et
+
+
+    //Adým-4 
+    Data Access te
+    //EfCategoryDal sýnýfýný tanýmla, 
+    EfEntityRepositoryBase sýnýfýndan referans al iþlem bitti.
+    //Son olarak form kýsmýndan çaðýrmaya baþla
