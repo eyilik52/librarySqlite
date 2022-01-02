@@ -12,11 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibraryProjectApp.Reader
+namespace LibraryProjectApp.Book
 {
-    public partial class Form1 : Form
+    public partial class BookManager : Form
     {
-        public Form1()
+        public BookManager()
         {
             InitializeComponent();
             
