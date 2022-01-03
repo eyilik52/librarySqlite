@@ -11,23 +11,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entities.Concrete;
 
 namespace LibraryProjectApp.Book
 {
-    public partial class BookManager : Form
+    public partial class FrmBookManager : Form
     {
-        public BookManager()
+        public FrmBookManager()
         {
             InitializeComponent();
             
             _categoryService = new CategoryManager(new EfCategoryDal());
+            _bookService = new BookManager(new EfBookDal());
         }
 
         
         private ICategoryService _categoryService;
+        private IBookService _bookService;
         private void Form1_Load(object sender, EventArgs e)
         {
-            //LoadProduct();//Ürünleri Listele
+            LoadBook();
             LoadCategories();
         }
 
@@ -43,16 +46,16 @@ namespace LibraryProjectApp.Book
             cbxCategoryName.DisplayMember = "Name";
             cbxCategoryName.ValueMember = "Id";
 
-            var categoryList2 = _categoryService.GetAll().Data;
-            cbxCategoryUpdate.DataSource = categoryList;
-            cbxCategoryUpdate.DisplayMember = "Name";
-            cbxCategoryUpdate.ValueMember = "Id";
+            //var categoryList2 = _categoryService.GetAll().Data;
+            //cbxCategoryUpdate.DataSource = categoryList;
+            //cbxCategoryUpdate.DisplayMember = "Name";
+            //cbxCategoryUpdate.ValueMember = "Id";
         }
 
-        //private void LoadProduct()
-        //{
-        //    DgwProduct.DataSource = _productService.GetAll();
-        //}
+        private void LoadBook()
+        {
+            DgwProduct.DataSource = _bookService.GetAll();
+        }
 
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -83,25 +86,24 @@ namespace LibraryProjectApp.Book
 
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    _productService.Add(new Product
-            //    {
-            //        CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue),
-            //        ProductName = txtProductName.Text,
-            //        QuantityPerUnit = tbxQuantityPerUnit.Text,
-            //        UnitPrice = Convert.ToDecimal(txtProductPrice.Text),
-            //        UnitsInStock = Convert.ToInt16(tbxProductStock.Text)
-            //    }
-            //    );
-            //    LoadProduct();
-            //    MessageBox.Show("Ürün Kaydedildi!...");
-            //}
-            //catch (Exception exception)
-            //{
+            try
+            {
+                _bookService.Add(new Entities.Concrete.Book
+                {
+                    CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue),
+                    Name = txtProductName.Text,
+                    BarcodeNumber= tbxQuantityPerUnit.Text                  
+                    
+                }
+                );
+                LoadBook();
+                MessageBox.Show("Ürün Kaydedildi!...");
+            }
+            catch (Exception exception)
+            {
 
-            //    MessageBox.Show(exception.Message);
-            //}
+                MessageBox.Show(exception.Message);
+            }
 
             
         }
@@ -123,12 +125,13 @@ namespace LibraryProjectApp.Book
 
         private void DgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            FrmBookUpdate Update = new FrmBookUpdate();
             var row = DgwProduct.CurrentRow;
-            tbxProductUpdateName.Text = row.Cells[1].Value.ToString();
-            cbxCategoryUpdate.SelectedValue = row.Cells[2].Value;
-            tbxStockUpdate.Text = row.Cells[5].Value.ToString();
-            tbxQualityUpdate.Text = row.Cells[4].Value.ToString();
-            tbxProductPriceUpdate.Text = row.Cells[3].Value.ToString();
+            Update.tbxProductUpdateName.Text = row.Cells[1].Value.ToString();
+            Update.cbxCategoryUpdate.SelectedValue = row.Cells[2].Value;
+            Update.tbxStockUpdate.Text = row.Cells[5].Value.ToString();
+            Update.tbxQualityUpdate.Text = row.Cells[4].Value.ToString();
+            Update.tbxProductPriceUpdate.Text = row.Cells[3].Value.ToString();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

@@ -30,6 +30,7 @@ namespace LibraryProjectApp
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +43,22 @@ namespace LibraryProjectApp
             this.dataGridView1.Size = new System.Drawing.Size(742, 326);
             this.dataGridView1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(21, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "KİTAP YÖNETİMİ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 471);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmMain";
             this.Text = "DİVANTÜRK ŞEHİT İRFAN ÜNCELİ İLKOKULU ";
@@ -59,6 +71,7 @@ namespace LibraryProjectApp
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

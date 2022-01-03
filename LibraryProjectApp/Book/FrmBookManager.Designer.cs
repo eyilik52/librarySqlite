@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryProjectApp.Book
 {
-    partial class BookManager
+    partial class FrmBookManager
     {
         /// <summary>
         /// Required designer variable.
@@ -48,30 +48,18 @@ namespace LibraryProjectApp.Book
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.cbxCategoryUpdate = new System.Windows.Forms.ComboBox();
-            this.tbxQualityUpdate = new System.Windows.Forms.TextBox();
-            this.tbxStockUpdate = new System.Windows.Forms.TextBox();
-            this.tbxProductPriceUpdate = new System.Windows.Forms.TextBox();
-            this.tbxProductUpdateName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgwProduct)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.gbxBook.SuspendLayout();
             this.gbxProductAdd.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgwProduct
             // 
             this.DgwProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgwProduct.Location = new System.Drawing.Point(43, 203);
+            this.DgwProduct.Location = new System.Drawing.Point(45, 103);
             this.DgwProduct.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DgwProduct.Name = "DgwProduct";
             this.DgwProduct.Size = new System.Drawing.Size(835, 197);
@@ -82,11 +70,11 @@ namespace LibraryProjectApp.Book
             // 
             this.gbxCategory.Controls.Add(this.cbxCategory);
             this.gbxCategory.Controls.Add(this.label1);
-            this.gbxCategory.Location = new System.Drawing.Point(43, 15);
+            this.gbxCategory.Location = new System.Drawing.Point(45, 18);
             this.gbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxCategory.Name = "gbxCategory";
             this.gbxCategory.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxCategory.Size = new System.Drawing.Size(835, 69);
+            this.gbxCategory.Size = new System.Drawing.Size(403, 69);
             this.gbxCategory.TabIndex = 1;
             this.gbxCategory.TabStop = false;
             this.gbxCategory.Text = "Kategoriye Göre Ara";
@@ -94,7 +82,7 @@ namespace LibraryProjectApp.Book
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(212, 30);
+            this.cbxCategory.Location = new System.Drawing.Point(108, 27);
             this.cbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategory.Name = "cbxCategory";
             this.cbxCategory.Size = new System.Drawing.Size(242, 23);
@@ -115,18 +103,18 @@ namespace LibraryProjectApp.Book
             // 
             this.gbxBook.Controls.Add(this.txtProduct);
             this.gbxBook.Controls.Add(this.label2);
-            this.gbxBook.Location = new System.Drawing.Point(43, 105);
+            this.gbxBook.Location = new System.Drawing.Point(477, 18);
             this.gbxBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxBook.Name = "gbxBook";
             this.gbxBook.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxBook.Size = new System.Drawing.Size(835, 80);
+            this.gbxBook.Size = new System.Drawing.Size(403, 69);
             this.gbxBook.TabIndex = 2;
             this.gbxBook.TabStop = false;
             this.gbxBook.Text = "Kitap Adına Göre Ara";
             // 
             // txtProduct
             // 
-            this.txtProduct.Location = new System.Drawing.Point(212, 35);
+            this.txtProduct.Location = new System.Drawing.Point(84, 32);
             this.txtProduct.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.Size = new System.Drawing.Size(242, 23);
@@ -156,7 +144,7 @@ namespace LibraryProjectApp.Book
             this.gbxProductAdd.Controls.Add(this.label4);
             this.gbxProductAdd.Controls.Add(this.label6);
             this.gbxProductAdd.Controls.Add(this.label3);
-            this.gbxProductAdd.Location = new System.Drawing.Point(43, 442);
+            this.gbxProductAdd.Location = new System.Drawing.Point(45, 342);
             this.gbxProductAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxProductAdd.Name = "gbxProductAdd";
             this.gbxProductAdd.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -267,133 +255,9 @@ namespace LibraryProjectApp.Book
             this.label3.TabIndex = 0;
             this.label3.Text = "Ürün Adı:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.cbxCategoryUpdate);
-            this.groupBox1.Controls.Add(this.tbxQualityUpdate);
-            this.groupBox1.Controls.Add(this.tbxStockUpdate);
-            this.groupBox1.Controls.Add(this.tbxProductPriceUpdate);
-            this.groupBox1.Controls.Add(this.tbxProductUpdateName);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(43, 606);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(835, 158);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ürün Güncelle";
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(564, 125);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(130, 33);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // cbxCategoryUpdate
-            // 
-            this.cbxCategoryUpdate.FormattingEnabled = true;
-            this.cbxCategoryUpdate.Location = new System.Drawing.Point(94, 77);
-            this.cbxCategoryUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbxCategoryUpdate.Name = "cbxCategoryUpdate";
-            this.cbxCategoryUpdate.Size = new System.Drawing.Size(245, 23);
-            this.cbxCategoryUpdate.TabIndex = 3;
-            // 
-            // tbxQualityUpdate
-            // 
-            this.tbxQualityUpdate.Location = new System.Drawing.Point(492, 77);
-            this.tbxQualityUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxQualityUpdate.Name = "tbxQualityUpdate";
-            this.tbxQualityUpdate.Size = new System.Drawing.Size(245, 23);
-            this.tbxQualityUpdate.TabIndex = 2;
-            // 
-            // tbxStockUpdate
-            // 
-            this.tbxStockUpdate.Location = new System.Drawing.Point(492, 32);
-            this.tbxStockUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxStockUpdate.Name = "tbxStockUpdate";
-            this.tbxStockUpdate.Size = new System.Drawing.Size(245, 23);
-            this.tbxStockUpdate.TabIndex = 2;
-            // 
-            // tbxProductPriceUpdate
-            // 
-            this.tbxProductPriceUpdate.Location = new System.Drawing.Point(94, 114);
-            this.tbxProductPriceUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxProductPriceUpdate.Name = "tbxProductPriceUpdate";
-            this.tbxProductPriceUpdate.Size = new System.Drawing.Size(245, 23);
-            this.tbxProductPriceUpdate.TabIndex = 2;
-            // 
-            // tbxProductUpdateName
-            // 
-            this.tbxProductUpdateName.Location = new System.Drawing.Point(94, 36);
-            this.tbxProductUpdateName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxProductUpdateName.Name = "tbxProductUpdateName";
-            this.tbxProductUpdateName.Size = new System.Drawing.Size(245, 23);
-            this.tbxProductUpdateName.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 118);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Fiyat :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(414, 81);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 15);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Birim Adedi :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 81);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 15);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Kategori: ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(414, 36);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(67, 15);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Stok Adedi:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 36);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 15);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Ürün Adı:";
-            // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(751, 408);
+            this.btnRemove.Location = new System.Drawing.Point(753, 308);
             this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(105, 36);
@@ -402,19 +266,30 @@ namespace LibraryProjectApp.Book
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // Form1
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(609, 308);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(105, 36);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "GÜNCELLE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // FrmBookManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 749);
+            this.ClientSize = new System.Drawing.Size(926, 532);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxBook);
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.DgwProduct);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "Form1";
+            this.Name = "FrmBookManager";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgwProduct)).EndInit();
@@ -424,8 +299,6 @@ namespace LibraryProjectApp.Book
             this.gbxBook.PerformLayout();
             this.gbxProductAdd.ResumeLayout(false);
             this.gbxProductAdd.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -451,19 +324,8 @@ namespace LibraryProjectApp.Book
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxCategoryName;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbxCategoryUpdate;
-        private System.Windows.Forms.TextBox tbxQualityUpdate;
-        private System.Windows.Forms.TextBox tbxStockUpdate;
-        private System.Windows.Forms.TextBox tbxProductPriceUpdate;
-        private System.Windows.Forms.TextBox tbxProductUpdateName;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

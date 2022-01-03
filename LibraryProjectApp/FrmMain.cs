@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using LibraryProjectApp.Book;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,12 @@ namespace LibraryProjectApp
             LibraryContext context = new LibraryContext();
             context.Database.EnsureDeleted();
             MessageBox.Show("silindi");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmBookManager frmBookManager = new FrmBookManager();
+            frmBookManager.ShowDialog();
         }
     }
 }
