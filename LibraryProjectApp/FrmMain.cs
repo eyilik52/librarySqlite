@@ -1,6 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using LibraryProjectApp.Book;
+using LibraryProjectApp.FileBook;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +49,9 @@ namespace LibraryProjectApp
             MessageBox.Show("silindi");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void btnBookOperations_Click(object sender, EventArgs e)
         {
             FrmBookManager frmBookManager = new FrmBookManager();
             frmBookManager.ShowDialog();

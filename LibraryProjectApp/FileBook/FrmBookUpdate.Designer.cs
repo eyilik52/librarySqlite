@@ -1,5 +1,5 @@
 ﻿
-namespace LibraryProjectApp.Book
+namespace LibraryProjectApp.FileBook
 {
     partial class FrmBookUpdate
     {
@@ -32,12 +32,10 @@ namespace LibraryProjectApp.Book
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxCategoryUpdate = new System.Windows.Forms.ComboBox();
-            this.tbxQualityUpdate = new System.Windows.Forms.TextBox();
             this.tbxStockUpdate = new System.Windows.Forms.TextBox();
-            this.tbxProductPriceUpdate = new System.Windows.Forms.TextBox();
-            this.tbxProductUpdateName = new System.Windows.Forms.TextBox();
+            this.tbxBarkotNo = new System.Windows.Forms.TextBox();
+            this.tbxBookUpdateName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -48,12 +46,10 @@ namespace LibraryProjectApp.Book
             // 
             this.groupBox1.Controls.Add(this.btnUpdate);
             this.groupBox1.Controls.Add(this.cbxCategoryUpdate);
-            this.groupBox1.Controls.Add(this.tbxQualityUpdate);
             this.groupBox1.Controls.Add(this.tbxStockUpdate);
-            this.groupBox1.Controls.Add(this.tbxProductPriceUpdate);
-            this.groupBox1.Controls.Add(this.tbxProductUpdateName);
+            this.groupBox1.Controls.Add(this.tbxBarkotNo);
+            this.groupBox1.Controls.Add(this.tbxBookUpdateName);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
@@ -61,20 +57,21 @@ namespace LibraryProjectApp.Book
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.groupBox1.Size = new System.Drawing.Size(390, 344);
+            this.groupBox1.Size = new System.Drawing.Size(390, 289);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Güncelle";
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(132, 270);
+            this.btnUpdate.Location = new System.Drawing.Point(131, 203);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 33);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Güncelle";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cbxCategoryUpdate
             // 
@@ -85,14 +82,6 @@ namespace LibraryProjectApp.Book
             this.cbxCategoryUpdate.Size = new System.Drawing.Size(245, 23);
             this.cbxCategoryUpdate.TabIndex = 3;
             // 
-            // tbxQualityUpdate
-            // 
-            this.tbxQualityUpdate.Location = new System.Drawing.Point(94, 203);
-            this.tbxQualityUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxQualityUpdate.Name = "tbxQualityUpdate";
-            this.tbxQualityUpdate.Size = new System.Drawing.Size(245, 23);
-            this.tbxQualityUpdate.TabIndex = 2;
-            // 
             // tbxStockUpdate
             // 
             this.tbxStockUpdate.Location = new System.Drawing.Point(94, 158);
@@ -101,21 +90,21 @@ namespace LibraryProjectApp.Book
             this.tbxStockUpdate.Size = new System.Drawing.Size(245, 23);
             this.tbxStockUpdate.TabIndex = 2;
             // 
-            // tbxProductPriceUpdate
+            // tbxBarkotNo
             // 
-            this.tbxProductPriceUpdate.Location = new System.Drawing.Point(94, 114);
-            this.tbxProductPriceUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxProductPriceUpdate.Name = "tbxProductPriceUpdate";
-            this.tbxProductPriceUpdate.Size = new System.Drawing.Size(245, 23);
-            this.tbxProductPriceUpdate.TabIndex = 2;
+            this.tbxBarkotNo.Location = new System.Drawing.Point(94, 114);
+            this.tbxBarkotNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbxBarkotNo.Name = "tbxBarkotNo";
+            this.tbxBarkotNo.Size = new System.Drawing.Size(245, 23);
+            this.tbxBarkotNo.TabIndex = 2;
             // 
-            // tbxProductUpdateName
+            // tbxBookUpdateName
             // 
-            this.tbxProductUpdateName.Location = new System.Drawing.Point(94, 36);
-            this.tbxProductUpdateName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tbxProductUpdateName.Name = "tbxProductUpdateName";
-            this.tbxProductUpdateName.Size = new System.Drawing.Size(245, 23);
-            this.tbxProductUpdateName.TabIndex = 2;
+            this.tbxBookUpdateName.Location = new System.Drawing.Point(94, 36);
+            this.tbxBookUpdateName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbxBookUpdateName.Name = "tbxBookUpdateName";
+            this.tbxBookUpdateName.Size = new System.Drawing.Size(245, 23);
+            this.tbxBookUpdateName.TabIndex = 2;
             // 
             // label8
             // 
@@ -123,19 +112,9 @@ namespace LibraryProjectApp.Book
             this.label8.Location = new System.Drawing.Point(8, 118);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 15);
+            this.label8.Size = new System.Drawing.Size(63, 15);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Fiyat :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 207);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 15);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Birim Adedi :";
+            this.label8.Text = "Barkot No:";
             // 
             // label10
             // 
@@ -163,18 +142,19 @@ namespace LibraryProjectApp.Book
             this.label12.Location = new System.Drawing.Point(8, 36);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 15);
+            this.label12.Size = new System.Drawing.Size(58, 15);
             this.label12.TabIndex = 0;
-            this.label12.Text = "Ürün Adı:";
+            this.label12.Text = "Kitap Adı:";
             // 
             // FrmBookUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 406);
+            this.ClientSize = new System.Drawing.Size(465, 346);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBookUpdate";
             this.Text = "FrmBookUpdate";
+            this.Load += new System.EventHandler(this.FrmBookUpdate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -183,16 +163,14 @@ namespace LibraryProjectApp.Book
 
         #endregion
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.ComboBox cbxCategoryUpdate;
-        public System.Windows.Forms.TextBox tbxQualityUpdate;
         public System.Windows.Forms.TextBox tbxStockUpdate;
-        public System.Windows.Forms.TextBox tbxProductPriceUpdate;
-        public System.Windows.Forms.TextBox tbxProductUpdateName;
+        public System.Windows.Forms.TextBox tbxBarkotNo;
+        public System.Windows.Forms.TextBox tbxBookUpdateName;
     }
 }

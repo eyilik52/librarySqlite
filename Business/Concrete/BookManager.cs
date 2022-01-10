@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Constans;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -21,23 +23,43 @@ namespace Business.Concrete
         public IResult Add(Book book)
         {
             _bookDal.Add(book);
-            return new SuccessResult();
+            return new SuccessResult(Messages.SaveAll);
         }
 
         public IResult Delete(Book book)
         {
             _bookDal.Delete(book);
-            return new SuccessResult();
+            return new SuccessResult(Messages.Delete);
         }
 
         public IDataResult<List<Book>> GetAll()
         {
-            return new SuccessDataResult<List<Book>>(_bookDal.GetAll());
+            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Hata 1");
         }
 
-        public IDataResult<List<Book>> GetById(int bookId)
+        public IDataResult<List<Book>> GetAllByCategoryId(int categoryId)
         {
-            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(c => c.Id == bookId));
+            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(p => p.CategoryId == categoryId));
+        }
+
+        public IDataResult<Book> GetById(int bookId)
+        {
+            return new SuccessDataResult<Book>(_bookDal.Get(p => p.Id == bookId));
+        }
+
+        public IDataResult<List<BookOrCategoryDetails>> GetCategorySearch(string key)
+        {
+            return new SuccessDataResult<List<BookOrCategoryDetails>>(_bookDal.GetBookOrCategoryDetails().Where(p => p.CategoryName.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
+
+        public IDataResult<List<BookOrCategoryDetails>> GetBookOrCategoryDetails()
+        {
+            return new SuccessDataResult<List<BookOrCategoryDetails>>(_bookDal.GetBookOrCategoryDetails());
+        }
+
+        public IDataResult<List<BookOrCategoryDetails>> GetBookSearch(string key) //kt => kt.Alan.ToLower().Contains(kelime.ToLower()) küçük büyük harf duyarlılığı engelleme::Hakkı Eyilik
+        {
+            return new SuccessDataResult<List<BookOrCategoryDetails>>(_bookDal.GetBookOrCategoryDetails().Where(p => p.BookName.ToLower().Contains(key.ToLower().Trim())).ToList());
         }
 
         public IResult Update(Book book)

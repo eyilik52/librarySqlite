@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
 
-namespace LibraryProjectApp.Book
+namespace LibraryProjectApp.FileBook
 {
     public partial class FrmBookManager : Form
     {
@@ -25,13 +25,17 @@ namespace LibraryProjectApp.Book
             _bookService = new BookManager(new EfBookDal());
         }
 
-        
+        BookManager bookManager = new BookManager(new EfBookDal());
+
+
         private ICategoryService _categoryService;
         private IBookService _bookService;
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadBook();
             LoadCategories();
+            LoadBookOrCategoryDetails();
+            GridViewKolonİsimleri();
+           
         }
 
         private void LoadCategories()
@@ -42,26 +46,21 @@ namespace LibraryProjectApp.Book
             cbxCategory.ValueMember = "Id";
 
             var categoryList1 = _categoryService.GetAll().Data;
-            cbxCategoryName.DataSource = categoryList;
+            cbxCategoryName.DataSource = categoryList1;
             cbxCategoryName.DisplayMember = "Name";
             cbxCategoryName.ValueMember = "Id";
-
-            //var categoryList2 = _categoryService.GetAll().Data;
-            //cbxCategoryUpdate.DataSource = categoryList;
-            //cbxCategoryUpdate.DisplayMember = "Name";
-            //cbxCategoryUpdate.ValueMember = "Id";
         }
 
-        private void LoadBook()
+        public void LoadBookOrCategoryDetails()
         {
-            DgwProduct.DataSource = _bookService.GetAll();
+            DgwBook.DataSource = _bookService.GetBookOrCategoryDetails().Data;
         }
 
         private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             try //Daha değerler dolmadan yüklemeye çalışacağındanilk seferinde hata almamak için...
             {
-                //DgwProduct.DataSource = _productService.GetProductsByCategory(Convert.ToInt32(cbxCategory.SelectedValue));
+                DgwBook.DataSource = _bookService.GetCategorySearch(cbxCategory.Text).Data;
             }
             catch
             {
@@ -73,30 +72,32 @@ namespace LibraryProjectApp.Book
 
         private void txtProduct_TextChanged(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(txtProduct.Text))
+
+            if (!String.IsNullOrEmpty(txtSearchBookName.Text))
             {
-                //DgwProduct.DataSource = _productService.GetProductsByProductName(txtProduct.Text);
+                SearchBook(txtSearchBookName.Text);
             }
             else
             {
-                //LoadProduct();
+                LoadBookOrCategoryDetails();
             }
 
         }
-
+        
         private void btnProductAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                _bookService.Add(new Entities.Concrete.Book
+                _bookService.Add(new Book
                 {
                     CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue),
-                    Name = txtProductName.Text,
-                    BarcodeNumber= tbxQuantityPerUnit.Text                  
+                    Name = txtBookName.Text,
+                    BarcodeNumber= tbxBarcodeNumber.Text,
+                    Stock=Convert.ToInt32(tbxBookStock.Text)                  
                     
                 }
                 );
-                LoadBook();
+                LoadBookOrCategoryDetails();
                 MessageBox.Show("Ürün Kaydedildi!...");
             }
             catch (Exception exception)
@@ -123,25 +124,52 @@ namespace LibraryProjectApp.Book
             //MessageBox.Show("Ürün Güncellendi!...");
         }
 
-        private void DgwProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            FrmBookUpdate Update = new FrmBookUpdate();
-            var row = DgwProduct.CurrentRow;
-            Update.tbxProductUpdateName.Text = row.Cells[1].Value.ToString();
-            Update.cbxCategoryUpdate.SelectedValue = row.Cells[2].Value;
-            Update.tbxStockUpdate.Text = row.Cells[5].Value.ToString();
-            Update.tbxQualityUpdate.Text = row.Cells[4].Value.ToString();
-            Update.tbxProductPriceUpdate.Text = row.Cells[3].Value.ToString();
-        }
+        
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //_productService.Delete(new Product
-            //{
-            //     ProductId=Convert.ToInt32(DgwProduct.CurrentRow.Cells[0].Value)
-            //});
-            //LoadProduct();
-            //MessageBox.Show("Ürün Silindi...");
+            _bookService.Delete(new Book
+            {
+                Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
+            });
+            LoadBookOrCategoryDetails();
+            MessageBox.Show("Ürün Silindi...");
         }
+        public void SearchBook(string key)
+        {
+            var result = bookManager.GetBookSearch(key);
+            if (result.Success)
+            {
+                DgwBook.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
+
+        private void DgwBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmBookUpdate Update = new FrmBookUpdate();
+            var row = DgwBook.CurrentRow;
+            Update.UpdateId = Convert.ToInt32(row.Cells[0].Value);
+            Update.tbxBarkotNo.Text = row.Cells[1].Value.ToString();
+            Update.tbxBookUpdateName.Text = row.Cells[2].Value.ToString();
+            Update.cbxCategoryUpdate.SelectedValue = row.Cells[3].Value;
+            Update.tbxStockUpdate.Text = row.Cells[4].Value.ToString();
+            Update.ShowDialog();
+        }
+
+        private void GridViewKolonİsimleri()
+        {
+            DgwBook.Columns[0].Visible = false;
+            DgwBook.Columns[1].HeaderText = "Barkod No";
+            DgwBook.Columns[2].HeaderText = "Kitap Adı";
+            DgwBook.Columns[3].HeaderText = "Kategori Adı";
+            DgwBook.Columns[4].HeaderText = "Adet";
+
+
+        }
+
     }
 }
