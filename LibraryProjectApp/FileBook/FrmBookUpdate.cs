@@ -45,7 +45,7 @@ namespace LibraryProjectApp.FileBook
             Book book = new Book();
             book.Id = UpdateId;
             book.BarcodeNumber = tbxBarkotNo.Text;
-            book.Name = tbxBookUpdateName.Text;
+            book.BookName = tbxBookUpdateName.Text;
             book.Stock =Convert.ToInt32( tbxStockUpdate.Text);
             book.CategoryId =(int) cbxCategoryUpdate.SelectedValue;
             bookManager.Update(book);

@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entities.Concrete;
+using LibraryProjectApp.FileCategory;
 
 namespace LibraryProjectApp.FileBook
 {
@@ -84,21 +85,27 @@ namespace LibraryProjectApp.FileBook
 
         }
         
-        private void btnProductAdd_Click(object sender, EventArgs e)
+        private void btnBookAdd_Click(object sender, EventArgs e)
         {
             try
             {
                 _bookService.Add(new Book
                 {
                     CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue),
-                    Name = txtBookName.Text,
-                    BarcodeNumber= tbxBarcodeNumber.Text,
-                    Stock=Convert.ToInt32(tbxBookStock.Text)                  
-                    
+                    BookName = txtBookName.Text,
+                    BarcodeNumber = tbxBarcodeNumber.Text,
+                    AuthorName = tbxYazar.Text,
+                    AssetNumber = Convert.ToInt32(tbxDemirbasNo.Text),
+                    CabinetNumber = Convert.ToChar(tbxDolapNo.Text),
+                    YearOfPublication = Convert.ToInt32(tbsBasimYili.Text),
+                    ShelfNo = Convert.ToInt32(tbxRafNo.Text),
+                    NumberOfPages = Convert.ToInt32(tbxSayfaSayisi.Text),
+                    Publisher = tbxYayinEvi.Text,
+                    Stock = Convert.ToInt32(tbxBookStock.Text)
                 }
                 );
                 LoadBookOrCategoryDetails();
-                MessageBox.Show("Ürün Kaydedildi!...");
+                MessageBox.Show("Kitap kaydetme işlemi başarılı");
             }
             catch (Exception exception)
             {
@@ -171,5 +178,10 @@ namespace LibraryProjectApp.FileBook
 
         }
 
+        private void btnCategoryAdd_Click(object sender, EventArgs e)
+        {
+            FrmCategoryAdd categoryAdd = new FrmCategoryAdd();
+            categoryAdd.ShowDialog();
+        }
     }
 }

@@ -24,11 +24,13 @@ namespace DataAccess.Concrete.EntityFramework
                              where b.IsActive == true
                              select new BookOrCategoryDetails
                              {
-                                  BookId = b.Id,
+                                 BookId = b.Id,
                                  BarcodeNumber = b.BarcodeNumber,
-                                 BookName = b.Name,
+                                 BookName = b.BookName,
                                  CategoryName = c.Name,
                                  Stock = b.Stock,
+                                 
+
                                  //CompanyName = Com.Name,
                                  
                                  //SalePrice = p.SalePrice,

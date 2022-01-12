@@ -24,6 +24,7 @@ namespace LibraryProjectApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //veritabanıSil();
             //veritabanıolustur();
             var result = bookManager.GetAll();
             if (result.Success)
