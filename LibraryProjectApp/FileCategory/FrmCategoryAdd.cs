@@ -2,6 +2,7 @@
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using LibraryProjectApp.FileBook;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,7 @@ namespace LibraryProjectApp.FileCategory
             InitializeComponent();
             _categoryService = new CategoryManager(new EfCategoryDal());
         }
-
+        FrmBookOperations frmBookManager = (FrmBookOperations)Application.OpenForms["FrmBookManager"];
         private ICategoryService _categoryService;
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
@@ -31,6 +32,7 @@ namespace LibraryProjectApp.FileCategory
             });
             MessageBox.Show("Kitap kaydetme işlemi başarılı");
             tbxCategoryAdd.Text = "";
+            frmBookManager.LoadCategories();
         }
     }
 }

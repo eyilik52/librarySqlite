@@ -41,7 +41,7 @@ namespace LibraryProjectApp
         {
             LibraryContext context = new LibraryContext();
             context.Database.EnsureCreated();
-            MessageBox.Show("oluştueruldsu");
+            MessageBox.Show("oluşturuldu");
         }
         private static void veritabanıSil()
         {
@@ -54,7 +54,7 @@ namespace LibraryProjectApp
 
         private void btnBookOperations_Click(object sender, EventArgs e)
         {
-            FrmBookManager frmBookManager = new FrmBookManager();
+            FrmBookOperations frmBookManager = new FrmBookOperations();
             frmBookManager.ShowDialog();
         }
     }

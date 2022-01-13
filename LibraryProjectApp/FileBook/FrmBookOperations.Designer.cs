@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryProjectApp.FileBook
 {
-    partial class FrmBookManager
+    partial class FrmBookOperations
     {
         /// <summary>
         /// Required designer variable.
@@ -31,6 +31,7 @@ namespace LibraryProjectApp.FileBook
         {
             this.DgwBook = new System.Windows.Forms.DataGridView();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
+            this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbxBook = new System.Windows.Forms.GroupBox();
@@ -61,7 +62,6 @@ namespace LibraryProjectApp.FileBook
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.btnCategoryAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.gbxBook.SuspendLayout();
@@ -91,6 +91,16 @@ namespace LibraryProjectApp.FileBook
             this.gbxCategory.TabIndex = 1;
             this.gbxCategory.TabStop = false;
             this.gbxCategory.Text = "Kategoriye Göre Ara";
+            // 
+            // btnCategoryAdd
+            // 
+            this.btnCategoryAdd.Location = new System.Drawing.Point(357, 16);
+            this.btnCategoryAdd.Name = "btnCategoryAdd";
+            this.btnCategoryAdd.Size = new System.Drawing.Size(48, 42);
+            this.btnCategoryAdd.TabIndex = 2;
+            this.btnCategoryAdd.Text = "EKLE";
+            this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // cbxCategory
             // 
@@ -123,7 +133,7 @@ namespace LibraryProjectApp.FileBook
             this.gbxBook.Size = new System.Drawing.Size(337, 69);
             this.gbxBook.TabIndex = 2;
             this.gbxBook.TabStop = false;
-            this.gbxBook.Text = "Kitap Adına Göre Ara";
+            this.gbxBook.Text = "Okuyucu Adına Göre Ara";
             // 
             // txtSearchBookName
             // 
@@ -137,12 +147,12 @@ namespace LibraryProjectApp.FileBook
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 35);
+            this.label2.Location = new System.Drawing.Point(0, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 15);
+            this.label2.Size = new System.Drawing.Size(76, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Kitap Adı";
+            this.label2.Text = "Okuyucu Adı";
             // 
             // gbxProductAdd
             // 
@@ -173,10 +183,10 @@ namespace LibraryProjectApp.FileBook
             this.gbxProductAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxProductAdd.Name = "gbxProductAdd";
             this.gbxProductAdd.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxProductAdd.Size = new System.Drawing.Size(758, 224);
+            this.gbxProductAdd.Size = new System.Drawing.Size(758, 236);
             this.gbxProductAdd.TabIndex = 3;
             this.gbxProductAdd.TabStop = false;
-            this.gbxProductAdd.Text = "Yeni Kitap Ekle";
+            this.gbxProductAdd.Text = "Yeni Okuyucu Ekle";
             // 
             // cbxCategoryName
             // 
@@ -399,28 +409,18 @@ namespace LibraryProjectApp.FileBook
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
-            // btnCategoryAdd
-            // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(357, 16);
-            this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(48, 42);
-            this.btnCategoryAdd.TabIndex = 2;
-            this.btnCategoryAdd.Text = "EKLE";
-            this.btnCategoryAdd.UseVisualStyleBackColor = true;
-            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
-            // 
-            // FrmBookManager
+            // FrmBookOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 532);
+            this.ClientSize = new System.Drawing.Size(951, 557);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxBook);
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.DgwBook);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.Name = "FrmBookManager";
+            this.Name = "FrmBookOperations";
             this.Text = "KİTAP YÖNETİM ALANI";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).EndInit();

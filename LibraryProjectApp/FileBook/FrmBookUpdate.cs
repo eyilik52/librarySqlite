@@ -24,7 +24,7 @@ namespace LibraryProjectApp.FileBook
         public int UpdateId;
         
 
-        FrmBookManager frmBookManager =(FrmBookManager)Application.OpenForms["FrmBookManager"];
+        FrmBookOperations frmBookManager =(FrmBookOperations)Application.OpenForms["FrmBookManager"];
         BookManager bookManager = new BookManager(new EfBookDal());
         private ICategoryService _categoryService;
         private void FrmBookUpdate_Load(object sender, EventArgs e)

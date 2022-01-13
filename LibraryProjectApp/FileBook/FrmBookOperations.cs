@@ -16,9 +16,9 @@ using LibraryProjectApp.FileCategory;
 
 namespace LibraryProjectApp.FileBook
 {
-    public partial class FrmBookManager : Form
+    public partial class FrmBookOperations : Form
     {
-        public FrmBookManager()
+        public FrmBookOperations()
         {
             InitializeComponent();
             
@@ -39,7 +39,7 @@ namespace LibraryProjectApp.FileBook
            
         }
 
-        private void LoadCategories()
+        public void LoadCategories()
         {
             var categoryList = _categoryService.GetAll().Data;
             cbxCategory.DataSource = categoryList;

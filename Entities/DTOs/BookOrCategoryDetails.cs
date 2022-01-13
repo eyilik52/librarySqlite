@@ -12,7 +12,10 @@ namespace Entities.DTOs
         public int BookId { get; set; }
         public string BarcodeNumber { get; set; }
         public string BookName { get; set; }
-        public string CategoryName { get; set; }         
+        public string CategoryName { get; set; }
+        public char CabinetNumber { get; set; }
+        public string AuthorName { get; set; }
+        public int ShelfNo { get; set; }//Raf No
         public int Stock { get; set; }
     }
 }

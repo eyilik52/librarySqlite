@@ -29,6 +29,9 @@ namespace DataAccess.Concrete.EntityFramework
                                  BookName = b.BookName,
                                  CategoryName = c.Name,
                                  Stock = b.Stock,
+                                 AuthorName=b.AuthorName,
+                                 CabinetNumber=b.CabinetNumber,
+                                 ShelfNo=b.ShelfNo
                                  
 
                                  //CompanyName = Com.Name,
