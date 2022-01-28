@@ -22,9 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Library> Libraries { get; set; }
         public DbSet<School> Schools { get; set; }
         public DbSet<Stock> stocks { get; set; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<StudentOnDuty> StudentOnDuties { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Reader> Readers { get; set; }
 
     }
 }

@@ -35,7 +35,7 @@ namespace LibraryProjectApp.FileBook
         {
             LoadCategories();
             LoadBookOrCategoryDetails();
-            GridViewKolonİsimleri();
+            //GridViewKolonİsimleri();
            
         }
 
@@ -61,12 +61,11 @@ namespace LibraryProjectApp.FileBook
         {
             try //Daha değerler dolmadan yüklemeye çalışacağındanilk seferinde hata almamak için...
             {
-                DgwBook.DataSource = _bookService.GetCategorySearch(cbxCategory.Text).Data;
+                    DgwBook.DataSource = _bookService.GetCategorySearch(cbxCategory.Text).Data;  
             }
             catch
             {
-
-
+                MessageBox.Show("Bir hata oluştu. Hata sebebi tespit edilemedi.");
             }
 
         }
@@ -92,7 +91,7 @@ namespace LibraryProjectApp.FileBook
                 _bookService.Add(new Book
                 {
                     CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue),
-                    BookName = txtBookName.Text,
+                    BookName = tbxBookName.Text,
                     BarcodeNumber = tbxBarcodeNumber.Text,
                     AuthorName = tbxYazar.Text,
                     AssetNumber = Convert.ToInt32(tbxDemirbasNo.Text),
@@ -157,14 +156,21 @@ namespace LibraryProjectApp.FileBook
 
         private void DgwBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmBookUpdate Update = new FrmBookUpdate();
-            var row = DgwBook.CurrentRow;
-            Update.UpdateId = Convert.ToInt32(row.Cells[0].Value);
-            Update.tbxBarkotNo.Text = row.Cells[1].Value.ToString();
-            Update.tbxBookUpdateName.Text = row.Cells[2].Value.ToString();
-            Update.cbxCategoryUpdate.SelectedValue = row.Cells[3].Value;
-            Update.tbxStockUpdate.Text = row.Cells[4].Value.ToString();
-            Update.ShowDialog();
+            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+            tbxBookName.Text = result.Data.BookName;
+            tbxBarcodeNumber.Text = result.Data.BarcodeNumber;
+            tbxBookStock.Text =result.Data.Stock.ToString();
+            tbxDemirbasNo.Text = result.Data.AssetNumber.ToString();
+            tbxDolapNo.Text = result.Data.CabinetNumber.ToString();
+            tbxYayinEvi.Text = result.Data.Publisher;
+            tbxYazar.Text = result.Data.AuthorName;
+            tbxSayfaSayisi.Text = result.Data.NumberOfPages.ToString();
+            tbsBasimYili.Text = result.Data.YearOfPublication.ToString();
+            tbxRafNo.Text = result.Data.ShelfNo.ToString();
+            
+            
+
+
         }
 
         private void GridViewKolonİsimleri()
@@ -174,14 +180,33 @@ namespace LibraryProjectApp.FileBook
             DgwBook.Columns[2].HeaderText = "Kitap Adı";
             DgwBook.Columns[3].HeaderText = "Kategori Adı";
             DgwBook.Columns[4].HeaderText = "Adet";
-
-
         }
 
         private void btnCategoryAdd_Click(object sender, EventArgs e)
         {
             FrmCategoryAdd categoryAdd = new FrmCategoryAdd();
             categoryAdd.ShowDialog();
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            var row = DgwBook.CurrentRow;
+            book.Id = Convert.ToInt32(row.Cells[0].Value);
+            book.BarcodeNumber = tbxBarcodeNumber.Text;
+            book.BookName = tbxBookName.Text;
+            book.Stock = Convert.ToInt32(tbxBookStock.Text);
+            book.CategoryId = Convert.ToInt32(cbxCategoryName.SelectedValue);
+            book.AuthorName = tbxYazar.Text;
+            book.AssetNumber = Convert.ToInt32(tbxDemirbasNo.Text);
+            book.CabinetNumber = Convert.ToChar(tbxDolapNo.Text);
+            book.YearOfPublication = Convert.ToInt32(tbsBasimYili.Text);
+            book.ShelfNo = Convert.ToInt32(tbxRafNo.Text);
+            book.NumberOfPages = Convert.ToInt32(tbxSayfaSayisi.Text);
+            book.Publisher = tbxYayinEvi.Text;
+            bookManager.Update(book);
+            LoadBookOrCategoryDetails();
+            MessageBox.Show("Güncellendi");
         }
     }
 }

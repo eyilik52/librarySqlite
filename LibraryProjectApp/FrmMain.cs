@@ -1,6 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using LibraryProjectApp.FileBook;
+using LibraryProjectApp.FileReader;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,23 @@ namespace LibraryProjectApp
         {
             FrmBookOperations frmBookManager = new FrmBookOperations();
             frmBookManager.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmReaderOperations frmReaderOperations = new FrmReaderOperations();
+            frmReaderOperations.ShowDialog();
+        }
+
+        private void btnClose(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmGiveBook frmGiveBook = new FrmGiveBook();
+            frmGiveBook.ShowDialog();
         }
     }
 }

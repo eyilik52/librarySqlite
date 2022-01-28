@@ -49,7 +49,7 @@ namespace LibraryProjectApp.FileBook
             this.tbsBasimYili = new System.Windows.Forms.TextBox();
             this.tbxYayinEvi = new System.Windows.Forms.TextBox();
             this.tbxYazar = new System.Windows.Forms.TextBox();
-            this.txtBookName = new System.Windows.Forms.TextBox();
+            this.tbxBookName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@ namespace LibraryProjectApp.FileBook
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.gbxBook.SuspendLayout();
@@ -105,6 +106,8 @@ namespace LibraryProjectApp.FileBook
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
+            this.cbxCategory.Items.AddRange(new object[] {
+            "TÜMÜNÜ GETİR"});
             this.cbxCategory.Location = new System.Drawing.Point(108, 27);
             this.cbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategory.Name = "cbxCategory";
@@ -141,7 +144,7 @@ namespace LibraryProjectApp.FileBook
             this.txtSearchBookName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSearchBookName.Name = "txtSearchBookName";
             this.txtSearchBookName.Size = new System.Drawing.Size(242, 23);
-            this.txtSearchBookName.TabIndex = 1;
+            this.txtSearchBookName.TabIndex = 0;
             this.txtSearchBookName.TextChanged += new System.EventHandler(this.txtProduct_TextChanged);
             // 
             // label2
@@ -156,6 +159,7 @@ namespace LibraryProjectApp.FileBook
             // 
             // gbxProductAdd
             // 
+            this.gbxProductAdd.Controls.Add(this.btnUpdate);
             this.gbxProductAdd.Controls.Add(this.cbxCategoryName);
             this.gbxProductAdd.Controls.Add(this.tbxBarcodeNumber);
             this.gbxProductAdd.Controls.Add(this.tbxBookStock);
@@ -167,7 +171,7 @@ namespace LibraryProjectApp.FileBook
             this.gbxProductAdd.Controls.Add(this.tbsBasimYili);
             this.gbxProductAdd.Controls.Add(this.tbxYayinEvi);
             this.gbxProductAdd.Controls.Add(this.tbxYazar);
-            this.gbxProductAdd.Controls.Add(this.txtBookName);
+            this.gbxProductAdd.Controls.Add(this.tbxBookName);
             this.gbxProductAdd.Controls.Add(this.label7);
             this.gbxProductAdd.Controls.Add(this.label4);
             this.gbxProductAdd.Controls.Add(this.label6);
@@ -195,7 +199,7 @@ namespace LibraryProjectApp.FileBook
             this.cbxCategoryName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategoryName.Name = "cbxCategoryName";
             this.cbxCategoryName.Size = new System.Drawing.Size(245, 23);
-            this.cbxCategoryName.TabIndex = 3;
+            this.cbxCategoryName.TabIndex = 8;
             // 
             // tbxBarcodeNumber
             // 
@@ -203,7 +207,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxBarcodeNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxBarcodeNumber.Name = "tbxBarcodeNumber";
             this.tbxBarcodeNumber.Size = new System.Drawing.Size(245, 23);
-            this.tbxBarcodeNumber.TabIndex = 2;
+            this.tbxBarcodeNumber.TabIndex = 1;
             // 
             // tbxBookStock
             // 
@@ -211,7 +215,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxBookStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxBookStock.Name = "tbxBookStock";
             this.tbxBookStock.Size = new System.Drawing.Size(245, 23);
-            this.tbxBookStock.TabIndex = 2;
+            this.tbxBookStock.TabIndex = 7;
             // 
             // tbxDolapNo
             // 
@@ -219,15 +223,15 @@ namespace LibraryProjectApp.FileBook
             this.tbxDolapNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxDolapNo.Name = "tbxDolapNo";
             this.tbxDolapNo.Size = new System.Drawing.Size(84, 23);
-            this.tbxDolapNo.TabIndex = 2;
+            this.tbxDolapNo.TabIndex = 9;
             // 
             // btnBookAdd
             // 
             this.btnBookAdd.Location = new System.Drawing.Point(613, 112);
             this.btnBookAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBookAdd.Name = "btnBookAdd";
-            this.btnBookAdd.Size = new System.Drawing.Size(130, 103);
-            this.btnBookAdd.TabIndex = 1;
+            this.btnBookAdd.Size = new System.Drawing.Size(130, 44);
+            this.btnBookAdd.TabIndex = 12;
             this.btnBookAdd.Text = "Ekle";
             this.btnBookAdd.UseVisualStyleBackColor = true;
             this.btnBookAdd.Click += new System.EventHandler(this.btnBookAdd_Click);
@@ -238,7 +242,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxRafNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxRafNo.Name = "tbxRafNo";
             this.tbxRafNo.Size = new System.Drawing.Size(84, 23);
-            this.tbxRafNo.TabIndex = 2;
+            this.tbxRafNo.TabIndex = 10;
             // 
             // tbxDemirbasNo
             // 
@@ -246,7 +250,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxDemirbasNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxDemirbasNo.Name = "tbxDemirbasNo";
             this.tbxDemirbasNo.Size = new System.Drawing.Size(84, 23);
-            this.tbxDemirbasNo.TabIndex = 2;
+            this.tbxDemirbasNo.TabIndex = 11;
             // 
             // tbxSayfaSayisi
             // 
@@ -254,7 +258,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxSayfaSayisi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxSayfaSayisi.Name = "tbxSayfaSayisi";
             this.tbxSayfaSayisi.Size = new System.Drawing.Size(79, 23);
-            this.tbxSayfaSayisi.TabIndex = 2;
+            this.tbxSayfaSayisi.TabIndex = 5;
             // 
             // tbsBasimYili
             // 
@@ -262,7 +266,7 @@ namespace LibraryProjectApp.FileBook
             this.tbsBasimYili.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbsBasimYili.Name = "tbsBasimYili";
             this.tbsBasimYili.Size = new System.Drawing.Size(65, 23);
-            this.tbsBasimYili.TabIndex = 2;
+            this.tbsBasimYili.TabIndex = 6;
             // 
             // tbxYayinEvi
             // 
@@ -270,7 +274,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxYayinEvi.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxYayinEvi.Name = "tbxYayinEvi";
             this.tbxYayinEvi.Size = new System.Drawing.Size(245, 23);
-            this.tbxYayinEvi.TabIndex = 2;
+            this.tbxYayinEvi.TabIndex = 4;
             // 
             // tbxYazar
             // 
@@ -278,15 +282,15 @@ namespace LibraryProjectApp.FileBook
             this.tbxYazar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxYazar.Name = "tbxYazar";
             this.tbxYazar.Size = new System.Drawing.Size(245, 23);
-            this.tbxYazar.TabIndex = 2;
+            this.tbxYazar.TabIndex = 3;
             // 
-            // txtBookName
+            // tbxBookName
             // 
-            this.txtBookName.Location = new System.Drawing.Point(95, 70);
-            this.txtBookName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(245, 23);
-            this.txtBookName.TabIndex = 2;
+            this.tbxBookName.Location = new System.Drawing.Point(95, 70);
+            this.tbxBookName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbxBookName.Name = "tbxBookName";
+            this.tbxBookName.Size = new System.Drawing.Size(245, 23);
+            this.tbxBookName.TabIndex = 2;
             // 
             // label7
             // 
@@ -371,7 +375,7 @@ namespace LibraryProjectApp.FileBook
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 149);
+            this.label8.Location = new System.Drawing.Point(21, 156);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 15);
@@ -408,6 +412,16 @@ namespace LibraryProjectApp.FileBook
             this.btnRemove.Text = "SİL";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(613, 172);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 43);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // FrmBookOperations
             // 
@@ -446,7 +460,7 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.GroupBox gbxProductAdd;
         private System.Windows.Forms.TextBox tbxBarcodeNumber;
         private System.Windows.Forms.TextBox tbxBookStock;
-        private System.Windows.Forms.TextBox txtBookName;
+        private System.Windows.Forms.TextBox tbxBookName;
         private System.Windows.Forms.Button btnBookAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
@@ -469,6 +483,7 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCategoryAdd;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 
