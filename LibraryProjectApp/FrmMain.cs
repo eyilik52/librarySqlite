@@ -20,14 +20,14 @@ namespace LibraryProjectApp
         {
             InitializeComponent();
         }
-        BookManager bookManager = new BookManager(new EfBookDal());
+        EscrowBookManager _escBookManager = new EscrowBookManager(new EfEscrowBookDal());
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
             //veritabanıSil();
             //veritabanıolustur();
-            var result = bookManager.GetAll();
+            var result = _escBookManager.BookDeliveredMember();
             if (result.Success)
             {
                 dataGridView1.DataSource = result.Data;
@@ -49,9 +49,7 @@ namespace LibraryProjectApp
             LibraryContext context = new LibraryContext();
             context.Database.EnsureDeleted();
             MessageBox.Show("silindi");
-        }
-
-        
+        }        
 
         private void btnBookOperations_Click(object sender, EventArgs e)
         {
@@ -74,6 +72,12 @@ namespace LibraryProjectApp
         {
             FrmGiveBook frmGiveBook = new FrmGiveBook();
             frmGiveBook.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FrmTakeBackBook frmTakeBackBook = new FrmTakeBackBook();
+            frmTakeBackBook.ShowDialog();
         }
     }
 }

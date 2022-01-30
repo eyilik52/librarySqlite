@@ -134,12 +134,20 @@ namespace LibraryProjectApp.FileBook
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            _bookService.Delete(new Book
-            {
-                Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
-            });
+            //_bookService.Delete(new Book
+            //{
+            //    Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
+            //});
+            //LoadBookOrCategoryDetails();
+            //MessageBox.Show("Ürün Silindi...");
+
+            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+            result.Data.IsActive = false;
+            _bookService.Update(result.Data);
+
+            MessageBox.Show("Ürün Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             LoadBookOrCategoryDetails();
-            MessageBox.Show("Ürün Silindi...");
+
         }
         public void SearchBook(string key)
         {

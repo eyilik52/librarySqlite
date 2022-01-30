@@ -46,11 +46,12 @@ namespace LibraryProjectApp
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 22);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(861, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(867, 258);
             this.dataGridView1.TabIndex = 0;
             // 
             // gbxBookBuyerList
@@ -104,6 +105,7 @@ namespace LibraryProjectApp
             this.button5.TabIndex = 0;
             this.button5.Text = "Kitap Al";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 

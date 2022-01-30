@@ -13,6 +13,6 @@ namespace Entities.Concrete
         public int LibraryId { get; set; }
         public int BookId { get; set; }
         public int UnitInStock { get; set; }
-        public bool IsActive { get; set; } = true;
+        
     }
 }

@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Category:IEntity
+    public class EscrowBook:IEntity
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public int ReaderId { get; set; }
+        public int BookId { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public DateTime DeliveryDate { get; set; }
         public bool IsActive { get; set; } = true;
     }
 }

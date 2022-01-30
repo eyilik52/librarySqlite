@@ -40,18 +40,20 @@ namespace LibraryProjectApp.FileBook
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBook = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tbxBarkotNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbxBookName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.grpMember = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.tbxKimlikNo = new System.Windows.Forms.TextBox();
             this.tbxNameSurname = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDeliveryDate = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMember)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -65,7 +67,7 @@ namespace LibraryProjectApp.FileBook
             this.groupBox1.Controls.Add(this.dgwMember);
             this.groupBox1.Location = new System.Drawing.Point(13, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(235, 454);
+            this.groupBox1.Size = new System.Drawing.Size(235, 467);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Üye Listesi";
@@ -81,7 +83,7 @@ namespace LibraryProjectApp.FileBook
             this.dgwMember.Location = new System.Drawing.Point(3, 19);
             this.dgwMember.Name = "dgwMember";
             this.dgwMember.RowTemplate.Height = 25;
-            this.dgwMember.Size = new System.Drawing.Size(229, 432);
+            this.dgwMember.Size = new System.Drawing.Size(229, 445);
             this.dgwMember.TabIndex = 0;
             this.dgwMember.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwMember_CellDoubleClick);
             // 
@@ -109,7 +111,7 @@ namespace LibraryProjectApp.FileBook
             this.groupBox2.Controls.Add(this.dgwBook);
             this.groupBox2.Location = new System.Drawing.Point(712, 36);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(235, 451);
+            this.groupBox2.Size = new System.Drawing.Size(235, 467);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kitap Listesi";
@@ -124,7 +126,7 @@ namespace LibraryProjectApp.FileBook
             this.dgwBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwBook.Location = new System.Drawing.Point(3, 19);
             this.dgwBook.Name = "dgwBook";
-            this.dgwBook.Size = new System.Drawing.Size(229, 429);
+            this.dgwBook.Size = new System.Drawing.Size(229, 445);
             this.dgwBook.TabIndex = 0;
             this.dgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgwBook_CellDoubleClick);
             // 
@@ -149,26 +151,16 @@ namespace LibraryProjectApp.FileBook
             // 
             // grpBook
             // 
-            this.grpBook.Controls.Add(this.button2);
             this.grpBook.Controls.Add(this.tbxBarkotNumber);
             this.grpBook.Controls.Add(this.label4);
             this.grpBook.Controls.Add(this.tbxBookName);
             this.grpBook.Controls.Add(this.label5);
-            this.grpBook.Location = new System.Drawing.Point(251, 228);
+            this.grpBook.Location = new System.Drawing.Point(251, 182);
             this.grpBook.Name = "grpBook";
-            this.grpBook.Size = new System.Drawing.Size(438, 207);
+            this.grpBook.Size = new System.Drawing.Size(438, 156);
             this.grpBook.TabIndex = 1;
             this.grpBook.TabStop = false;
             this.grpBook.Text = "Kitap Bilgileri";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(106, 154);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Önceki Okur Bilgilerini Getir";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // tbxBarkotNumber
             // 
@@ -204,26 +196,16 @@ namespace LibraryProjectApp.FileBook
             // 
             // grpMember
             // 
-            this.grpMember.Controls.Add(this.button1);
             this.grpMember.Controls.Add(this.tbxKimlikNo);
             this.grpMember.Controls.Add(this.tbxNameSurname);
             this.grpMember.Controls.Add(this.label3);
             this.grpMember.Controls.Add(this.label2);
             this.grpMember.Location = new System.Drawing.Point(254, 36);
             this.grpMember.Name = "grpMember";
-            this.grpMember.Size = new System.Drawing.Size(438, 186);
+            this.grpMember.Size = new System.Drawing.Size(438, 140);
             this.grpMember.TabIndex = 1;
             this.grpMember.TabStop = false;
             this.grpMember.Text = "Üye Bilgileri";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(103, 131);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Önceki Okunan Kitap Bilgisini Getir";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // tbxKimlikNo
             // 
@@ -268,11 +250,53 @@ namespace LibraryProjectApp.FileBook
             this.label1.TabIndex = 2;
             this.label1.Text = "EMANET KİTAP VERME EKRANI";
             // 
+            // lblDeliveryDate
+            // 
+            this.lblDeliveryDate.AutoSize = true;
+            this.lblDeliveryDate.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblDeliveryDate.Location = new System.Drawing.Point(559, 367);
+            this.lblDeliveryDate.Name = "lblDeliveryDate";
+            this.lblDeliveryDate.Size = new System.Drawing.Size(28, 32);
+            this.lblDeliveryDate.TabIndex = 3;
+            this.lblDeliveryDate.Text = "0";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(455, 360);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(74, 43);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(455, 442);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(111, 61);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Ödünç Kitap Ver";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(313, 367);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 15);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Emanet Günü";
+            // 
             // FrmGiveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 502);
+            this.ClientSize = new System.Drawing.Size(959, 515);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lblDeliveryDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpMember);
             this.Controls.Add(this.grpBook);
@@ -309,15 +333,17 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox tbxBarkotNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbxBookName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbxKimlikNo;
         private System.Windows.Forms.TextBox tbxNameSurname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDeliveryDate;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label7;
     }
 }
