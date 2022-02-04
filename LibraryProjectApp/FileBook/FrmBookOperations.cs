@@ -141,12 +141,7 @@ namespace LibraryProjectApp.FileBook
             //LoadBookOrCategoryDetails();
             //MessageBox.Show("Ürün Silindi...");
 
-            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
-            result.Data.IsActive = false;
-            _bookService.Update(result.Data);
 
-            MessageBox.Show("Ürün Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            LoadBookOrCategoryDetails();
 
         }
         public void SearchBook(string key)
@@ -167,7 +162,7 @@ namespace LibraryProjectApp.FileBook
             var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
             tbxBookName.Text = result.Data.BookName;
             tbxBarcodeNumber.Text = result.Data.BarcodeNumber;
-            tbxBookStock.Text =result.Data.Stock.ToString();
+            tbxBookStock.Text = result.Data.Stock.ToString();
             tbxDemirbasNo.Text = result.Data.AssetNumber.ToString();
             tbxDolapNo.Text = result.Data.CabinetNumber.ToString();
             tbxYayinEvi.Text = result.Data.Publisher;
@@ -175,8 +170,8 @@ namespace LibraryProjectApp.FileBook
             tbxSayfaSayisi.Text = result.Data.NumberOfPages.ToString();
             tbsBasimYili.Text = result.Data.YearOfPublication.ToString();
             tbxRafNo.Text = result.Data.ShelfNo.ToString();
-            
-            
+
+
 
 
         }
@@ -215,6 +210,31 @@ namespace LibraryProjectApp.FileBook
             bookManager.Update(book);
             LoadBookOrCategoryDetails();
             MessageBox.Show("Güncellendi");
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+            result.Data.IsActive = false;
+            _bookService.Update(result.Data);
+
+            MessageBox.Show("Ürün Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            LoadBookOrCategoryDetails();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+            tbxBookName.Text = result.Data.BookName;
+            tbxBarcodeNumber.Text = result.Data.BarcodeNumber;
+            tbxBookStock.Text = result.Data.Stock.ToString();
+            tbxDemirbasNo.Text = result.Data.AssetNumber.ToString();
+            tbxDolapNo.Text = result.Data.CabinetNumber.ToString();
+            tbxYayinEvi.Text = result.Data.Publisher;
+            tbxYazar.Text = result.Data.AuthorName;
+            tbxSayfaSayisi.Text = result.Data.NumberOfPages.ToString();
+            tbsBasimYili.Text = result.Data.YearOfPublication.ToString();
+            tbxRafNo.Text = result.Data.ShelfNo.ToString();
         }
     }
 }

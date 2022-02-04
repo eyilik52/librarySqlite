@@ -33,9 +33,9 @@ namespace LibraryProjectApp.FileReader
                 _readerService.Add(new Reader
                 {
                     Tc = tbxIdentityNo.Text,
-                    Name = tbxName.Text,
-                    Surname = tbxSurname.Text,
-                    Phone = tbxPhoneNumber.Text,
+                    Name = tbxName.Text.ToUpper(),
+                    Surname = tbxSurname.Text.ToUpper(),
+                    Phone = tbxPhoneNumber.Text.ToUpper(),
                     Mail = tbxMailAdresess.Text,
                     Address = tbxAdresess.Text,
                     DateOfRegistration = dtDateOfRegistration.Value,

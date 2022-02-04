@@ -30,14 +30,14 @@ namespace LibraryProjectApp.FileBook
         private void FrmGiveBook_Load(object sender, EventArgs e)
         {
             lblDeliveryDate.Text = DateTime.Today.ToShortDateString();
-           dgwMember.DataSource= _readerService.GetAll().Data;
+            dgwMember.DataSource = _readerService.GetAll().Data;
             dgwBook.DataSource = _bookService.GetAll().Data;
         }
 
         private void dgwMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           tbxKimlikNo.Text=dgwMember.CurrentRow.Cells[1].Value.ToString();
-            tbxNameSurname.Text = dgwMember.CurrentRow.Cells[2].Value.ToString()+" "+dgwMember.CurrentRow.Cells[3].Value.ToString();
+            tbxKimlikNo.Text = dgwMember.CurrentRow.Cells[1].Value.ToString();
+            tbxNameSurname.Text = dgwMember.CurrentRow.Cells[2].Value.ToString() + " " + dgwMember.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void dgwBook_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -48,57 +48,75 @@ namespace LibraryProjectApp.FileBook
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
-            if (!String.IsNullOrEmpty(textBox1.Text))
+            try
             {
-               lblDeliveryDate.Text= DateTime.Now.AddDays(+Convert.ToInt32(textBox1.Text)).ToShortDateString();
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    lblDeliveryDate.Text = DateTime.Now.AddDays(+Convert.ToInt32(textBox1.Text)).ToShortDateString();
+                }
+                else
+                {
+                    lblDeliveryDate.Text = DateTime.Today.ToShortDateString();
+                }
             }
-            else
+            catch
             {
-                lblDeliveryDate.Text = DateTime.Today.ToShortDateString();
+                string a = textBox1.Text;
+                MessageBox.Show(a + " Bir sayı değildir. Lütfen kitabın geri alınacağı gün bilgisini giriniz...", "Hatalı Bilgi Girişi Yaptınız", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Boolean IsThere=false;
-            var result = _escrowBookService.GetAllEscrowReaderId(Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value));
-
-            for (int i = 0; i < result.Data.Count; i++)
+            if (tbxNameSurname.Text == "" && tbxBookName.Text == "")
             {
-                //int newReaderId = result.Data[i].ReaderId;
-                
-
-                if (result.Data[i].IsActive == true)
-                {
-                    IsThere = true;
-                    break;
-                }
-              
-            }
-            if (IsThere==false)
-            {
-                try
-                {
-                    _escrowBookService.Add(new EscrowBook
-                    {
-                        BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
-                        ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
-                        DeliveryDate = Convert.ToDateTime(lblDeliveryDate.Text),
-                        TransactionDate = DateTime.Now
-                    }
-                    );
-                    MessageBox.Show("Kitap Teslim işlemi başarılı");
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message);
-                }
+                MessageBox.Show("Kitap ve Okuyucu ismi girişi yapılmadı...", "Veri Eksikliği", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                   MessageBox.Show("Üye teslim etmesi gereken kitabı teslim etmemiş, Tekrar kitap verilemez...");
-            }   
+
+                Boolean IsThere = false;
+                var result = _escrowBookService.GetAllEscrowReaderId(Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value));
+
+                for (int i = 0; i < result.Data.Count; i++)
+                {
+                    //int newReaderId = result.Data[i].ReaderId;
+
+
+                    if (result.Data[i].IsActive == true)
+                    {
+                        IsThere = true;
+                        break;
+                    }
+
+                }
+                if (IsThere == false)
+                {
+                    try
+                    {
+                        _escrowBookService.Add(new EscrowBook
+                        {
+                            BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
+                            ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
+                            DeliveryDate = Convert.ToDateTime(lblDeliveryDate.Text),
+                            TransactionDate = DateTime.Now
+                        }
+                        );
+                        MessageBox.Show("Kitap Teslim işlemi başarılı");
+                    }
+                    catch (Exception exception)
+                    {
+                        MessageBox.Show(exception.Message);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Üye teslim etmesi gereken kitabı teslim etmemiş, Tekrar kitap verilemez...");
+                }
+
+
+
+            }
         }
     }
 }

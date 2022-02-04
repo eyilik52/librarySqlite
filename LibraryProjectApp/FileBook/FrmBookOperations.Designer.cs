@@ -29,15 +29,18 @@ namespace LibraryProjectApp.FileBook
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookOperations));
             this.DgwBook = new System.Windows.Forms.DataGridView();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
-            this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCategoryAdd = new System.Windows.Forms.Button();
             this.gbxBook = new System.Windows.Forms.GroupBox();
             this.txtSearchBookName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbxProductAdd = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxCategoryName = new System.Windows.Forms.ComboBox();
             this.tbxBarcodeNumber = new System.Windows.Forms.TextBox();
             this.tbxBookStock = new System.Windows.Forms.TextBox();
@@ -61,17 +64,21 @@ namespace LibraryProjectApp.FileBook
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
             this.gbxCategory.SuspendLayout();
             this.gbxBook.SuspendLayout();
             this.gbxProductAdd.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgwBook
             // 
             this.DgwBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgwBook.ContextMenuStrip = this.contextMenuStrip1;
             this.DgwBook.Location = new System.Drawing.Point(45, 93);
             this.DgwBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.DgwBook.Name = "DgwBook";
@@ -81,7 +88,6 @@ namespace LibraryProjectApp.FileBook
             // 
             // gbxCategory
             // 
-            this.gbxCategory.Controls.Add(this.btnCategoryAdd);
             this.gbxCategory.Controls.Add(this.cbxCategory);
             this.gbxCategory.Controls.Add(this.label1);
             this.gbxCategory.Location = new System.Drawing.Point(45, 18);
@@ -92,16 +98,6 @@ namespace LibraryProjectApp.FileBook
             this.gbxCategory.TabIndex = 1;
             this.gbxCategory.TabStop = false;
             this.gbxCategory.Text = "Kategoriye Göre Ara";
-            // 
-            // btnCategoryAdd
-            // 
-            this.btnCategoryAdd.Location = new System.Drawing.Point(357, 16);
-            this.btnCategoryAdd.Name = "btnCategoryAdd";
-            this.btnCategoryAdd.Size = new System.Drawing.Size(48, 42);
-            this.btnCategoryAdd.TabIndex = 2;
-            this.btnCategoryAdd.Text = "EKLE";
-            this.btnCategoryAdd.UseVisualStyleBackColor = true;
-            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // cbxCategory
             // 
@@ -124,6 +120,16 @@ namespace LibraryProjectApp.FileBook
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Kategori :";
+            // 
+            // btnCategoryAdd
+            // 
+            this.btnCategoryAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnCategoryAdd.Image")));
+            this.btnCategoryAdd.Location = new System.Drawing.Point(695, 59);
+            this.btnCategoryAdd.Name = "btnCategoryAdd";
+            this.btnCategoryAdd.Size = new System.Drawing.Size(48, 42);
+            this.btnCategoryAdd.TabIndex = 2;
+            this.btnCategoryAdd.UseVisualStyleBackColor = true;
+            this.btnCategoryAdd.Click += new System.EventHandler(this.btnCategoryAdd_Click);
             // 
             // gbxBook
             // 
@@ -159,6 +165,7 @@ namespace LibraryProjectApp.FileBook
             // 
             // gbxProductAdd
             // 
+            this.gbxProductAdd.Controls.Add(this.btnCategoryAdd);
             this.gbxProductAdd.Controls.Add(this.btnUpdate);
             this.gbxProductAdd.Controls.Add(this.cbxCategoryName);
             this.gbxProductAdd.Controls.Add(this.tbxBarcodeNumber);
@@ -192,13 +199,26 @@ namespace LibraryProjectApp.FileBook
             this.gbxProductAdd.TabStop = false;
             this.gbxProductAdd.Text = "Yeni Okuyucu Ekle";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUpdate.Location = new System.Drawing.Point(644, 176);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(99, 54);
+            this.btnUpdate.TabIndex = 5;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            // 
             // cbxCategoryName
             // 
             this.cbxCategoryName.FormattingEnabled = true;
             this.cbxCategoryName.Location = new System.Drawing.Point(498, 70);
             this.cbxCategoryName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategoryName.Name = "cbxCategoryName";
-            this.cbxCategoryName.Size = new System.Drawing.Size(245, 23);
+            this.cbxCategoryName.Size = new System.Drawing.Size(179, 23);
             this.cbxCategoryName.TabIndex = 8;
             // 
             // tbxBarcodeNumber
@@ -222,17 +242,20 @@ namespace LibraryProjectApp.FileBook
             this.tbxDolapNo.Location = new System.Drawing.Point(498, 112);
             this.tbxDolapNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxDolapNo.Name = "tbxDolapNo";
-            this.tbxDolapNo.Size = new System.Drawing.Size(84, 23);
+            this.tbxDolapNo.Size = new System.Drawing.Size(126, 23);
             this.tbxDolapNo.TabIndex = 9;
             // 
             // btnBookAdd
             // 
-            this.btnBookAdd.Location = new System.Drawing.Point(613, 112);
+            this.btnBookAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnBookAdd.Image")));
+            this.btnBookAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBookAdd.Location = new System.Drawing.Point(644, 112);
             this.btnBookAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnBookAdd.Name = "btnBookAdd";
-            this.btnBookAdd.Size = new System.Drawing.Size(130, 44);
+            this.btnBookAdd.Size = new System.Drawing.Size(99, 54);
             this.btnBookAdd.TabIndex = 12;
-            this.btnBookAdd.Text = "Ekle";
+            this.btnBookAdd.Text = "Kaydet";
+            this.btnBookAdd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBookAdd.UseVisualStyleBackColor = true;
             this.btnBookAdd.Click += new System.EventHandler(this.btnBookAdd_Click);
             // 
@@ -241,7 +264,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxRafNo.Location = new System.Drawing.Point(498, 154);
             this.tbxRafNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxRafNo.Name = "tbxRafNo";
-            this.tbxRafNo.Size = new System.Drawing.Size(84, 23);
+            this.tbxRafNo.Size = new System.Drawing.Size(126, 23);
             this.tbxRafNo.TabIndex = 10;
             // 
             // tbxDemirbasNo
@@ -249,7 +272,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxDemirbasNo.Location = new System.Drawing.Point(498, 196);
             this.tbxDemirbasNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxDemirbasNo.Name = "tbxDemirbasNo";
-            this.tbxDemirbasNo.Size = new System.Drawing.Size(84, 23);
+            this.tbxDemirbasNo.Size = new System.Drawing.Size(126, 23);
             this.tbxDemirbasNo.TabIndex = 11;
             // 
             // tbxSayfaSayisi
@@ -402,33 +425,40 @@ namespace LibraryProjectApp.FileBook
             this.label3.TabIndex = 0;
             this.label3.Text = "Kitap Adı:";
             // 
-            // btnRemove
+            // contextMenuStrip1
             // 
-            this.btnRemove.Location = new System.Drawing.Point(811, 93);
-            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(130, 47);
-            this.btnRemove.TabIndex = 4;
-            this.btnRemove.Text = "SİL";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileToolStripMenuItem,
+            this.silToolStripMenuItem,
+            this.updateToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 70);
             // 
-            // btnUpdate
+            // yenileToolStripMenuItem
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(613, 172);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(130, 43);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // FrmBookOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 557);
-            this.Controls.Add(this.btnRemove);
+            this.ClientSize = new System.Drawing.Size(855, 557);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxBook);
             this.Controls.Add(this.gbxCategory);
@@ -444,6 +474,7 @@ namespace LibraryProjectApp.FileBook
             this.gbxBook.PerformLayout();
             this.gbxProductAdd.ResumeLayout(false);
             this.gbxProductAdd.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -467,7 +498,6 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxCategoryName;
-        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.TextBox tbxDolapNo;
         private System.Windows.Forms.TextBox tbxRafNo;
         private System.Windows.Forms.TextBox tbxDemirbasNo;
@@ -484,6 +514,10 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCategoryAdd;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
     }
 }
 
