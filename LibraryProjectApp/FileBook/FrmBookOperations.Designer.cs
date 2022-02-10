@@ -32,6 +32,10 @@ namespace LibraryProjectApp.FileBook
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookOperations));
             this.DgwBook = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,15 +68,11 @@ namespace LibraryProjectApp.FileBook
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gbxCategory.SuspendLayout();
             this.gbxBook.SuspendLayout();
             this.gbxProductAdd.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DgwBook
@@ -85,6 +85,35 @@ namespace LibraryProjectApp.FileBook
             this.DgwBook.Size = new System.Drawing.Size(758, 197);
             this.DgwBook.TabIndex = 0;
             this.DgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwBook_CellDoubleClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileToolStripMenuItem,
+            this.silToolStripMenuItem,
+            this.updateToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 70);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // updateToolStripMenuItem
+            // 
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.updateToolStripMenuItem.Text = "Güncelle";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // gbxCategory
             // 
@@ -197,7 +226,7 @@ namespace LibraryProjectApp.FileBook
             this.gbxProductAdd.Size = new System.Drawing.Size(758, 236);
             this.gbxProductAdd.TabIndex = 3;
             this.gbxProductAdd.TabStop = false;
-            this.gbxProductAdd.Text = "Yeni Okuyucu Ekle";
+            this.gbxProductAdd.Text = "Yeni Kitap  Ekle";
             // 
             // btnUpdate
             // 
@@ -266,6 +295,7 @@ namespace LibraryProjectApp.FileBook
             this.tbxRafNo.Name = "tbxRafNo";
             this.tbxRafNo.Size = new System.Drawing.Size(126, 23);
             this.tbxRafNo.TabIndex = 10;
+
             // 
             // tbxDemirbasNo
             // 
@@ -425,35 +455,6 @@ namespace LibraryProjectApp.FileBook
             this.label3.TabIndex = 0;
             this.label3.Text = "Kitap Adı:";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yenileToolStripMenuItem,
-            this.silToolStripMenuItem,
-            this.updateToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 70);
-            // 
-            // yenileToolStripMenuItem
-            // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.updateToolStripMenuItem.Text = "Güncelle";
-            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
-            // 
             // FrmBookOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -468,13 +469,13 @@ namespace LibraryProjectApp.FileBook
             this.Text = "KİTAP YÖNETİM ALANI";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gbxCategory.ResumeLayout(false);
             this.gbxCategory.PerformLayout();
             this.gbxBook.ResumeLayout(false);
             this.gbxBook.PerformLayout();
             this.gbxProductAdd.ResumeLayout(false);
             this.gbxProductAdd.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

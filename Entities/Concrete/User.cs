@@ -23,6 +23,7 @@ namespace Entities.Concrete
         public bool? Ayarlar { get; set; }
         public bool? FiyatGuncelle { get; set; }
         public bool? Yedekleme { get; set; }
+        public bool IsActive { get; set; } = true;
 
 
     }

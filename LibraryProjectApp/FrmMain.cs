@@ -2,6 +2,7 @@
 using DataAccess.Concrete.EntityFramework;
 using LibraryProjectApp.FileBook;
 using LibraryProjectApp.FileReader;
+using LibraryProjectApp.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,7 @@ namespace LibraryProjectApp
             frmBookManager.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMember(object sender, EventArgs e)
         {
             FrmReaderOperations frmReaderOperations = new FrmReaderOperations();
             frmReaderOperations.ShowDialog();
@@ -65,7 +66,7 @@ namespace LibraryProjectApp
 
         private void btnClose(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -78,6 +79,18 @@ namespace LibraryProjectApp
         {
             FrmTakeBackBook frmTakeBackBook = new FrmTakeBackBook();
             frmTakeBackBook.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FrmReportMember reportMember = new FrmReportMember();
+            reportMember.ShowDialog();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            FrmSettings frmSettings = new FrmSettings();
+            frmSettings.ShowDialog();
         }
     }
 }

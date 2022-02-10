@@ -236,5 +236,7 @@ namespace LibraryProjectApp.FileBook
             tbsBasimYili.Text = result.Data.YearOfPublication.ToString();
             tbxRafNo.Text = result.Data.ShelfNo.ToString();
         }
+
+        
     }
 }

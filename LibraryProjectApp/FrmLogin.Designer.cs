@@ -84,7 +84,7 @@ namespace LibraryProjectApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(429, 287);
+            this.ClientSize = new System.Drawing.Size(431, 255);
             this.Controls.Add(this.cmbUserName);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.label2);

@@ -41,13 +41,14 @@ namespace LibraryProjectApp
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbxBookBuyerList = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSetting = new System.Windows.Forms.Button();
             this.bntClose = new System.Windows.Forms.Button();
             this.ımgButon = new System.Windows.Forms.ImageList(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnBookOperations = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnmember = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gbxBookBuyerList.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -129,24 +130,38 @@ namespace LibraryProjectApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSetting);
             this.groupBox1.Controls.Add(this.bntClose);
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.btnBookOperations);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnmember);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(872, 107);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // btnSetting
+            // 
+            this.btnSetting.Image = ((System.Drawing.Image)(resources.GetObject("btnSetting.Image")));
+            this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSetting.Location = new System.Drawing.Point(626, 22);
+            this.btnSetting.Name = "btnSetting";
+            this.btnSetting.Size = new System.Drawing.Size(114, 79);
+            this.btnSetting.TabIndex = 0;
+            this.btnSetting.Text = "Ayarlar";
+            this.btnSetting.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
+            // 
             // bntClose
             // 
             this.bntClose.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bntClose.ImageIndex = 0;
             this.bntClose.ImageList = this.ımgButon;
-            this.bntClose.Location = new System.Drawing.Point(751, 22);
+            this.bntClose.Location = new System.Drawing.Point(750, 22);
             this.bntClose.Name = "bntClose";
             this.bntClose.Size = new System.Drawing.Size(114, 79);
             this.bntClose.TabIndex = 0;
@@ -172,20 +187,21 @@ namespace LibraryProjectApp
             this.button6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.ImageIndex = 4;
             this.button6.ImageList = this.ımgButon;
-            this.button6.Location = new System.Drawing.Point(602, 22);
+            this.button6.Location = new System.Drawing.Point(502, 22);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 79);
             this.button6.TabIndex = 0;
             this.button6.Text = "Raporlar";
             this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
             this.button5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.ImageIndex = 2;
             this.button5.ImageList = this.ımgButon;
-            this.button5.Location = new System.Drawing.Point(453, 22);
+            this.button5.Location = new System.Drawing.Point(378, 22);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 79);
             this.button5.TabIndex = 0;
@@ -199,7 +215,7 @@ namespace LibraryProjectApp
             this.button4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.ImageIndex = 3;
             this.button4.ImageList = this.ımgButon;
-            this.button4.Location = new System.Drawing.Point(304, 22);
+            this.button4.Location = new System.Drawing.Point(254, 22);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(114, 79);
             this.button4.TabIndex = 0;
@@ -213,7 +229,7 @@ namespace LibraryProjectApp
             this.btnBookOperations.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBookOperations.ImageIndex = 1;
             this.btnBookOperations.ImageList = this.ımgButon;
-            this.btnBookOperations.Location = new System.Drawing.Point(155, 22);
+            this.btnBookOperations.Location = new System.Drawing.Point(130, 22);
             this.btnBookOperations.Name = "btnBookOperations";
             this.btnBookOperations.Size = new System.Drawing.Size(114, 79);
             this.btnBookOperations.TabIndex = 0;
@@ -222,28 +238,29 @@ namespace LibraryProjectApp
             this.btnBookOperations.UseVisualStyleBackColor = true;
             this.btnBookOperations.Click += new System.EventHandler(this.btnBookOperations_Click);
             // 
-            // button2
+            // btnmember
             // 
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.ImageIndex = 5;
-            this.button2.ImageList = this.ımgButon;
-            this.button2.Location = new System.Drawing.Point(6, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 79);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Üye İşlemleri";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnmember.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnmember.ImageIndex = 5;
+            this.btnmember.ImageList = this.ımgButon;
+            this.btnmember.Location = new System.Drawing.Point(6, 22);
+            this.btnmember.Name = "btnmember";
+            this.btnmember.Size = new System.Drawing.Size(114, 79);
+            this.btnmember.TabIndex = 0;
+            this.btnmember.Text = "Üye İşlemleri";
+            this.btnmember.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnmember.UseVisualStyleBackColor = true;
+            this.btnmember.Click += new System.EventHandler(this.btnMember);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 508);
+            this.ClientSize = new System.Drawing.Size(906, 493);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxBookBuyerList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "DİVANTÜRK ŞEHİT İRFAN ÜNCELİ İLKOKULU ";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -264,7 +281,7 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnBookOperations;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnmember;
         private System.Windows.Forms.ImageList ımgButon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -273,6 +290,7 @@ namespace LibraryProjectApp
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Button btnSetting;
     }
 }
 
