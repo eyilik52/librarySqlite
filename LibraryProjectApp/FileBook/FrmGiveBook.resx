@@ -66,6 +66,9 @@
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="contextMenuUye.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -75,11 +78,14 @@
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="contextMenuKitap.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAIhtJREFUeF7de2dUVee6rlsBAUFAUQEpYkFRQVARRQWUIr333ssCFh3pHQEBRWMJ
+        vAAADrwBlbxySQAAIhtJREFUeF7de2dUVee6rlsBAUFAUQEpYkFRQVARRQWUIr333ssCFh3pHQEBRWMJ
         UWPX2HuJioIde4/RmMREd457n3hvcu9wjOuP89z3/dZaiG3H7LPPj3PmGM+Yq8w1mc/z9m9O+v032JQG
         DBjgp6Kico7wQllZ+aiSklIRfW4p+/p/8Na/f/9wJSXlp+rq6jA0NsKYsaYwGKkHDQ0NqKqqggT5jgRZ
         QYcayX7xP2dTGjhwYGP/ASoYaWgA75B5CE1xR0SyB4JTXOEf44KZc6ygpzdcCEHHvmAvkf/2v/dGVp1I

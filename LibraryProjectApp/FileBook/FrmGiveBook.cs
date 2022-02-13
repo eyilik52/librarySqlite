@@ -118,5 +118,17 @@ namespace LibraryProjectApp.FileBook
 
             }
         }
+
+        private void seçToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tbxKimlikNo.Text = dgwMember.CurrentRow.Cells[1].Value.ToString();
+            tbxNameSurname.Text = dgwMember.CurrentRow.Cells[2].Value.ToString() + " " + dgwMember.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void seçToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            tbxBarkotNumber.Text = dgwBook.CurrentRow.Cells[1].Value.ToString();
+            tbxBookName.Text = dgwBook.CurrentRow.Cells[3].Value.ToString();
+        }
     }
 }

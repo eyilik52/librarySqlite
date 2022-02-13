@@ -29,6 +29,7 @@ namespace LibraryProjectApp.FileBook
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGiveBook));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgwMember = new System.Windows.Forms.DataGridView();
@@ -56,6 +57,10 @@ namespace LibraryProjectApp.FileBook
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.contextMenuUye = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.seçToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuKitap = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.seçToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwMember)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -63,6 +68,8 @@ namespace LibraryProjectApp.FileBook
             this.grpBook.SuspendLayout();
             this.grpMember.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.contextMenuUye.SuspendLayout();
+            this.contextMenuKitap.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,6 +89,7 @@ namespace LibraryProjectApp.FileBook
             this.Column1,
             this.Column2,
             this.Column3});
+            this.dgwMember.ContextMenuStrip = this.contextMenuUye;
             this.dgwMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwMember.Location = new System.Drawing.Point(3, 19);
             this.dgwMember.Name = "dgwMember";
@@ -126,6 +134,7 @@ namespace LibraryProjectApp.FileBook
             this.Column6,
             this.Column4,
             this.Column5});
+            this.dgwBook.ContextMenuStrip = this.contextMenuKitap;
             this.dgwBook.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgwBook.Location = new System.Drawing.Point(3, 19);
             this.dgwBook.Name = "dgwBook";
@@ -310,6 +319,34 @@ namespace LibraryProjectApp.FileBook
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Teslim tarihi belirleme";
             // 
+            // contextMenuUye
+            // 
+            this.contextMenuUye.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seçToolStripMenuItem});
+            this.contextMenuUye.Name = "contextMenuUye";
+            this.contextMenuUye.Size = new System.Drawing.Size(93, 26);
+            // 
+            // seçToolStripMenuItem
+            // 
+            this.seçToolStripMenuItem.Name = "seçToolStripMenuItem";
+            this.seçToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seçToolStripMenuItem.Text = "Seç";
+            this.seçToolStripMenuItem.Click += new System.EventHandler(this.seçToolStripMenuItem_Click);
+            // 
+            // contextMenuKitap
+            // 
+            this.contextMenuKitap.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seçToolStripMenuItem1});
+            this.contextMenuKitap.Name = "contextMenuStrip1";
+            this.contextMenuKitap.Size = new System.Drawing.Size(181, 48);
+            // 
+            // seçToolStripMenuItem1
+            // 
+            this.seçToolStripMenuItem1.Name = "seçToolStripMenuItem1";
+            this.seçToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.seçToolStripMenuItem1.Text = "Seç";
+            this.seçToolStripMenuItem1.Click += new System.EventHandler(this.seçToolStripMenuItem1_Click);
+            // 
             // FrmGiveBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -336,6 +373,8 @@ namespace LibraryProjectApp.FileBook
             this.grpMember.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.contextMenuUye.ResumeLayout(false);
+            this.contextMenuKitap.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +408,9 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuUye;
+        private System.Windows.Forms.ToolStripMenuItem seçToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuKitap;
+        private System.Windows.Forms.ToolStripMenuItem seçToolStripMenuItem1;
     }
 }
