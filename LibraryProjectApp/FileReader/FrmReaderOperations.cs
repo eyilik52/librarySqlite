@@ -65,16 +65,21 @@ namespace LibraryProjectApp.FileReader
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            Guncelle();
+        }
+
+        private void Guncelle()
+        {
             Reader Update = new Reader();
             var row = DgwBook.CurrentRow;
             Update.Id = Convert.ToInt32(row.Cells[0].Value);
             Update.Name = tbxName.Text;
-            Update.Surname=tbxSurname.Text;
+            Update.Surname = tbxSurname.Text;
             Update.Mail = tbxMailAdresess.Text;
-            Update.Phone = tbxPhoneNumber.Text;            
+            Update.Phone = tbxPhoneNumber.Text;
             Update.Tc = tbxIdentityNo.Text;
-            Update.ClassRoomId =Convert.ToInt32( nmrcClass.Value);
-            Update.ClassRoombranch =Convert.ToChar(cmbBransh.Text);
+            Update.ClassRoomId = Convert.ToInt32(nmrcClass.Value);
+            Update.ClassRoombranch = Convert.ToChar(cmbBransh.Text);
             Update.Address = tbxAdresess.Text;
             Update.DateOfRegistration = dtDateOfRegistration.Value;
 
@@ -171,12 +176,21 @@ namespace LibraryProjectApp.FileReader
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _readerService.Delete(new Reader
+            DialogResult dialogResult= MessageBox.Show("Devam edersiniz veri silinecek, işlemi yapmak istediğinize emin misiniz?","Uyarı",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
+            if (dialogResult==DialogResult.Yes)
             {
-                Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
-            });
-            LoadReaderDetails();
-            MessageBox.Show("Ürün Silindi...");
+                _readerService.Delete(new Reader
+                {
+                    Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
+                });
+                LoadReaderDetails();
+                MessageBox.Show("Ürün Silindi...");
+            }
+            else
+            {
+                MessageBox.Show("Silme işlemi iptal edildi, veri silinmedi");
+            }
+            
         }
 
         private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,8 +198,9 @@ namespace LibraryProjectApp.FileReader
             LoadReaderDetails();
         }
 
-       
-
-        
+        private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Guncelle();
+        }
     }
 }

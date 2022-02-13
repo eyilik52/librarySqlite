@@ -34,14 +34,18 @@ namespace LibraryProjectApp
             this.label2 = new System.Windows.Forms.Label();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.cmbUserName = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(178, 150);
+            this.btnLogin.Location = new System.Drawing.Point(195, 130);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(132, 53);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Giriş";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -49,7 +53,7 @@ namespace LibraryProjectApp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 66);
+            this.label1.Location = new System.Drawing.Point(52, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 15);
             this.label1.TabIndex = 1;
@@ -58,7 +62,7 @@ namespace LibraryProjectApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 97);
+            this.label2.Location = new System.Drawing.Point(52, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 2;
@@ -66,36 +70,76 @@ namespace LibraryProjectApp
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(151, 94);
+            this.tbxPassword.Location = new System.Drawing.Point(146, 87);
             this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(181, 23);
-            this.tbxPassword.TabIndex = 4;
+            this.tbxPassword.TabIndex = 2;
             // 
             // cmbUserName
             // 
             this.cmbUserName.FormattingEnabled = true;
-            this.cmbUserName.Location = new System.Drawing.Point(151, 57);
+            this.cmbUserName.Location = new System.Drawing.Point(146, 50);
             this.cmbUserName.Name = "cmbUserName";
             this.cmbUserName.Size = new System.Drawing.Size(181, 23);
-            this.cmbUserName.TabIndex = 5;
+            this.cmbUserName.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(52, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 51);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Çıkış";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.linkLabel1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnLogin);
+            this.groupBox1.Controls.Add(this.cmbUserName);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tbxPassword);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(370, 220);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Üye giriş ekranı";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(126, 202);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(119, 15);
+            this.linkLabel1.TabIndex = 5;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "www.hakkieyilik.com";
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(431, 255);
-            this.Controls.Add(this.cmbUserName);
-            this.Controls.Add(this.tbxPassword);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnLogin);
+            this.CancelButton = this.button1;
+            this.ClientSize = new System.Drawing.Size(400, 248);
+            this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -106,5 +150,8 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.ComboBox cmbUserName;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

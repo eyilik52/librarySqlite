@@ -141,3 +141,4 @@ C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\Remoti
 C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\Remotion.dll
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmReportMember.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmSettings.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmMessageService.resources

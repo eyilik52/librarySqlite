@@ -31,6 +31,9 @@
     <Compile Update="FrmSettings.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Reports\FrmMessageService.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Reports\FrmReportMember.cs">
       <SubType>Form</SubType>
     </Compile>

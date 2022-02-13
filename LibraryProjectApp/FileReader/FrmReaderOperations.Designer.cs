@@ -71,6 +71,7 @@ namespace LibraryProjectApp.FileReader
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxProductAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcClass)).BeginInit();
             this.gbxBook.SuspendLayout();
@@ -496,23 +497,31 @@ namespace LibraryProjectApp.FileReader
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yenileToolStripMenuItem,
-            this.silToolStripMenuItem});
+            this.silToolStripMenuItem,
+            this.güncelleToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(106, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // yenileToolStripMenuItem
             // 
             this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
             this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
             // 
             // FrmReaderOperations
             // 
@@ -580,5 +589,6 @@ namespace LibraryProjectApp.FileReader
         private System.Windows.Forms.DataGridViewTextBoxColumn Branch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
     }
 }

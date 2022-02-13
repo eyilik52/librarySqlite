@@ -92,5 +92,10 @@ namespace LibraryProjectApp
             FrmSettings frmSettings = new FrmSettings();
             frmSettings.ShowDialog();
         }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

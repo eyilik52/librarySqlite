@@ -263,6 +263,7 @@ namespace LibraryProjectApp
             this.MaximizeBox = false;
             this.Name = "FrmMain";
             this.Text = "DİVANTÜRK ŞEHİT İRFAN ÜNCELİ İLKOKULU ";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.gbxBookBuyerList.ResumeLayout(false);
