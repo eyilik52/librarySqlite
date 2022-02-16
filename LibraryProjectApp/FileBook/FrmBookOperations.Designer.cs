@@ -32,6 +32,14 @@ namespace LibraryProjectApp.FileBook
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookOperations));
             this.DgwBook = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +86,15 @@ namespace LibraryProjectApp.FileBook
             // DgwBook
             // 
             this.DgwBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgwBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.CategoryName,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.DgwBook.ContextMenuStrip = this.contextMenuStrip1;
             this.DgwBook.Location = new System.Drawing.Point(45, 93);
             this.DgwBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -85,6 +102,55 @@ namespace LibraryProjectApp.FileBook
             this.DgwBook.Size = new System.Drawing.Size(758, 197);
             this.DgwBook.TabIndex = 0;
             this.DgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwBook_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "BookId";
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "barcodeNumber";
+            this.Column2.HeaderText = "Barkot No";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "BookName";
+            this.Column3.HeaderText = "Kitap Adı";
+            this.Column3.Name = "Column3";
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Kategori Adı";
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CabinetNumber";
+            this.Column4.HeaderText = "Dolap No";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "AuthorName";
+            this.Column5.HeaderText = "Yazar Adı";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ShelfNo";
+            this.Column6.HeaderText = "Sayfa";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Stock";
+            this.Column7.HeaderText = "Adet";
+            this.Column7.Name = "Column7";
             // 
             // contextMenuStrip1
             // 
@@ -171,7 +237,7 @@ namespace LibraryProjectApp.FileBook
             this.gbxBook.Size = new System.Drawing.Size(337, 69);
             this.gbxBook.TabIndex = 2;
             this.gbxBook.TabStop = false;
-            this.gbxBook.Text = "Okuyucu Adına Göre Ara";
+            this.gbxBook.Text = "Kitap Adına Göre Ara";
             // 
             // txtSearchBookName
             // 
@@ -185,12 +251,12 @@ namespace LibraryProjectApp.FileBook
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 35);
+            this.label2.Location = new System.Drawing.Point(8, 35);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 15);
+            this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Okuyucu Adı";
+            this.label2.Text = "Kitap Adı";
             // 
             // gbxProductAdd
             // 
@@ -295,7 +361,6 @@ namespace LibraryProjectApp.FileBook
             this.tbxRafNo.Name = "tbxRafNo";
             this.tbxRafNo.Size = new System.Drawing.Size(126, 23);
             this.tbxRafNo.TabIndex = 10;
-
             // 
             // tbxDemirbasNo
             // 
@@ -466,6 +531,7 @@ namespace LibraryProjectApp.FileBook
             this.Controls.Add(this.DgwBook);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmBookOperations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KİTAP YÖNETİM ALANI";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).EndInit();
@@ -519,6 +585,14 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
 

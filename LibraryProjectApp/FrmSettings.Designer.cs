@@ -52,7 +52,11 @@ namespace LibraryProjectApp
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,17 +68,13 @@ namespace LibraryProjectApp
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Kullanici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -84,7 +84,7 @@ namespace LibraryProjectApp
             this.tabControl1.Location = new System.Drawing.Point(0, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(797, 306);
+            this.tabControl1.Size = new System.Drawing.Size(797, 449);
             this.tabControl1.TabIndex = 0;
             // 
             // Kullanici
@@ -94,7 +94,7 @@ namespace LibraryProjectApp
             this.Kullanici.Location = new System.Drawing.Point(4, 24);
             this.Kullanici.Name = "Kullanici";
             this.Kullanici.Padding = new System.Windows.Forms.Padding(3);
-            this.Kullanici.Size = new System.Drawing.Size(789, 416);
+            this.Kullanici.Size = new System.Drawing.Size(789, 421);
             this.Kullanici.TabIndex = 0;
             this.Kullanici.Text = "Kullanıcı İşlemleri";
             this.Kullanici.UseVisualStyleBackColor = true;
@@ -287,10 +287,19 @@ namespace LibraryProjectApp
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(789, 278);
+            this.tabPage2.Size = new System.Drawing.Size(789, 421);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sms Gönderim Ayarları";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(366, 13);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.Size = new System.Drawing.Size(416, 259);
+            this.dataGridView2.TabIndex = 6;
             // 
             // groupBox2
             // 
@@ -314,6 +323,33 @@ namespace LibraryProjectApp
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Yeni Kullanıcı Ekle";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(15, 242);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(81, 15);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "ile görüşünüz.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 206);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(297, 15);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "* Sistem mutlucell mesaj sistemine göre hazırlanmıştır. ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 223);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(323, 15);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "* Farklı bir mesaj sistemi kullanmak istiyorsanız, yazılımcınız ";
             // 
             // label8
             // 
@@ -408,47 +444,11 @@ namespace LibraryProjectApp
             this.textBox5.Size = new System.Drawing.Size(138, 23);
             this.textBox5.TabIndex = 1;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(366, 13);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(416, 259);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 223);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(323, 15);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "* Farklı bir mesaj sistemi kullanmak istiyorsanız, yazılımcınız ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 206);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(297, 15);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "* Sistem mutlucell mesaj sistemine göre hazırlanmıştır. ";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 242);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 15);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "ile görüşünüz.";
-            // 
             // FrmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 321);
+            this.ClientSize = new System.Drawing.Size(815, 461);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSettings";
@@ -460,9 +460,9 @@ namespace LibraryProjectApp
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

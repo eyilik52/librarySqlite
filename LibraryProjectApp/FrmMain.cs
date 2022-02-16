@@ -28,7 +28,7 @@ namespace LibraryProjectApp
         {
             //veritabanıSil();
             //veritabanıolustur();
-            var result = _escBookManager.BookDeliveredMember();
+            var result = _escBookManager.NonDeliveredMember();
             if (result.Success)
             {
                 dataGridView1.DataSource = result.Data;
@@ -83,8 +83,9 @@ namespace LibraryProjectApp
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FrmReportMember reportMember = new FrmReportMember();
-            reportMember.ShowDialog();
+            FrmReports frmReports = new FrmReports();
+            frmReports.ShowDialog();
+
         }
 
         private void btnSetting_Click(object sender, EventArgs e)

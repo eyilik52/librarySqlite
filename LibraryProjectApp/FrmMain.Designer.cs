@@ -126,7 +126,7 @@ namespace LibraryProjectApp
             this.gbxBookBuyerList.Size = new System.Drawing.Size(873, 280);
             this.gbxBookBuyerList.TabIndex = 2;
             this.gbxBookBuyerList.TabStop = false;
-            this.gbxBookBuyerList.Text = "KİTAP TESLİM ALANLAR :";
+            this.gbxBookBuyerList.Text = "BU GÜN İTİBARİYLE TESLİM EDİLMESİ GEREKENLER/TESLİM TARİHİ GEÇENLER";
             // 
             // groupBox1
             // 
@@ -191,7 +191,7 @@ namespace LibraryProjectApp
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(114, 79);
             this.button6.TabIndex = 0;
-            this.button6.Text = "Raporlar";
+            this.button6.Text = "Raporlar/Mesajlar";
             this.button6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -262,6 +262,7 @@ namespace LibraryProjectApp
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DİVANTÜRK ŞEHİT İRFAN ÜNCELİ İLKOKULU ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);

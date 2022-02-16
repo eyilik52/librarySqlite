@@ -29,6 +29,7 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers());
         }
+        
 
         public IResult Delete(EscrowBook escrowBook)
         {
@@ -49,6 +50,16 @@ namespace Business.Concrete
         public IDataResult<EscrowBook> GetById(int escrowBookId)
         {
             return new SuccessDataResult<EscrowBook>(_escrowBookDal.Get(p => p.Id == escrowBookId));
+        }
+
+        public IDataResult<List<BookDeliveredMember>> GetEscrowBookSearchDate(DateTime dateTime1, DateTime dateTime2)
+        {
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.DeliveryDate > dateTime1 & p.DeliveryDate < dateTime2).ToList());
+        }
+
+        public IDataResult<List<BookDeliveredMember>> NonDeliveredMember()
+        {
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p=>p.DeliveryDate <= DateTime.Now).ToList());
         }
 
         public IResult Update(EscrowBook escrowBook)

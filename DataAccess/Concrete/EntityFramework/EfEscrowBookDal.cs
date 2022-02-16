@@ -25,7 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
                              select new BookDeliveredMember
                              {
                                   AuthorName=b.AuthorName,
-                                   BookName=b.BookName,
+                                   BookName=b.BookName, 
                                     DeliveryDate=e.DeliveryDate,
                                      EscrowBookId=e.Id,
                                       ReaderName=r.Name,

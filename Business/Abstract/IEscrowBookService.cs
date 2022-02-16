@@ -16,7 +16,9 @@ namespace Business.Abstract
         IResult Delete(EscrowBook escrowBook);
         IResult Update(EscrowBook escrowBook);
         IDataResult<List<BookDeliveredMember>> BookDeliveredMember();
+        IDataResult<List<BookDeliveredMember>> NonDeliveredMember();
         IDataResult<List<EscrowBook>> GetAllEscrowReaderId(int readerId);
         IDataResult<EscrowBook> GetById(int escrowBookId);
+        IDataResult<List<BookDeliveredMember>> GetEscrowBookSearchDate(DateTime dateTime1, DateTime dateTime2);
     }
 }
