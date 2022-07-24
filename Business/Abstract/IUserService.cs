@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,9 @@ namespace Business.Abstract
         void Add(User user);
         void Update(User user);
         void Delete(User user);
+        IDataResult<User> GetByUserName(string key);
+        IResult CheckUser(User user);
+        IDataResult<User> GetByPassword(string key);
+        IResult checkLogin(string userName, string password);
     }
 }

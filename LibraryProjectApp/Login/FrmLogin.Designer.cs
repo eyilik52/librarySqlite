@@ -114,12 +114,13 @@ namespace LibraryProjectApp
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(126, 202);
+            this.linkLabel1.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel1.Location = new System.Drawing.Point(106, 202);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(119, 15);
+            this.linkLabel1.Size = new System.Drawing.Size(178, 15);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "www.hakkieyilik.com";
+            this.linkLabel1.Text = "www.kütüphanemguvende.com";
             // 
             // FrmLogin
             // 

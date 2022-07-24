@@ -40,7 +40,8 @@ namespace LibraryProjectApp.FileReader
                     Address = tbxAdresess.Text,
                     DateOfRegistration = dtDateOfRegistration.Value,
                     ClassRoombranch = Convert.ToChar(cmbBransh.Text),
-                    ClassRoomId = (int)nmrcClass.Value
+                    ClassRoomId = (int)nmrcClass.Value,
+                     Password=txtsifre.Text
                 }
                 );
                 LoadReaderDetails();
@@ -81,6 +82,7 @@ namespace LibraryProjectApp.FileReader
             Update.ClassRoomId = Convert.ToInt32(nmrcClass.Value);
             Update.ClassRoombranch = Convert.ToChar(cmbBransh.Text);
             Update.Address = tbxAdresess.Text;
+            Update.Password = txtsifre.Text;
             Update.DateOfRegistration = dtDateOfRegistration.Value;
 
             Rmanager.Update(Update);
@@ -201,6 +203,25 @@ namespace LibraryProjectApp.FileReader
         private void güncelleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Guncelle();
+        }
+
+        private void şifreVerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSettings sifrever = new FrmSettings();
+            
+
+            var result = _readerService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+
+            sifrever.txtName.Text = result.Data.Name;
+            sifrever.txtSurname.Text = result.Data.Surname;
+            sifrever.txtPhone.Text = result.Data.Phone;
+
+            sifrever.ShowDialog();
+        }
+
+        private void tbxSurname_TextChanged(object sender, EventArgs e)
+        {
+            txtsifre.Text = tbxSurname.Text+"52";
         }
     }
 }

@@ -19,6 +19,12 @@ namespace Business.Abstract
         IResult Delete(Reader reader);
         IDataResult<List<ReaderDetails>> GetReaderDetails();
         IDataResult<List<ReaderDetails>> GetClassSearch(int key);
+        IDataResult<Reader> GetByLoginReaderId(int id);
+
+        IDataResult<Reader> GetByReaderTc(string key);
+        IResult CheckUser(Reader reader);
+        IDataResult<Reader> GetByPassword(string key);
+        IResult checkLogin(string readerTc, string password);
 
     }
 }

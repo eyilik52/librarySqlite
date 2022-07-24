@@ -71,5 +71,43 @@ namespace Business.Concrete
             _readerDal.Update(reader);
             return new SuccessResult(Messages.Update);
         }
+
+       
+
+        public IDataResult<Reader> GetByLoginReaderId(int id)
+        {
+            return new SuccessDataResult<Reader>(_readerDal.Get(p => p.Id == id && p.IsActive == true));
+        }
+
+        public IDataResult<Reader> GetByReaderTc(string key)
+        {
+            return new SuccessDataResult<Reader>(_readerDal.Get(p => p.Tc == key));
+        }       
+
+        public IDataResult<Reader> GetByPassword(string key)
+        {
+            return new SuccessDataResult<Reader>(_readerDal.Get(p => p.Password == key));
+        }
+
+        public IResult checkLogin(string readerTc, string password)
+        {
+            if (GetByReaderTc(readerTc).Data == null)
+            {
+                return new ErrorResult("Kullanici adi bulunamadi");
+            }
+            else if (GetByPassword(password).Data == null)
+            {
+                return new ErrorResult("Sifre bulunamadi");
+            }
+            else
+            {
+                return new SuccessResult();
+            }
+        }
+
+        public IResult CheckUser(Reader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

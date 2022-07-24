@@ -72,6 +72,9 @@ namespace LibraryProjectApp.FileReader
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şifreVerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtsifre = new System.Windows.Forms.TextBox();
             this.gbxProductAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcClass)).BeginInit();
             this.gbxBook.SuspendLayout();
@@ -82,6 +85,8 @@ namespace LibraryProjectApp.FileReader
             // 
             // gbxProductAdd
             // 
+            this.gbxProductAdd.Controls.Add(this.txtsifre);
+            this.gbxProductAdd.Controls.Add(this.label4);
             this.gbxProductAdd.Controls.Add(this.btnUpdate);
             this.gbxProductAdd.Controls.Add(this.cmbBransh);
             this.gbxProductAdd.Controls.Add(this.nmrcClass);
@@ -115,7 +120,7 @@ namespace LibraryProjectApp.FileReader
             // 
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(482, 178);
+            this.btnUpdate.Location = new System.Drawing.Point(502, 182);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 58);
             this.btnUpdate.TabIndex = 11;
@@ -172,7 +177,7 @@ namespace LibraryProjectApp.FileReader
             this.dtDateOfRegistration.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDateOfRegistration.Location = new System.Drawing.Point(498, 67);
             this.dtDateOfRegistration.Name = "dtDateOfRegistration";
-            this.dtDateOfRegistration.Size = new System.Drawing.Size(110, 23);
+            this.dtDateOfRegistration.Size = new System.Drawing.Size(73, 23);
             this.dtDateOfRegistration.TabIndex = 8;
             // 
             // label9
@@ -202,7 +207,7 @@ namespace LibraryProjectApp.FileReader
             // 
             // tbxAdresess
             // 
-            this.tbxAdresess.Location = new System.Drawing.Point(502, 112);
+            this.tbxAdresess.Location = new System.Drawing.Point(498, 117);
             this.tbxAdresess.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbxAdresess.Multiline = true;
             this.tbxAdresess.Name = "tbxAdresess";
@@ -213,7 +218,7 @@ namespace LibraryProjectApp.FileReader
             // 
             this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(639, 178);
+            this.btnAdd.Location = new System.Drawing.Point(643, 182);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(104, 58);
@@ -238,6 +243,7 @@ namespace LibraryProjectApp.FileReader
             this.tbxSurname.Name = "tbxSurname";
             this.tbxSurname.Size = new System.Drawing.Size(245, 23);
             this.tbxSurname.TabIndex = 3;
+            this.tbxSurname.TextChanged += new System.EventHandler(this.tbxSurname_TextChanged);
             // 
             // tbxName
             // 
@@ -280,7 +286,7 @@ namespace LibraryProjectApp.FileReader
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(415, 115);
+            this.label13.Location = new System.Drawing.Point(415, 120);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 15);
@@ -498,30 +504,54 @@ namespace LibraryProjectApp.FileReader
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yenileToolStripMenuItem,
             this.silToolStripMenuItem,
-            this.güncelleToolStripMenuItem});
+            this.güncelleToolStripMenuItem,
+            this.şifreVerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 92);
             // 
             // yenileToolStripMenuItem
             // 
             this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
             this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // güncelleToolStripMenuItem
             // 
             this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.güncelleToolStripMenuItem.Text = "Güncelle";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
+            // 
+            // şifreVerToolStripMenuItem
+            // 
+            this.şifreVerToolStripMenuItem.Name = "şifreVerToolStripMenuItem";
+            this.şifreVerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.şifreVerToolStripMenuItem.Text = "Şifre Ver";
+            this.şifreVerToolStripMenuItem.Click += new System.EventHandler(this.şifreVerToolStripMenuItem_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(577, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Şifre :";
+            // 
+            // txtsifre
+            // 
+            this.txtsifre.Location = new System.Drawing.Point(620, 67);
+            this.txtsifre.Name = "txtsifre";
+            this.txtsifre.Size = new System.Drawing.Size(123, 23);
+            this.txtsifre.TabIndex = 13;
             // 
             // FrmReaderOperations
             // 
@@ -533,6 +563,7 @@ namespace LibraryProjectApp.FileReader
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.DgwBook);
             this.Name = "FrmReaderOperations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OKUYUCU İŞLEMLERİ EKRANI";
             this.Load += new System.EventHandler(this.FrmReaderOperations_Load);
             this.gbxProductAdd.ResumeLayout(false);
@@ -590,5 +621,8 @@ namespace LibraryProjectApp.FileReader
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem şifreVerToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtsifre;
+        private System.Windows.Forms.Label label4;
     }
 }

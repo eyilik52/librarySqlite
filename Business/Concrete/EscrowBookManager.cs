@@ -47,6 +47,11 @@ namespace Business.Concrete
             return new SuccessDataResult<List<EscrowBook>>(_escrowBookDal.GetAll(p => p.ReaderId == readerId));
         }
 
+        public IDataResult<List<GetBooksInMember>> GetBooksInMember(int ReaderId)//üyelerdeki kitaplar
+        {
+            return new SuccessDataResult<List<GetBooksInMember>>(_escrowBookDal.GetBooksInMember().Where(p => p.ReaderId == ReaderId).ToList());
+        }        
+
         public IDataResult<EscrowBook> GetById(int escrowBookId)
         {
             return new SuccessDataResult<EscrowBook>(_escrowBookDal.Get(p => p.Id == escrowBookId));
@@ -54,7 +59,7 @@ namespace Business.Concrete
 
         public IDataResult<List<BookDeliveredMember>> GetEscrowBookSearchDate(DateTime dateTime1, DateTime dateTime2)
         {
-            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.DeliveryDate > dateTime1 & p.DeliveryDate < dateTime2).ToList());
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetAllBookDeliveredMembers().Where(p => p.DeliveryDate > dateTime1 & p.DeliveryDate < dateTime2).ToList());
         }
 
         public IDataResult<List<BookDeliveredMember>> NonDeliveredMember()

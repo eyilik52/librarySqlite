@@ -51,7 +51,7 @@ namespace LibraryProjectApp
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.SmsAyar = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -68,11 +68,12 @@ namespace LibraryProjectApp
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.YedekIslemleri = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.Kullanici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.SmsAyar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +81,8 @@ namespace LibraryProjectApp
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Kullanici);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.SmsAyar);
+            this.tabControl1.Controls.Add(this.YedekIslemleri);
             this.tabControl1.Location = new System.Drawing.Point(0, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -128,7 +130,7 @@ namespace LibraryProjectApp
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.txtSurname);
             this.groupBox1.Controls.Add(this.txtUserName);
-            this.groupBox1.Location = new System.Drawing.Point(8, 54);
+            this.groupBox1.Location = new System.Drawing.Point(8, 7);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(380, 356);
             this.groupBox1.TabIndex = 4;
@@ -280,17 +282,17 @@ namespace LibraryProjectApp
             this.txtUserName.Size = new System.Drawing.Size(138, 23);
             this.txtUserName.TabIndex = 1;
             // 
-            // tabPage2
+            // SmsAyar
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(789, 421);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Sms Gönderim Ayarları";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.SmsAyar.Controls.Add(this.dataGridView2);
+            this.SmsAyar.Controls.Add(this.groupBox2);
+            this.SmsAyar.Location = new System.Drawing.Point(4, 24);
+            this.SmsAyar.Name = "SmsAyar";
+            this.SmsAyar.Padding = new System.Windows.Forms.Padding(3);
+            this.SmsAyar.Size = new System.Drawing.Size(789, 421);
+            this.SmsAyar.TabIndex = 1;
+            this.SmsAyar.Text = "Sms Gönderim Ayarları";
+            this.SmsAyar.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -444,6 +446,16 @@ namespace LibraryProjectApp
             this.textBox5.Size = new System.Drawing.Size(138, 23);
             this.textBox5.TabIndex = 1;
             // 
+            // YedekIslemleri
+            // 
+            this.YedekIslemleri.Location = new System.Drawing.Point(4, 24);
+            this.YedekIslemleri.Name = "YedekIslemleri";
+            this.YedekIslemleri.Padding = new System.Windows.Forms.Padding(3);
+            this.YedekIslemleri.Size = new System.Drawing.Size(789, 421);
+            this.YedekIslemleri.TabIndex = 2;
+            this.YedekIslemleri.Text = "Yedekleme İşlemleri";
+            this.YedekIslemleri.UseVisualStyleBackColor = true;
+            // 
             // FrmSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -459,7 +471,7 @@ namespace LibraryProjectApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.SmsAyar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -471,13 +483,7 @@ namespace LibraryProjectApp
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Kullanici;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox txtMail;
-        private System.Windows.Forms.TextBox txtAgainPassword;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TabPage SmsAyar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -485,9 +491,7 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtPhone;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnUpdate;
@@ -507,5 +511,14 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage YedekIslemleri;
+        public System.Windows.Forms.TextBox txtMail;
+        public System.Windows.Forms.TextBox txtAgainPassword;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.TextBox txtSurname;
+        public System.Windows.Forms.TextBox txtUserName;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.MaskedTextBox txtPhone;
+        public System.Windows.Forms.GroupBox groupBox1;
     }
 }

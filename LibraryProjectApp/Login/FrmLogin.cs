@@ -25,7 +25,29 @@ namespace LibraryProjectApp
             if (result.Password == tbxPassword.Text)
             {
                 Cursor.Current = Cursors.WaitCursor;
-                FrmMain baslangic = new FrmMain();
+                FrmMain gorevli = new FrmMain();
+                FrmOgrenciEkrani ogrenciEkrani = new FrmOgrenciEkrani();
+
+
+                if (result.positionId==2)
+                {
+                    MessageBox.Show("Öğretmen girişi yapılacak");
+                }
+                else if (result.positionId==3)
+                {
+                    ogrenciEkrani.Show();
+                    this.Hide();
+
+                }
+                else if (result.positionId==1)
+                {
+                    gorevli.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Yetkisiz giriş yapıldı...");
+                }
                 //baslangic.btnPacketService.Enabled = (bool)result.Satis;
                 //baslangic.btnBackup.Enabled = (bool)result.Yedekleme;
                 //baslangic.btnPriceChange.Enabled = (bool)result.FiyatGuncelle;
@@ -34,8 +56,8 @@ namespace LibraryProjectApp
                 //baslangic.btnSettingsPage.Enabled = (bool)result.Ayarlar;
                 //baslangic.btnStockPage.Enabled = (bool)result.Stok;
                 //baslangic.lblUserName.Text = result.Name + " " + result.Surname;
-                baslangic.Show();
-                this.Hide();
+                
+
                 Cursor.Current = Cursors.Default;
             }
             else

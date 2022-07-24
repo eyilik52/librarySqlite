@@ -66,7 +66,9 @@ namespace LibraryProjectApp
 
         private void btnClose(object sender, EventArgs e)
         {
-            Application.Exit();
+            FrmMainLogin frmMainLogin = new FrmMainLogin();
+            frmMainLogin.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -33,6 +33,7 @@ namespace LibraryProjectApp.Reports
             this.dtFirstDate = new System.Windows.Forms.DateTimePicker();
             this.dtSecondDate = new System.Windows.Forms.DateTimePicker();
             this.btnBring = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,11 +70,22 @@ namespace LibraryProjectApp.Reports
             this.btnBring.UseVisualStyleBackColor = true;
             this.btnBring.Click += new System.EventHandler(this.btnBring_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(723, 47);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 496);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBring);
             this.Controls.Add(this.dtSecondDate);
             this.Controls.Add(this.dtFirstDate);
@@ -91,5 +103,6 @@ namespace LibraryProjectApp.Reports
         private System.Windows.Forms.DateTimePicker dtFirstDate;
         private System.Windows.Forms.DateTimePicker dtSecondDate;
         private System.Windows.Forms.Button btnBring;
+        private System.Windows.Forms.Button button1;
     }
 }

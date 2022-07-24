@@ -32,5 +32,23 @@ namespace LibraryProjectApp.Reports
                 MessageBox.Show(result.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var result = _escBookManager.BookDeliveredMember();//Bütün teslimler
+            var Teslimler = result.Data;
+
+            var Kitaplar = Teslimler.OrderBy(Ogrenci => Ogrenci.BookName)//sırala
+                                     .GroupBy(Ogrenci => Ogrenci.BookName)//grupla
+                                     .Select(Kitap => new { Sinif = Kitap.Key, OkunmaSayisi = Kitap.Count() });//seç
+
+            Console.WriteLine("Sınıf öğrenci sayıları :");
+
+            foreach (var Satir in Kitaplar)
+            {                
+                MessageBox.Show(Satir.Sinif + " İsimli Kitap "+ Satir.OkunmaSayisi + " kez okunmuş..." );
+            }
+
+        }
     }
 }

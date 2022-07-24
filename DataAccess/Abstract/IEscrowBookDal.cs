@@ -12,5 +12,7 @@ namespace DataAccess.Abstract
     public interface IEscrowBookDal:IEntityRepository<EscrowBook>
     {
         List<BookDeliveredMember> GetBookDeliveredMembers();
+        List<BookDeliveredMember> GetAllBookDeliveredMembers();
+        List<GetBooksInMember> GetBooksInMember();
     }
 }

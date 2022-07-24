@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "1O45+S1f5KLi9tcD3l03HF+ZsBZPxMNPvHoYU8B+h7ci0AT7zvX0i8KRPMS4xlJQZ39Os5/4YBD0VC0sUOLXzg==",
+  "dgSpecHash": "9FnWwh0950XfdLmT5bxIkTw0a/vj4Dr4W0Td+sElg9zIX3gY/BOWb6r6pfAObM/teId1RZXQaOzRaa30W9WRfw==",
   "success": true,
   "projectFilePath": "C:\\Users\\eyili\\Desktop\\library\\LibraryProjectApp\\LibraryProjectApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\eyili\\.nuget\\packages\\linqtoexcel\\1.11.0\\linqtoexcel.1.11.0.nupkg.sha512",
     "C:\\Users\\eyili\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.0\\microsoft.data.sqlite.core.5.0.0.nupkg.sha512",
     "C:\\Users\\eyili\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "C:\\Users\\eyili\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
@@ -32,16 +31,5 @@
     "C:\\Users\\eyili\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
     "C:\\Users\\eyili\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'LinqToExcel 1.11.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0-windows7.0'. This package may not be fully compatible with your project.",
-      "libraryId": "LinqToExcel",
-      "targetGraphs": [
-        "net5.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

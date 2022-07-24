@@ -135,11 +135,13 @@ C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\Librar
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\ref\LibraryProjectApp.dll
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.pdb
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.genruntimeconfig.cache
-C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\LinqToExcel.dll
-C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\Remotion.Data.Linq.dll
-C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\Remotion.Interfaces.dll
-C:\Users\eyili\Desktop\library\LibraryProjectApp\bin\Debug\net5.0-windows\Remotion.dll
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmReportMember.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmSettings.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmMessageService.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmReports.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmBookReports.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmOgrenciEkrani.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmKitapDonut.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmMainLogin.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Login.LoginTeacher.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Login.LoginUser.resources

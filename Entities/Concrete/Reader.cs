@@ -17,6 +17,7 @@ namespace Entities.Concrete
         public string Phone { get; set; }
         public string Mail { get; set; }
         public string Address { get; set; }
+        public string Password { get; set; }
         public int ClassRoomId { get; set; }
         public char ClassRoombranch { get; set; }
         public DateTime DateOfRegistration { get; set; }//Kayıt tarihi

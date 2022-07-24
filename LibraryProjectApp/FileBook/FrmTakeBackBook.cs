@@ -45,12 +45,8 @@ namespace LibraryProjectApp.FileBook
         private void button1_Click(object sender, EventArgs e)
         {
             var result = _escrowBookService.GetById(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-            //result.Data.IsActive = false;
-            _escBookManager.Update(new EscrowBook
-            {
-                Id=result.Data.Id,
-                IsActive = false
-            }) ;
+            result.Data.IsActive = false;
+            _escBookManager.Update(result.Data);
             LoadGrid();
             MessageBox.Show("Kitap teslim alma işlemi başarı ile sonuçlandı.");
         }

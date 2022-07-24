@@ -13,7 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string sql = @"Server=(localdb)\mssqllocaldb;Database=LibraryDB;Trusted_Connection=true";
+            //string sql = @"Server=(localdb)\mssqllocaldb;Database=LibraryDB;Trusted_Connection=true";
 
             string sqlite = @"Data Source = Library.s3db";
             optionsBuilder.UseSqlite(sqlite);
@@ -28,5 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Reader> Readers { get; set; }
         public DbSet<EscrowBook> EscrowBooks { get; set; }
         public DbSet<User> Users{ get; set; }
+        public DbSet<EscrowBookDetail> escrowBookDetails { get; set; }
+        public DbSet<Position> Positions { get; set; }
     }
 }

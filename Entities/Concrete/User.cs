@@ -13,6 +13,7 @@ namespace Entities.Concrete
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
+        public int positionId { get; set; }
         public string Surname { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
@@ -20,8 +21,7 @@ namespace Entities.Concrete
         public bool? Rapor { get; set; }
         public bool? Stok { get; set; }
         public bool? UrunGiris { get; set; }
-        public bool? Ayarlar { get; set; }
-        public bool? FiyatGuncelle { get; set; }
+        public bool? Ayarlar { get; set; }        
         public bool? Yedekleme { get; set; }
         public bool IsActive { get; set; } = true;
 
