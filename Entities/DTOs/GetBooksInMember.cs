@@ -12,8 +12,12 @@ namespace Entities.DTOs
         
         public string BookName { get; set; }
         public int ReaderId { get; set; }
+        public int BookId { get; set; }
+        public int EscBookId { get; set; }
         public string AuthorName { get; set; }
         public DateTime TransactionDate { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public int EkranId { get; set; }
+        //öğrenci:1,Öğretmen:2, pasif :0
     }
 }

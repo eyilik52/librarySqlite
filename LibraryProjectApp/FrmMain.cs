@@ -26,8 +26,7 @@ namespace LibraryProjectApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //veritabanıSil();
-            //veritabanıolustur();
+            
             var result = _escBookManager.NonDeliveredMember();
             if (result.Success)
             {
@@ -39,18 +38,7 @@ namespace LibraryProjectApp
             }
         }
 
-        private static void veritabanıolustur()
-        {
-            LibraryContext context = new LibraryContext();
-            context.Database.EnsureCreated();
-            MessageBox.Show("oluşturuldu");
-        }
-        private static void veritabanıSil()
-        {
-            LibraryContext context = new LibraryContext();
-            context.Database.EnsureDeleted();
-            MessageBox.Show("silindi");
-        }        
+            
 
         private void btnBookOperations_Click(object sender, EventArgs e)
         {

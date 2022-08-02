@@ -26,10 +26,8 @@ namespace LibraryProjectApp.Login
         }
         UserManager _userManager = new UserManager(new EfUserDal());
         ReaderManager _readerManager = new ReaderManager(new EfReaderDal());
-        EscrowBookManager _escBookManager = new EscrowBookManager(new EfEscrowBookDal());
-
-
-         
+        
+                 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FrmOgrenciEkrani ogrenciEkrani = new FrmOgrenciEkrani();          
@@ -41,17 +39,12 @@ namespace LibraryProjectApp.Login
                 var resultgiris = _readerManager.checkLogin(cmbUserName.Text, tbxPassword.Text);
                 if (resultgiris.Success)
                 {
-                    var reader = _readerManager.GetByReaderTc(cmbUserName.Text).Data;
-                    //var active = _readerManager.GetByLoginReaderId(reader.Id).Data;
+                    var reader = _readerManager.GetByReaderTc(cmbUserName.Text).Data;    
+                    
                     if (reader.IsActive != false)
                     {
+                        ogrenciEkrani._reader = reader;                       
                         
-                        ogrenciEkrani.ReaderId = reader.Id;
-                        ogrenciEkrani.lblNameSurname.Text = reader.Name + " " + reader.Surname;
-                        var result2 = _escBookManager.GetBooksInMember(reader.Id);
-                        //üyelerin elindeki kitabı ekrana yazıdıryoruz.
-                        ogrenciEkrani.dataGridView1.DataSource = result2.Data;
-                        ogrenciEkrani.ReaderId = reader.Id;
                         ogrenciEkrani.Show();
                         this.Close();
                     }
@@ -100,10 +93,12 @@ namespace LibraryProjectApp.Login
 
         private void LoginUser_Load(object sender, EventArgs e)
         {
-            var userList = _readerManager.GetAll().Data;
-            cmbUserName.DataSource = userList;
-            cmbUserName.DisplayMember = "Surname";
-            cmbUserName.ValueMember = "Id";
+
+            ////cOMBOBOXA KULLANICI ADI ATAMAARKA PLANDA İSE ID VAR.
+            //var userList = _readerManager.GetAll().Data;
+            //cmbUserName.DataSource = userList;
+            //cmbUserName.DisplayMember = "Surname";
+            //cmbUserName.ValueMember = "Id";
         }
     }
 }

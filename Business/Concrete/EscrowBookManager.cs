@@ -45,12 +45,7 @@ namespace Business.Concrete
         public IDataResult<List<EscrowBook>> GetAllEscrowReaderId(int readerId)
         {
             return new SuccessDataResult<List<EscrowBook>>(_escrowBookDal.GetAll(p => p.ReaderId == readerId));
-        }
-
-        public IDataResult<List<GetBooksInMember>> GetBooksInMember(int ReaderId)//üyelerdeki kitaplar
-        {
-            return new SuccessDataResult<List<GetBooksInMember>>(_escrowBookDal.GetBooksInMember().Where(p => p.ReaderId == ReaderId).ToList());
-        }        
+        }            
 
         public IDataResult<EscrowBook> GetById(int escrowBookId)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Concrete.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,5 +43,40 @@ namespace LibraryProjectApp
             loginUser.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            veritabanıolustur();
+        }
+
+        private static void veritabanıolustur()
+        {
+            LibraryContext context = new LibraryContext();
+            context.Database.EnsureCreated();
+            MessageBox.Show("oluşturuldu");
+        }
+        private static void veritabanıSil()
+        {
+            LibraryContext context = new LibraryContext();
+            context.Database.EnsureDeleted();
+            MessageBox.Show("silindi");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            veritabanıSil();
+            }
+
+        private void FrmMainLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+

@@ -38,12 +38,12 @@ namespace LibraryProjectApp
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxEtkiOlay = new System.Windows.Forms.TextBox();
+            this.tbxAnaFikir = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -137,8 +137,8 @@ namespace LibraryProjectApp
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.tbxEtkiOlay);
+            this.groupBox2.Controls.Add(this.tbxAnaFikir);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -149,21 +149,21 @@ namespace LibraryProjectApp
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dönüt Giriş Ekranı :";
             // 
-            // textBox2
+            // tbxEtkiOlay
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 173);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(772, 144);
-            this.textBox2.TabIndex = 2;
+            this.tbxEtkiOlay.Location = new System.Drawing.Point(6, 173);
+            this.tbxEtkiOlay.Multiline = true;
+            this.tbxEtkiOlay.Name = "tbxEtkiOlay";
+            this.tbxEtkiOlay.Size = new System.Drawing.Size(772, 144);
+            this.tbxEtkiOlay.TabIndex = 2;
             // 
-            // textBox1
+            // tbxAnaFikir
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 35);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(648, 104);
-            this.textBox1.TabIndex = 2;
+            this.tbxAnaFikir.Location = new System.Drawing.Point(130, 35);
+            this.tbxAnaFikir.Multiline = true;
+            this.tbxAnaFikir.Name = "tbxAnaFikir";
+            this.tbxAnaFikir.Size = new System.Drawing.Size(648, 104);
+            this.tbxAnaFikir.TabIndex = 2;
             // 
             // label9
             // 
@@ -185,31 +185,34 @@ namespace LibraryProjectApp
             this.label8.TabIndex = 1;
             this.label8.Text = "Sizi En Çok Etkileyen Olay :";
             // 
-            // button1
+            // btnSend
             // 
-            this.button1.Location = new System.Drawing.Point(843, 330);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 161);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "GÖNDER";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSend.Location = new System.Drawing.Point(843, 330);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(136, 161);
+            this.btnSend.TabIndex = 6;
+            this.btnSend.Text = "İNCELENMESİ İÇİN GÖNDER";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // button2
+            // btnSave
             // 
-            this.button2.Location = new System.Drawing.Point(843, 185);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 128);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "TEMİZLE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSave.Location = new System.Drawing.Point(843, 185);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(136, 128);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "KAYDET";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FrmKitapDonut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(991, 509);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -234,14 +237,14 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label lblReaderName;
         public System.Windows.Forms.Label lblAuthorName;
         public System.Windows.Forms.Label lblBookName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.TextBox tbxEtkiOlay;
+        public System.Windows.Forms.TextBox tbxAnaFikir;
     }
 }

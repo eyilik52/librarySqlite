@@ -14,5 +14,8 @@ namespace Entities.Concrete
         public bool IsActive { get; set; } = true;
         public string Ozet { get; set; }
         public string AnaFikir { get; set; }
+        public int EkranId { get; set; }
+        public int BookId { get; set; }
+        //öğrenci:1,Öğretmen:2, pasif :0
     }
 }

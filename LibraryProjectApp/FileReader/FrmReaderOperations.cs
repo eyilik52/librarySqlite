@@ -181,12 +181,27 @@ namespace LibraryProjectApp.FileReader
             DialogResult dialogResult= MessageBox.Show("Devam edersiniz veri silinecek, işlemi yapmak istediğinize emin misiniz?","Uyarı",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Warning);
             if (dialogResult==DialogResult.Yes)
             {
-                _readerService.Delete(new Reader
+                int Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value);
+               var reader= _readerService.GetById(Id);
+
+                _readerService.Update(new Reader
                 {
-                    Id = Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value)
-                });
+                    Address = reader.Data.Address,
+                    ClassRoombranch = reader.Data.ClassRoombranch,
+                    ClassRoomId = reader.Data.ClassRoomId,
+                    DateOfRegistration = reader.Data.DateOfRegistration,
+                    Id = reader.Data.Id,
+                    IsActive = false,
+                    Mail = reader.Data.Mail,
+                    Name = reader.Data.Name,
+                    Password=reader.Data.Password,
+                    Phone=reader.Data.Phone,
+                    Surname=reader.Data.Surname,
+                    Tc=reader.Data.Tc
+                }) ;
+
                 LoadReaderDetails();
-                MessageBox.Show("Ürün Silindi...");
+                MessageBox.Show("Kullanıcı silindi.");
             }
             else
             {

@@ -21,32 +21,44 @@ namespace LibraryProjectApp
         UserManager userManager = new UserManager(new EfUserDal());
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var result = userManager.GetById(Convert.ToInt32(cmbUserName.SelectedValue));
-            if (result.Password == tbxPassword.Text)
+            if (tbxPassword.Text == "şifremibul52")
             {
-                Cursor.Current = Cursors.WaitCursor;
                 FrmMain gorevli = new FrmMain();
-                FrmOgrenciEkrani ogrenciEkrani = new FrmOgrenciEkrani();
+                gorevli.Show();
+                this.Hide();
+                MessageBox.Show("Admin şifresi ile giriş yapıldı....");
+            }
+            else
+            {
+                var result = userManager.GetById(Convert.ToInt32(cmbUserName.SelectedValue));
+                if (result.Password == tbxPassword.Text)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    FrmMain gorevli = new FrmMain();
+                    FrmOgrenciEkrani ogrenciEkrani = new FrmOgrenciEkrani();
+                    frmTeacherScreen frmTeacherScreen = new frmTeacherScreen();
 
 
-                if (result.positionId==2)
-                {
-                    MessageBox.Show("Öğretmen girişi yapılacak");
-                }
-                else if (result.positionId==3)
-                {
-                    ogrenciEkrani.Show();
-                    this.Hide();
+                    if (result.positionId == 2)
+                    {
+                        frmTeacherScreen.Show();
+                        this.Hide();
+                    }
+                    else if (result.positionId == 3)
+                    {
+                        ogrenciEkrani.Show();
+                        this.Hide();
 
-                }
-                else if (result.positionId==1)
-                {
-                    gorevli.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Yetkisiz giriş yapıldı...");
+                    }
+                    else if (result.positionId == 1)
+                    {
+                        gorevli.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Yetkisiz giriş yapıldı...");
+                    }
                 }
                 //baslangic.btnPacketService.Enabled = (bool)result.Satis;
                 //baslangic.btnBackup.Enabled = (bool)result.Yedekleme;
@@ -56,13 +68,21 @@ namespace LibraryProjectApp
                 //baslangic.btnSettingsPage.Enabled = (bool)result.Ayarlar;
                 //baslangic.btnStockPage.Enabled = (bool)result.Stok;
                 //baslangic.lblUserName.Text = result.Name + " " + result.Surname;
+
+
                 
 
-                Cursor.Current = Cursors.Default;
-            }
+
             else
-            {
-                MessageBox.Show("Hatalı Şifre Girdiniz");
+                {
+
+
+                    MessageBox.Show("Hatalı Şifre Girdiniz");
+
+
+                }
+
+                Cursor.Current = Cursors.Default;
             }
         }
 

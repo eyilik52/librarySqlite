@@ -34,6 +34,7 @@ namespace LibraryProjectApp
             this.Kullanici = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nmrPozisyon = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@ namespace LibraryProjectApp
             this.txtMail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtAgainPassword = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -73,6 +75,7 @@ namespace LibraryProjectApp
             this.Kullanici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrPozisyon)).BeginInit();
             this.SmsAyar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -113,6 +116,7 @@ namespace LibraryProjectApp
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nmrPozisyon);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnAdd);
             this.groupBox1.Controls.Add(this.label2);
@@ -125,6 +129,7 @@ namespace LibraryProjectApp
             this.groupBox1.Controls.Add(this.txtMail);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtAgainPassword);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtName);
@@ -136,6 +141,13 @@ namespace LibraryProjectApp
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Yeni Kullanıcı Ekle";
+            // 
+            // nmrPozisyon
+            // 
+            this.nmrPozisyon.Location = new System.Drawing.Point(139, 250);
+            this.nmrPozisyon.Name = "nmrPozisyon";
+            this.nmrPozisyon.Size = new System.Drawing.Size(108, 23);
+            this.nmrPozisyon.TabIndex = 4;
             // 
             // label1
             // 
@@ -243,6 +255,15 @@ namespace LibraryProjectApp
             this.txtAgainPassword.PasswordChar = '*';
             this.txtAgainPassword.Size = new System.Drawing.Size(138, 23);
             this.txtAgainPassword.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(29, 252);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(67, 15);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "pozisyon Id";
             // 
             // label7
             // 
@@ -460,6 +481,7 @@ namespace LibraryProjectApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(815, 461);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -471,6 +493,7 @@ namespace LibraryProjectApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrPozisyon)).EndInit();
             this.SmsAyar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -520,5 +543,7 @@ namespace LibraryProjectApp
         public System.Windows.Forms.TextBox txtName;
         public System.Windows.Forms.MaskedTextBox txtPhone;
         public System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown nmrPozisyon;
+        private System.Windows.Forms.Label label15;
     }
 }

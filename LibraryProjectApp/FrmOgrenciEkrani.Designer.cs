@@ -42,16 +42,16 @@ namespace LibraryProjectApp
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransActionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -196,34 +196,6 @@ namespace LibraryProjectApp
             this.dataGridView1.Size = new System.Drawing.Size(723, 268);
             this.dataGridView1.TabIndex = 0;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.özetGönderToolStripMenuItem,
-            this.yenileToolStripMenuItem,
-            this.kitapİçinNotGönderToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
-            // 
-            // özetGönderToolStripMenuItem
-            // 
-            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
-            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
-            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
-            // 
-            // yenileToolStripMenuItem
-            // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            // 
-            // kitapİçinNotGönderToolStripMenuItem
-            // 
-            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
-            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "ReaderId";
@@ -265,10 +237,39 @@ namespace LibraryProjectApp
             this.DeliveryDate.Name = "DeliveryDate";
             this.DeliveryDate.Width = 150;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.özetGönderToolStripMenuItem,
+            this.yenileToolStripMenuItem,
+            this.kitapİçinNotGönderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            // 
+            // özetGönderToolStripMenuItem
+            // 
+            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
+            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
+            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            // 
+            // kitapİçinNotGönderToolStripMenuItem
+            // 
+            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
+            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
+            // 
             // FrmOgrenciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

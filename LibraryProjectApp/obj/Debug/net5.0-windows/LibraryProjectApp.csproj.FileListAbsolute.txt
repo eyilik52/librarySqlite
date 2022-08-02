@@ -145,3 +145,5 @@ C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\Librar
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmMainLogin.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Login.LoginTeacher.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Login.LoginUser.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.frmTeacherScreen.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.frmDegerlendir.resources

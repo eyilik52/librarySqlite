@@ -13,6 +13,6 @@ namespace DataAccess.Abstract
     {
         List<BookDeliveredMember> GetBookDeliveredMembers();
         List<BookDeliveredMember> GetAllBookDeliveredMembers();
-        List<GetBooksInMember> GetBooksInMember();
+        
     }
 }

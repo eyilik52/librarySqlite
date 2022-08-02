@@ -39,6 +39,7 @@ namespace LibraryProjectApp
                             user.Mail = txtMail.Text;
                             user.Password = txtPassword.Text;
                             user.UserName = txtUserName.Text;
+                            user.positionId =Convert.ToInt32( nmrPozisyon.Value);
                             //user.Satis = checkSatis.Checked;
                             //user.Rapor = checkRapor.Checked;
                             //user.Stok = checkStok.Checked;
@@ -120,6 +121,7 @@ namespace LibraryProjectApp
                         user.Mail = txtMail.Text;
                         user.Password = txtPassword.Text;
                         user.UserName = txtUserName.Text;
+                        user.positionId =Convert.ToInt32( nmrPozisyon.Value);
                         //user.Satis = checkSatis.Checked;
                         //user.Rapor = checkRapor.Checked;
                         //user.Stok = checkStok.Checked;

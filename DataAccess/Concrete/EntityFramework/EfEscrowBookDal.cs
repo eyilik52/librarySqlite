@@ -14,7 +14,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<BookDeliveredMember> GetBookDeliveredMembers()
         {
-            using (LibraryContext context=new LibraryContext())
+            using (LibraryContext context = new LibraryContext())
             {
                 var result = from e in context.EscrowBooks
                              join b in context.Books
@@ -22,32 +22,6 @@ namespace DataAccess.Concrete.EntityFramework
                              join r in context.Readers
                              on e.ReaderId equals r.Id
                              where e.IsActive == true
-                             select new BookDeliveredMember
-                             {
-                                  AuthorName=b.AuthorName,
-                                   BookName=b.BookName, 
-                                    DeliveryDate=e.DeliveryDate,
-                                     EscrowBookId=e.Id,
-                                      ReaderName=r.Name,
-                                      ReaderSurname=r.Surname,
-                                       TransactionDate=e.TransactionDate
-                             };
-
-
-                return result.ToList();
-                            
-            }
-        }
-
-        public List<BookDeliveredMember> GetAllBookDeliveredMembers()
-        {
-            using (LibraryContext context = new LibraryContext())
-            {
-                var result = from e in context.EscrowBooks
-                             join b in context.Books
-                             on e.BookId equals b.Id
-                             join r in context.Readers
-                             on e.ReaderId equals r.Id                             
                              select new BookDeliveredMember
                              {
                                  AuthorName = b.AuthorName,
@@ -65,7 +39,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public List<GetBooksInMember> GetBooksInMember()
+        public List<BookDeliveredMember> GetAllBookDeliveredMembers()
         {
             using (LibraryContext context = new LibraryContext())
             {
@@ -74,13 +48,15 @@ namespace DataAccess.Concrete.EntityFramework
                              on e.BookId equals b.Id
                              join r in context.Readers
                              on e.ReaderId equals r.Id
-                             select new GetBooksInMember
+                             select new BookDeliveredMember
                              {
                                  AuthorName = b.AuthorName,
-                                  BookName = b.BookName,
-                                   ReaderId=r.Id,
-                                    DeliveryDate=e.DeliveryDate,
-                                     TransactionDate=e.TransactionDate
+                                 BookName = b.BookName,
+                                 DeliveryDate = e.DeliveryDate,
+                                 EscrowBookId = e.Id,
+                                 ReaderName = r.Name,
+                                 ReaderSurname = r.Surname,
+                                 TransactionDate = e.TransactionDate
                              };
 
 
@@ -89,6 +65,9 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        
+
     }
+
+
 }
+

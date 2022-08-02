@@ -27,6 +27,8 @@ namespace LibraryProjectApp.FileBook
         IBookService _bookService;
         IReaderService _readerService;
         IEscrowBookService _escrowBookService;
+        EscrowBookDetailManager _escrowBookDetail = new EscrowBookDetailManager(new EfEscrowBookDetailDal());//detay tablosu için
+
         private void FrmGiveBook_Load(object sender, EventArgs e)
         {
             lblDeliveryDate.Text = DateTime.Today.ToShortDateString();
@@ -99,10 +101,23 @@ namespace LibraryProjectApp.FileBook
                             BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
                             ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
                             DeliveryDate = Convert.ToDateTime(lblDeliveryDate.Text),
-                            TransactionDate = DateTime.Now
+                            TransactionDate = DateTime.Now,
+                             EkranId=1
+                              
                         }
                         );
-                        MessageBox.Show("Kitap Teslim işlemi başarılı");
+
+                        
+                        _escrowBookDetail.Add(new EscrowBookDetail//detay tablosunu burada oluştur
+                        {
+                            ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
+                            BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
+                            EkranId =1 
+                        });
+                        MessageBox.Show("Okuyucu için dönüt tablosu oluşturuldu.");
+
+
+                        MessageBox.Show("Kitap Teslim işlemi başarılı bir şekilde gerçekleştirildi.");
                     }
                     catch (Exception exception)
                     {
