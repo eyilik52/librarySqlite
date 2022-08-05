@@ -8,7 +8,8 @@ namespace Entities.DTOs
 {
     public class BookDeliveredMember
     {
-        public int EscrowBookId { get; set; }        
+        public int EscrowBookId { get; set; }
+        public string BarkodNumber { get; set; }
         public string BookName { get; set; }
         public string ReaderName { get; set; }
         public string ReaderSurname { get; set; }

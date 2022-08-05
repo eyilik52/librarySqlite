@@ -103,6 +103,7 @@ namespace LibraryProjectApp.FileBook
                     Stock = Convert.ToInt32(tbxBookStock.Text)
                 }
                 );
+                TumTxtBoxSil(this);
                 LoadBookOrCategoryDetails();
                 MessageBox.Show("Kitap kaydetme işlemi başarılı");
             }
@@ -209,17 +210,28 @@ namespace LibraryProjectApp.FileBook
             book.Publisher = tbxYayinEvi.Text;
             bookManager.Update(book);
             LoadBookOrCategoryDetails();
+            TumTxtBoxSil(this);
             MessageBox.Show("Güncellendi");
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
-            result.Data.IsActive = false;
-            _bookService.Update(result.Data);
+            DialogResult dialogResult = MessageBox.Show("Devam edersiniz veri silinecek, işlemi yapmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = _bookService.GetById(Convert.ToInt32(DgwBook.CurrentRow.Cells[0].Value));
+                result.Data.IsActive = false;
+                _bookService.Update(result.Data);
 
-            MessageBox.Show("Ürün Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            LoadBookOrCategoryDetails();
+                MessageBox.Show("Ürün Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                LoadBookOrCategoryDetails();
+            }
+            else
+            {
+                MessageBox.Show("Silme işlemi iptal edildi, veri silinmedi");
+            }
+
+            
         }
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -236,7 +248,52 @@ namespace LibraryProjectApp.FileBook
             tbsBasimYili.Text = result.Data.YearOfPublication.ToString();
             tbxRafNo.Text = result.Data.ShelfNo.ToString();
         }
+        public void SearchBarkod(string key)
+        {
+            var result = bookManager.GetBarkodSearch(key);
+            if (result.Success)
+            {
+                DgwBook.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    SearchBarkod(textBox1.Text);
+                    textBox1.Text = "";
+                }
+                else
+                {
+                    LoadBookOrCategoryDetails();
+                }
+            }
+        }
 
-        
+        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadBookOrCategoryDetails();
+            TumTxtBoxSil(this);
+        }
+        public static void TumTxtBoxSil(Control ctl)
+        {
+            foreach (Control c in ctl.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+                if (c.Controls.Count > 0)
+                {
+                    TumTxtBoxSil(c);
+                }
+            }
+        }
     }
 }

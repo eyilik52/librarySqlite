@@ -31,7 +31,7 @@ namespace LibraryProjectApp
                  AnaFikir =result.AnaFikir,
                   BookId= result.BookId,
                    EkranId=0,                    
-                     Ozet=result.Ozet,
+                     Konu=result.Konu,
                       ReaderId=result.Id
             });
             

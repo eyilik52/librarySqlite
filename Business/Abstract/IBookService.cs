@@ -19,5 +19,6 @@ namespace Business.Abstract
         IResult Delete(Book book);
         IDataResult<List<BookOrCategoryDetails>> GetBookOrCategoryDetails();
         IDataResult<List<BookOrCategoryDetails>> GetCategorySearch(string key);
+        IDataResult<List<BookOrCategoryDetails>> GetBarkodSearch(string key);
     }
 }

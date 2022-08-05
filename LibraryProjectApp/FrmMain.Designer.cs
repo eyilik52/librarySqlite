@@ -256,7 +256,7 @@ namespace LibraryProjectApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(906, 493);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbxBookBuyerList);

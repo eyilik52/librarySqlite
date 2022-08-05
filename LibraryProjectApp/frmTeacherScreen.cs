@@ -23,14 +23,15 @@ namespace LibraryProjectApp
         EscrowBookDetailManager _escrowBookDetailManager = new EscrowBookDetailManager(new EfEscrowBookDetailDal());
         BookManager _bookManager = new BookManager(new EfBookDal());
         ReaderManager _readerManager = new ReaderManager(new EfReaderDal());
+        public User _user;
 
         public Book _book;
         public Reader _reader;
         public EscrowBookDetail detay;
         private void frmTeacherScreen_Load(object sender, EventArgs e)
         {
+            lblNameSurname.Text = _user.Name + " " + _user.Surname;
             listele();
-
         }
 
         public void listele()
@@ -55,19 +56,18 @@ namespace LibraryProjectApp
             else
             {
                 dataGridView1.DataSource = "";
-            }
-            
+            }          
             
         }
 
         private void ozetdegerlendir_Click(object sender, EventArgs e)
         {
             frmDegerlendir frmDeger = new frmDegerlendir();
-            frmDeger.lblReaderName.Text = _reader.Name + " " + _reader.Surname;
+            frmDeger.lblReaderName.Text = _user.Name + " " + _user.Surname;
             frmDeger.lblBookName.Text = _book.BookName;
             frmDeger.lblAuthorName.Text = _book.AuthorName;
             frmDeger.tbxAnaFikir.Text = detay.AnaFikir;
-            frmDeger.tbxEtkiOlay.Text = detay.Ozet;
+            //frmDeger.tbxEtkiOlay.Text = detay.Ozet;
             frmDeger.Show();
         }
     }

@@ -43,8 +43,7 @@ namespace LibraryProjectApp.Login
                     
                     if (reader.IsActive != false)
                     {
-                        ogrenciEkrani._reader = reader;                       
-                        
+                        ogrenciEkrani._reader = reader;
                         ogrenciEkrani.Show();
                         this.Close();
                     }

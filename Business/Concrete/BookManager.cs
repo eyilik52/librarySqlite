@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Book>> GetAll()
         {
-            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Hata 1");
+            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(p=>p.IsActive==true), "Hata 1");
         }
 
         public IDataResult<List<Book>> GetAllByCategoryId(int categoryId)
@@ -67,5 +67,12 @@ namespace Business.Concrete
             _bookDal.Update(book);
             return new SuccessResult();
         }
+
+        public IDataResult<List<BookOrCategoryDetails>> GetBarkodSearch(string key)
+        {
+            return new SuccessDataResult<List<BookOrCategoryDetails>>(_bookDal.GetBookOrCategoryDetails().Where(p => p.BarcodeNumber.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
+
+        
     }
 }

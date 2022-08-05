@@ -150,7 +150,18 @@ namespace LibraryProjectApp.FileReader
                 MessageBox.Show(result.Message);
             }
         }
-
+        public void SearchTCKN(string key)
+        {
+            var result = Rmanager.GetTCKNSearch(key);
+            if (result.Success)
+            {
+                DgwBook.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
         public void SearchSurname(string key)
         {
             var result = Rmanager.GetSurnameSearch(key);
@@ -237,6 +248,26 @@ namespace LibraryProjectApp.FileReader
         private void tbxSurname_TextChanged(object sender, EventArgs e)
         {
             txtsifre.Text = tbxSurname.Text+"52";
+        }
+
+
+
+     
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(textBox1.Text))
+                {
+                    SearchTCKN(textBox1.Text);
+                    textBox1.Text = "";
+                }
+                else
+                {
+                    LoadReaderDetails();
+                }
+            }
         }
     }
 }

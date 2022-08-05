@@ -42,16 +42,19 @@ namespace LibraryProjectApp
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransActionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -188,13 +191,45 @@ namespace LibraryProjectApp
             this.BookName,
             this.Column5,
             this.TransActionDate,
-            this.DeliveryDate});
+            this.DeliveryDate,
+            this.Column3,
+            this.Column4,
+            this.Column6});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(7, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(723, 268);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.özetGönderToolStripMenuItem,
+            this.yenileToolStripMenuItem,
+            this.kitapİçinNotGönderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            // 
+            // özetGönderToolStripMenuItem
+            // 
+            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
+            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
+            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
+            // 
+            // kitapİçinNotGönderToolStripMenuItem
+            // 
+            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
+            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
             // 
             // Id
             // 
@@ -219,7 +254,7 @@ namespace LibraryProjectApp
             // Column5
             // 
             this.Column5.DataPropertyName = "AuthorName";
-            this.Column5.HeaderText = "Yazar Adı";
+            this.Column5.HeaderText = "Yazar";
             this.Column5.Name = "Column5";
             this.Column5.Width = 150;
             // 
@@ -237,39 +272,32 @@ namespace LibraryProjectApp
             this.DeliveryDate.Name = "DeliveryDate";
             this.DeliveryDate.Width = 150;
             // 
-            // contextMenuStrip1
+            // Column3
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.özetGönderToolStripMenuItem,
-            this.yenileToolStripMenuItem,
-            this.kitapİçinNotGönderToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            this.Column3.DataPropertyName = "BookId";
+            this.Column3.HeaderText = "BookId";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
             // 
-            // özetGönderToolStripMenuItem
+            // Column4
             // 
-            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
-            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
-            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
+            this.Column4.DataPropertyName = "EscBookId";
+            this.Column4.HeaderText = "EscBookId";
+            this.Column4.Name = "Column4";
+            this.Column4.Visible = false;
             // 
-            // yenileToolStripMenuItem
+            // Column6
             // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            // 
-            // kitapİçinNotGönderToolStripMenuItem
-            // 
-            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
-            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
+            this.Column6.DataPropertyName = "EkranId";
+            this.Column6.HeaderText = "EkranId";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
             // 
             // FrmOgrenciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -314,5 +342,8 @@ namespace LibraryProjectApp
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TransActionDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

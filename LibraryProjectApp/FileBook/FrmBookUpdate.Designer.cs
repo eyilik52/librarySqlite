@@ -64,7 +64,7 @@ namespace LibraryProjectApp.FileBook
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(131, 203);
+            this.btnUpdate.Location = new System.Drawing.Point(122, 225);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 33);
@@ -150,6 +150,7 @@ namespace LibraryProjectApp.FileBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(465, 346);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmBookUpdate";

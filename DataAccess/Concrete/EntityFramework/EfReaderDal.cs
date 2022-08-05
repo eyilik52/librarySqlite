@@ -24,7 +24,9 @@ namespace DataAccess.Concrete.EntityFramework
                                    ReaderName=r.Name,
                                     ReaderSurname=r.Surname,
                                      ClassRoom=r.ClassRoomId,
-                                      Branch=r.ClassRoombranch                                    
+                                      Branch=r.ClassRoombranch,
+                                       TCKN=r.Tc
+                                        
                                      
                              };
                 return result.ToList();

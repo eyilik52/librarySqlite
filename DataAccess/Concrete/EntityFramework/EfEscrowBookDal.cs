@@ -30,7 +30,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  EscrowBookId = e.Id,
                                  ReaderName = r.Name,
                                  ReaderSurname = r.Surname,
-                                 TransactionDate = e.TransactionDate
+                                 TransactionDate = e.TransactionDate,
+                                  BarkodNumber=b.BarcodeNumber
                              };
 
 

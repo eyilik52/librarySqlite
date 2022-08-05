@@ -58,32 +58,44 @@ namespace LibraryProjectApp
 
         private void özetGönderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmKitapDonut kitapDonut = new FrmKitapDonut();
-             
-            kitapDonut.lblReaderName.Text = _reader.Name + " " + _reader.Surname;
-            kitapDonut.lblBookName.Text= dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            kitapDonut.lblAuthorName.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            int bookId=Convert.ToInt32( dataGridView1.CurrentRow.Cells[3].Value);
-           var book = _bookManager.GetById(bookId).Data;
-            _book = book;
-            var result = detayManager.GetReaderandBookId(_reader.Id,_book.Id);
-            _escrowBookDetail = result;
-
+           
             
+                FrmKitapDonut kitapDonut = new FrmKitapDonut();
 
-            if (result.Count==0)
-            {
-                kitapDonut.Show();
-            }
-            else
-            {
-                kitapDonut.tbxAnaFikir.Text = result[0].AnaFikir;
-                kitapDonut.tbxEtkiOlay.Text = result[0].Ozet;
-                kitapDonut.Show();
-            }
+                kitapDonut.lblReaderName.Text = _reader.Name + " " + _reader.Surname;
+                kitapDonut.lblBookName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                kitapDonut.lblAuthorName.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                int bookId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
+                var book = _bookManager.GetById(bookId).Data;
+                _book = book;
+                var result = detayManager.GetReaderandBookId(_reader.Id, _book.Id);
+                _escrowBookDetail = result;
+
+
+
+                if (result.Count == 0)
+                {
+                    kitapDonut.Show();
+                }
+                else
+                {
+                    kitapDonut.tbxAnaFikir.Text = result[0].AnaFikir;
+                    kitapDonut.tbxKonu.Text = result[0].Konu;
+                    kitapDonut.Show();
+                }
+            //}
+            //catch 
+            //{
+
+            //    MessageBox.Show("Herhangi bir seçim yapılmadı. ");
+            //}
+            
             
         }
 
-        
+        private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookInMemeber();
+        }
     }
 }

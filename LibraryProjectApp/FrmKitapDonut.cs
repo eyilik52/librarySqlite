@@ -31,11 +31,17 @@ namespace LibraryProjectApp
                 _escrowBookDetail.Add(new EscrowBookDetail
                 {
                     AnaFikir = tbxAnaFikir.Text,
-                    Ozet = tbxEtkiOlay.Text,
+                    Konu = tbxKonu.Text,
                     ReaderId = frmOgrenciEkrani._reader.Id,
-                    BookId=frmOgrenciEkrani._book.Id                   
-
-
+                    BookId=frmOgrenciEkrani._book.Id,
+                    AnlaticiTuru=tbxAnlaticiTur.Text,
+                    EniyiIfade=tbxEniyiIfade.Text,
+                    KisiKadrosu=tbxKisiKadrosu.Text,
+                    KitapBegenildimi=tbxBegenildimi.Text,
+                    Mekan=tbxMekan.Text,
+                    SizceKitapSonu=tbxKitapSonu.Text,
+                    Tavsiye=tbxTavsiye.Text,
+                    Zaman=tbxZaman.Text 
                 });
                 MessageBox.Show("Yeni kayıt oluşturuldu.");
             }
@@ -45,7 +51,7 @@ namespace LibraryProjectApp
                 {
                     Id = frmOgrenciEkrani._escrowBookDetail[0].Id,
                     AnaFikir = tbxAnaFikir.Text,
-                    Ozet = tbxEtkiOlay.Text,
+                    Konu = tbxKonu.Text,
                     ReaderId = frmOgrenciEkrani._reader.Id,
                     BookId = frmOgrenciEkrani._escrowBookDetail[0].BookId,
                     EkranId = 1
@@ -66,7 +72,7 @@ namespace LibraryProjectApp
                 {
                     Id = frmOgrenciEkrani._escrowBookDetail[0].Id,
                     AnaFikir = tbxAnaFikir.Text,
-                    Ozet = tbxEtkiOlay.Text,
+                    Konu = tbxKonu.Text,
                     ReaderId = frmOgrenciEkrani._reader.Id,
                     BookId = frmOgrenciEkrani._escrowBookDetail[0].BookId,// hatalı satır
                     EkranId = 2

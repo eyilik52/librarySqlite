@@ -83,5 +83,34 @@ namespace LibraryProjectApp.FileBook
             e.Graphics.DrawString(mudur, new Font("Arial", 10), Brushes.Black, new Point(600, 320));
             e.Graphics.DrawString(unvan, new Font("Arial", 10), Brushes.Black, new Point(560, 340));
         }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(textBox2.Text))
+                {
+                    SearchBarcode(textBox2.Text);
+                    textBox1.Text = "";
+                }
+                else
+                {
+                    LoadGrid();
+                }
+            }
+        }
+
+        public void SearchBarcode(string key)
+        {
+            var result = _escBookManager.GetBarcodeSearch(key);
+            if (result.Success)
+            {
+                dataGridView1.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
     }
 }

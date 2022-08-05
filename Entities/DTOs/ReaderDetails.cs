@@ -10,6 +10,7 @@ namespace Entities.DTOs
    public  class ReaderDetails:IDto
     {
         public int ReaderId { get; set; }
+        public string TCKN { get; set; }
         public string ReaderName { get; set; }
         public string ReaderSurname { get; set; }
         public int ClassRoom { get; set; }

@@ -67,5 +67,10 @@ namespace Business.Concrete
             _escrowBookDal.Update(escrowBook);
             return new SuccessResult(Messages.Update);
         }
+
+        public IDataResult<List<BookDeliveredMember>> GetBarcodeSearch(string key)
+        {
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.BarkodNumber.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
     }
 }

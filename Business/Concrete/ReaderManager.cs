@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Reader>> GetAll()
         {
-            return new SuccessDataResult<List<Reader>>(_readerDal.GetAll(), "Hata");
+            return new SuccessDataResult<List<Reader>>(_readerDal.GetAll(p=>p.IsActive==true), "Hata");
         }
 
         public IDataResult<List<Reader>> GetAllByClassId(int classId)
@@ -61,6 +61,13 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<ReaderDetails>>(_readerDal.GetReaderDetails().Where(p => p.ReaderSurname.ToLower().Contains(key.ToLower().Trim())).ToList());
         }
+
+        public IDataResult<List<ReaderDetails>> GetTCKNSearch(string key)
+        {
+            return new SuccessDataResult<List<ReaderDetails>>(_readerDal.GetReaderDetails().Where(p => p.TCKN.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
+
+
         public IDataResult<List<ReaderDetails>> GetReaderDetails()
         {
             return new SuccessDataResult<List<ReaderDetails>>(_readerDal.GetReaderDetails());

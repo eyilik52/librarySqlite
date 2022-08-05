@@ -78,6 +78,7 @@ namespace LibraryProjectApp.FileCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(297, 275);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmCategoryAdd";

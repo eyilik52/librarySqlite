@@ -32,6 +32,8 @@ namespace LibraryProjectApp.FileReader
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReaderOperations));
             this.gbxProductAdd = new System.Windows.Forms.GroupBox();
+            this.txtsifre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cmbBransh = new System.Windows.Forms.ComboBox();
             this.nmrcClass = new System.Windows.Forms.NumericUpDown();
@@ -53,15 +55,17 @@ namespace LibraryProjectApp.FileReader
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gbxBook = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.txtSearchReaderSurname = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtSearchReaderName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
-            this.cbxCategory = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.DgwBook = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tckn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +77,6 @@ namespace LibraryProjectApp.FileReader
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreVerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtsifre = new System.Windows.Forms.TextBox();
             this.gbxProductAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcClass)).BeginInit();
             this.gbxBook.SuspendLayout();
@@ -115,6 +117,22 @@ namespace LibraryProjectApp.FileReader
             this.gbxProductAdd.TabIndex = 8;
             this.gbxProductAdd.TabStop = false;
             this.gbxProductAdd.Text = "Yeni Okuyucu Ekle";
+            // 
+            // txtsifre
+            // 
+            this.txtsifre.Location = new System.Drawing.Point(620, 67);
+            this.txtsifre.Name = "txtsifre";
+            this.txtsifre.Size = new System.Drawing.Size(123, 23);
+            this.txtsifre.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(577, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 15);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Şifre :";
             // 
             // btnUpdate
             // 
@@ -335,69 +353,30 @@ namespace LibraryProjectApp.FileReader
             // 
             // gbxBook
             // 
+            this.gbxBook.Controls.Add(this.label1);
+            this.gbxBook.Controls.Add(this.cbxCategory);
             this.gbxBook.Controls.Add(this.txtSearchReaderSurname);
             this.gbxBook.Controls.Add(this.label14);
             this.gbxBook.Controls.Add(this.txtSearchReaderName);
             this.gbxBook.Controls.Add(this.label2);
-            this.gbxBook.Location = new System.Drawing.Point(323, 12);
+            this.gbxBook.Location = new System.Drawing.Point(223, 12);
             this.gbxBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxBook.Name = "gbxBook";
             this.gbxBook.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxBook.Size = new System.Drawing.Size(448, 69);
+            this.gbxBook.Size = new System.Drawing.Size(548, 69);
             this.gbxBook.TabIndex = 7;
             this.gbxBook.TabStop = false;
             this.gbxBook.Text = "Okuyucu Bilgisine Göre Ara";
             // 
-            // txtSearchReaderSurname
+            // label1
             // 
-            this.txtSearchReaderSurname.Location = new System.Drawing.Point(307, 27);
-            this.txtSearchReaderSurname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSearchReaderSurname.Name = "txtSearchReaderSurname";
-            this.txtSearchReaderSurname.Size = new System.Drawing.Size(126, 23);
-            this.txtSearchReaderSurname.TabIndex = 1;
-            this.txtSearchReaderSurname.TextChanged += new System.EventHandler(this.txtSearchReaderSurname_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(212, 33);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(63, 15);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Soyadı Adı";
-            // 
-            // txtSearchReaderName
-            // 
-            this.txtSearchReaderName.Location = new System.Drawing.Point(60, 30);
-            this.txtSearchReaderName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtSearchReaderName.Name = "txtSearchReaderName";
-            this.txtSearchReaderName.Size = new System.Drawing.Size(126, 23);
-            this.txtSearchReaderName.TabIndex = 1;
-            this.txtSearchReaderName.TextChanged += new System.EventHandler(this.txtSearchReaderName_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 33);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Adı";
-            // 
-            // gbxCategory
-            // 
-            this.gbxCategory.Controls.Add(this.cbxCategory);
-            this.gbxCategory.Controls.Add(this.label1);
-            this.gbxCategory.Location = new System.Drawing.Point(13, 12);
-            this.gbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxCategory.Name = "gbxCategory";
-            this.gbxCategory.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxCategory.Size = new System.Drawing.Size(302, 69);
-            this.gbxCategory.TabIndex = 6;
-            this.gbxCategory.TabStop = false;
-            this.gbxCategory.Text = "Sınıf Düzeyine Göre Ara";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(395, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sınıfı";
             // 
             // cbxCategory
             // 
@@ -417,28 +396,79 @@ namespace LibraryProjectApp.FileReader
             "10",
             "11",
             "12"});
-            this.cbxCategory.Location = new System.Drawing.Point(119, 27);
+            this.cbxCategory.Location = new System.Drawing.Point(457, 30);
             this.cbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(145, 23);
+            this.cbxCategory.Size = new System.Drawing.Size(83, 23);
             this.cbxCategory.TabIndex = 1;
             this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
             // 
-            // label1
+            // txtSearchReaderSurname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sınıfı";
+            this.txtSearchReaderSurname.Location = new System.Drawing.Point(246, 27);
+            this.txtSearchReaderSurname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSearchReaderSurname.Name = "txtSearchReaderSurname";
+            this.txtSearchReaderSurname.Size = new System.Drawing.Size(126, 23);
+            this.txtSearchReaderSurname.TabIndex = 1;
+            this.txtSearchReaderSurname.TextChanged += new System.EventHandler(this.txtSearchReaderSurname_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(175, 33);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 15);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Soyadı Adı";
+            // 
+            // txtSearchReaderName
+            // 
+            this.txtSearchReaderName.Location = new System.Drawing.Point(41, 30);
+            this.txtSearchReaderName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtSearchReaderName.Name = "txtSearchReaderName";
+            this.txtSearchReaderName.Size = new System.Drawing.Size(126, 23);
+            this.txtSearchReaderName.TabIndex = 1;
+            this.txtSearchReaderName.TextChanged += new System.EventHandler(this.txtSearchReaderName_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 33);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Adı";
+            // 
+            // gbxCategory
+            // 
+            this.gbxCategory.Controls.Add(this.textBox1);
+            this.gbxCategory.Location = new System.Drawing.Point(13, 12);
+            this.gbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxCategory.Name = "gbxCategory";
+            this.gbxCategory.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.gbxCategory.Size = new System.Drawing.Size(202, 69);
+            this.gbxCategory.TabIndex = 6;
+            this.gbxCategory.TabStop = false;
+            this.gbxCategory.Text = "Barkodlu Arama(TC Kimlik)";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(7, 22);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(187, 36);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // DgwBook
             // 
             this.DgwBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgwBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column3,
+            this.tckn,
             this.Column1,
             this.Column2,
             this.Column4,
@@ -461,6 +491,13 @@ namespace LibraryProjectApp.FileReader
             this.Column3.Name = "Column3";
             this.Column3.Visible = false;
             // 
+            // tckn
+            // 
+            this.tckn.DataPropertyName = "TCKN";
+            this.tckn.HeaderText = "TC KİMLİK NO";
+            this.tckn.Name = "tckn";
+            this.tckn.Width = 110;
+            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ReaderName";
@@ -478,6 +515,7 @@ namespace LibraryProjectApp.FileReader
             this.Column4.DataPropertyName = "classRoom";
             this.Column4.HeaderText = "SINIF";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
             // 
             // Branch
             // 
@@ -488,9 +526,8 @@ namespace LibraryProjectApp.FileReader
             // Column5
             // 
             this.Column5.DataPropertyName = "LastReadBook";
-            this.Column5.HeaderText = "EN SON OKUNAN KİTAP";
+            this.Column5.HeaderText = "SON KİTAP";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 185;
             // 
             // Column6
             // 
@@ -537,26 +574,11 @@ namespace LibraryProjectApp.FileReader
             this.şifreVerToolStripMenuItem.Text = "Şifre Ver";
             this.şifreVerToolStripMenuItem.Click += new System.EventHandler(this.şifreVerToolStripMenuItem_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(577, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 15);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Şifre :";
-            // 
-            // txtsifre
-            // 
-            this.txtsifre.Location = new System.Drawing.Point(620, 67);
-            this.txtsifre.Name = "txtsifre";
-            this.txtsifre.Size = new System.Drawing.Size(123, 23);
-            this.txtsifre.TabIndex = 13;
-            // 
             // FrmReaderOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(785, 548);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxBook);
@@ -613,16 +635,18 @@ namespace LibraryProjectApp.FileReader
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem şifreVerToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtsifre;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tckn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Branch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem şifreVerToolStripMenuItem;
-        private System.Windows.Forms.TextBox txtsifre;
-        private System.Windows.Forms.Label label4;
     }
 }

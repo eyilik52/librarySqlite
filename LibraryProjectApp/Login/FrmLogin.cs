@@ -106,12 +106,16 @@ namespace LibraryProjectApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FrmMainLogin frmMainLogin = new FrmMainLogin();
+            frmMainLogin.Show();
+            this.Hide();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
             tbxPassword.Focus();
         }
+
+        
     }
 }

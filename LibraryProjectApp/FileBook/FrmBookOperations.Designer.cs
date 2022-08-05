@@ -32,19 +32,12 @@ namespace LibraryProjectApp.FileBook
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookOperations));
             this.DgwBook = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxCategory = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCategoryAdd = new System.Windows.Forms.Button();
@@ -76,6 +69,14 @@ namespace LibraryProjectApp.FileBook
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CategoryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgwBook)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbxCategory.SuspendLayout();
@@ -90,9 +91,9 @@ namespace LibraryProjectApp.FileBook
             this.Column1,
             this.Column2,
             this.Column3,
+            this.Column5,
             this.CategoryName,
             this.Column4,
-            this.Column5,
             this.Column6,
             this.Column7});
             this.DgwBook.ContextMenuStrip = this.contextMenuStrip1;
@@ -102,55 +103,6 @@ namespace LibraryProjectApp.FileBook
             this.DgwBook.Size = new System.Drawing.Size(758, 197);
             this.DgwBook.TabIndex = 0;
             this.DgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwBook_CellDoubleClick);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "BookId";
-            this.Column1.HeaderText = "Id";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "barcodeNumber";
-            this.Column2.HeaderText = "Barkot No";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "BookName";
-            this.Column3.HeaderText = "Kitap Adı";
-            this.Column3.Name = "Column3";
-            // 
-            // CategoryName
-            // 
-            this.CategoryName.DataPropertyName = "CategoryName";
-            this.CategoryName.HeaderText = "Kategori Adı";
-            this.CategoryName.Name = "CategoryName";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "CabinetNumber";
-            this.Column4.HeaderText = "Dolap No";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "AuthorName";
-            this.Column5.HeaderText = "Yazar Adı";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ShelfNo";
-            this.Column6.HeaderText = "Sayfa";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Stock";
-            this.Column7.HeaderText = "Adet";
-            this.Column7.Name = "Column7";
             // 
             // contextMenuStrip1
             // 
@@ -166,6 +118,7 @@ namespace LibraryProjectApp.FileBook
             this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
             this.yenileToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
             // 
             // silToolStripMenuItem
             // 
@@ -183,33 +136,42 @@ namespace LibraryProjectApp.FileBook
             // 
             // gbxCategory
             // 
-            this.gbxCategory.Controls.Add(this.cbxCategory);
-            this.gbxCategory.Controls.Add(this.label1);
+            this.gbxCategory.Controls.Add(this.textBox1);
             this.gbxCategory.Location = new System.Drawing.Point(45, 18);
             this.gbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxCategory.Name = "gbxCategory";
             this.gbxCategory.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxCategory.Size = new System.Drawing.Size(413, 69);
+            this.gbxCategory.Size = new System.Drawing.Size(277, 69);
             this.gbxCategory.TabIndex = 1;
             this.gbxCategory.TabStop = false;
-            this.gbxCategory.Text = "Kategoriye Göre Ara";
+            this.gbxCategory.Text = "BARKOT OKUTUNUZ:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(21, 22);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(242, 36);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // cbxCategory
             // 
             this.cbxCategory.FormattingEnabled = true;
             this.cbxCategory.Items.AddRange(new object[] {
             "TÜMÜNÜ GETİR"});
-            this.cbxCategory.Location = new System.Drawing.Point(108, 27);
+            this.cbxCategory.Location = new System.Drawing.Point(321, 27);
             this.cbxCategory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(242, 23);
+            this.cbxCategory.Size = new System.Drawing.Size(126, 23);
             this.cbxCategory.TabIndex = 1;
             this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 30);
+            this.label1.Location = new System.Drawing.Point(234, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
@@ -228,13 +190,15 @@ namespace LibraryProjectApp.FileBook
             // 
             // gbxBook
             // 
+            this.gbxBook.Controls.Add(this.cbxCategory);
+            this.gbxBook.Controls.Add(this.label1);
             this.gbxBook.Controls.Add(this.txtSearchBookName);
             this.gbxBook.Controls.Add(this.label2);
-            this.gbxBook.Location = new System.Drawing.Point(466, 18);
+            this.gbxBook.Location = new System.Drawing.Point(330, 18);
             this.gbxBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.gbxBook.Name = "gbxBook";
             this.gbxBook.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.gbxBook.Size = new System.Drawing.Size(337, 69);
+            this.gbxBook.Size = new System.Drawing.Size(473, 69);
             this.gbxBook.TabIndex = 2;
             this.gbxBook.TabStop = false;
             this.gbxBook.Text = "Kitap Adına Göre Ara";
@@ -244,7 +208,7 @@ namespace LibraryProjectApp.FileBook
             this.txtSearchBookName.Location = new System.Drawing.Point(84, 32);
             this.txtSearchBookName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtSearchBookName.Name = "txtSearchBookName";
-            this.txtSearchBookName.Size = new System.Drawing.Size(242, 23);
+            this.txtSearchBookName.Size = new System.Drawing.Size(121, 23);
             this.txtSearchBookName.TabIndex = 0;
             this.txtSearchBookName.TextChanged += new System.EventHandler(this.txtProduct_TextChanged);
             // 
@@ -292,10 +256,11 @@ namespace LibraryProjectApp.FileBook
             this.gbxProductAdd.Size = new System.Drawing.Size(758, 236);
             this.gbxProductAdd.TabIndex = 3;
             this.gbxProductAdd.TabStop = false;
-            this.gbxProductAdd.Text = "Yeni Kitap  Ekle";
+            this.gbxProductAdd.Text = "Yeni Kitap  Ekle/Güncelle";
             // 
             // btnUpdate
             // 
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.Location = new System.Drawing.Point(644, 176);
@@ -342,6 +307,7 @@ namespace LibraryProjectApp.FileBook
             // 
             // btnBookAdd
             // 
+            this.btnBookAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnBookAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnBookAdd.Image")));
             this.btnBookAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBookAdd.Location = new System.Drawing.Point(644, 112);
@@ -520,15 +486,71 @@ namespace LibraryProjectApp.FileBook
             this.label3.TabIndex = 0;
             this.label3.Text = "Kitap Adı:";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "BookId";
+            this.Column1.HeaderText = "Id";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "barcodeNumber";
+            this.Column2.HeaderText = "Barkot No";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "BookName";
+            this.Column3.HeaderText = "Kitap Adı";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 135;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "AuthorName";
+            this.Column5.HeaderText = "Yazar Adı";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // CategoryName
+            // 
+            this.CategoryName.DataPropertyName = "CategoryName";
+            this.CategoryName.HeaderText = "Kategori Adı";
+            this.CategoryName.Name = "CategoryName";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "CabinetNumber";
+            this.Column4.HeaderText = "Dolap No";
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "ShelfNo";
+            this.Column6.HeaderText = "Sayfa";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 75;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "Stock";
+            this.Column7.HeaderText = "Adet";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 50;
+            // 
             // FrmBookOperations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 557);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(855, 542);
             this.Controls.Add(this.gbxProductAdd);
             this.Controls.Add(this.gbxBook);
             this.Controls.Add(this.gbxCategory);
             this.Controls.Add(this.DgwBook);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "FrmBookOperations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -585,12 +607,13 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn CategoryName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
