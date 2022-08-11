@@ -64,6 +64,11 @@ namespace LibraryProjectApp.FileReader
             this.gbxCategory = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.DgwBook = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şifreVerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tckn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,12 +76,6 @@ namespace LibraryProjectApp.FileReader
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.şifreVerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxProductAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrcClass)).BeginInit();
             this.gbxBook.SuspendLayout();
@@ -473,8 +472,7 @@ namespace LibraryProjectApp.FileReader
             this.Column2,
             this.Column4,
             this.Branch,
-            this.Column5,
-            this.Column6});
+            this.Column5});
             this.DgwBook.ContextMenuStrip = this.contextMenuStrip1;
             this.DgwBook.Location = new System.Drawing.Point(13, 87);
             this.DgwBook.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -483,58 +481,6 @@ namespace LibraryProjectApp.FileReader
             this.DgwBook.Size = new System.Drawing.Size(758, 197);
             this.DgwBook.TabIndex = 5;
             this.DgwBook.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgwBook_CellDoubleClick);
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "ReaderId";
-            this.Column3.HeaderText = "Id";
-            this.Column3.Name = "Column3";
-            this.Column3.Visible = false;
-            // 
-            // tckn
-            // 
-            this.tckn.DataPropertyName = "TCKN";
-            this.tckn.HeaderText = "TC KİMLİK NO";
-            this.tckn.Name = "tckn";
-            this.tckn.Width = 110;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ReaderName";
-            this.Column1.HeaderText = "ADI";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ReaderSurname";
-            this.Column2.HeaderText = "SOYADI";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "classRoom";
-            this.Column4.HeaderText = "SINIF";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 70;
-            // 
-            // Branch
-            // 
-            this.Branch.DataPropertyName = "Branch";
-            this.Branch.HeaderText = "ŞUBE";
-            this.Branch.Name = "Branch";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "LastReadBook";
-            this.Column5.HeaderText = "SON KİTAP";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "ReadingHistory";
-            this.Column6.HeaderText = "OKUMA TARİHİ";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 130;
             // 
             // contextMenuStrip1
             // 
@@ -573,6 +519,55 @@ namespace LibraryProjectApp.FileReader
             this.şifreVerToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.şifreVerToolStripMenuItem.Text = "Şifre Ver";
             this.şifreVerToolStripMenuItem.Click += new System.EventHandler(this.şifreVerToolStripMenuItem_Click);
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "ReaderId";
+            this.Column3.HeaderText = "Id";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            // 
+            // tckn
+            // 
+            this.tckn.DataPropertyName = "TCKN";
+            this.tckn.HeaderText = "TC KİMLİK NO";
+            this.tckn.Name = "tckn";
+            this.tckn.Width = 130;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ReaderName";
+            this.Column1.HeaderText = "ADI";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ReaderSurname";
+            this.Column2.HeaderText = "SOYADI";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "classRoom";
+            this.Column4.HeaderText = "SINIF";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
+            // 
+            // Branch
+            // 
+            this.Branch.DataPropertyName = "Branch";
+            this.Branch.HeaderText = "ŞUBE";
+            this.Branch.Name = "Branch";
+            this.Branch.Width = 110;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "TelefonNo";
+            this.Column5.HeaderText = "Telefon No";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 150;
             // 
             // FrmReaderOperations
             // 
@@ -647,6 +642,5 @@ namespace LibraryProjectApp.FileReader
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Branch;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

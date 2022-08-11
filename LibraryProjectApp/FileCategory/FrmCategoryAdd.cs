@@ -30,9 +30,10 @@ namespace LibraryProjectApp.FileCategory
             {
                 Name = tbxCategoryAdd.Text
             });
-            MessageBox.Show("Kitap kaydetme işlemi başarılı");
+            MessageBox.Show("Kategori kaydetme işlemi başarılı");
             tbxCategoryAdd.Text = "";
             frmBookManager.LoadCategories();
+            this.Hide();
            
             
         }

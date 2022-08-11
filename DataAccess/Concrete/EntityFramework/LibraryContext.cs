@@ -18,7 +18,7 @@ namespace DataAccess.Concrete.EntityFramework
             string sqlite = @"Data Source = Library.s3db";
             optionsBuilder.UseSqlite(sqlite);
         }
-
+        
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ClassRoom> classRooms { get; set; }

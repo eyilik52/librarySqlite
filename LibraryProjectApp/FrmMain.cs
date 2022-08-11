@@ -26,7 +26,11 @@ namespace LibraryProjectApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            LoadDatagrid();
+        }
+
+        public void LoadDatagrid()
+        {
             var result = _escBookManager.NonDeliveredMember();
             if (result.Success)
             {
@@ -38,7 +42,6 @@ namespace LibraryProjectApp
             }
         }
 
-            
 
         private void btnBookOperations_Click(object sender, EventArgs e)
         {

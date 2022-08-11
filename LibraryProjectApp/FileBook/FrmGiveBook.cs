@@ -28,7 +28,7 @@ namespace LibraryProjectApp.FileBook
         IReaderService _readerService;
         IEscrowBookService _escrowBookService;
         EscrowBookDetailManager _escrowBookDetail = new EscrowBookDetailManager(new EfEscrowBookDetailDal());//detay tablosu için
-
+        FrmMain frmMain = (FrmMain)Application.OpenForms["FrmMain"];
         private void FrmGiveBook_Load(object sender, EventArgs e)
         {
             lblDeliveryDate.Text = DateTime.Today.ToShortDateString();
@@ -83,8 +83,6 @@ namespace LibraryProjectApp.FileBook
                 for (int i = 0; i < result.Data.Count; i++)
                 {
                     //int newReaderId = result.Data[i].ReaderId;
-
-
                     if (result.Data[i].IsActive == true)
                     {
                         IsThere = true;
@@ -102,11 +100,10 @@ namespace LibraryProjectApp.FileBook
                             ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
                             DeliveryDate = Convert.ToDateTime(lblDeliveryDate.Text),
                             TransactionDate = DateTime.Now,
-                             EkranId=1
-                              
+                             EkranId=1                              
                         }
                         );
-
+                      
                         
                         _escrowBookDetail.Add(new EscrowBookDetail//detay tablosunu burada oluştur
                         {
@@ -114,6 +111,7 @@ namespace LibraryProjectApp.FileBook
                             BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
                             EkranId =1 
                         });
+                        frmMain.LoadDatagrid();
                         MessageBox.Show("Okuyucu için dönüt tablosu oluşturuldu.");
 
 

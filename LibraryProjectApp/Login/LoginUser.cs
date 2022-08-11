@@ -22,7 +22,9 @@ namespace LibraryProjectApp.Login
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FrmMainLogin frmMainLogin = new FrmMainLogin();
+            frmMainLogin.Show();
+            this.Hide();
         }
         UserManager _userManager = new UserManager(new EfUserDal());
         ReaderManager _readerManager = new ReaderManager(new EfReaderDal());

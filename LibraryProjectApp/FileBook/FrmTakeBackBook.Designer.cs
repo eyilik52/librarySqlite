@@ -29,6 +29,7 @@ namespace LibraryProjectApp.FileBook
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,11 +40,16 @@ namespace LibraryProjectApp.FileBook
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.detayGetirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitapTeslimAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -59,6 +65,7 @@ namespace LibraryProjectApp.FileBook
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 19);
             this.dataGridView1.Name = "dataGridView1";
@@ -139,6 +146,34 @@ namespace LibraryProjectApp.FileBook
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.detayGetirToolStripMenuItem,
+            this.yenileToolStripMenuItem,
+            this.kitapTeslimAlToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 70);
+            // 
+            // detayGetirToolStripMenuItem
+            // 
+            this.detayGetirToolStripMenuItem.Name = "detayGetirToolStripMenuItem";
+            this.detayGetirToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.detayGetirToolStripMenuItem.Text = "Detay Getir";
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            // 
+            // kitapTeslimAlToolStripMenuItem
+            // 
+            this.kitapTeslimAlToolStripMenuItem.Name = "kitapTeslimAlToolStripMenuItem";
+            this.kitapTeslimAlToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.kitapTeslimAlToolStripMenuItem.Text = "Kitap Teslim Al";
+            this.kitapTeslimAlToolStripMenuItem.Click += new System.EventHandler(this.kitapTeslimAlToolStripMenuItem_Click);
+            // 
             // FrmTakeBackBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -152,7 +187,7 @@ namespace LibraryProjectApp.FileBook
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmTakeBackBook";
-            this.Text = "FrmTakeBackBook";
+            this.Text = "KİTAP GERİ ALMA EKRANI";
             this.Load += new System.EventHandler(this.FrmTakeBackBook_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -162,6 +197,7 @@ namespace LibraryProjectApp.FileBook
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -178,5 +214,9 @@ namespace LibraryProjectApp.FileBook
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem detayGetirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kitapTeslimAlToolStripMenuItem;
     }
 }

@@ -41,6 +41,7 @@ namespace LibraryProjectApp
 
                     if (result.positionId == 2)
                     {
+                        frmTeacherScreen._user = result;
                         frmTeacherScreen.Show();
                         this.Hide();
                     }

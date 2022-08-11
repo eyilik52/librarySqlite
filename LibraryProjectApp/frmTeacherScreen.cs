@@ -36,17 +36,19 @@ namespace LibraryProjectApp
 
         public void listele()
         {
+            dataGridView1.Rows.Clear();
             var result = _escrowBookDetailManager.GetTeacherScreen();
             if (result.Count!=0)
             {
                 detay = result[0];
+                
                 for (int i = 0; i < result.Count; i++)
                 {
                     int readerId = result[i].ReaderId;
+                    _reader = _readerManager.GetById(readerId).Data;
                     int bookId = result[i].BookId;
                     _book = _bookManager.GetById(bookId).Data;
-                    _reader = _readerManager.GetById(readerId).Data;
-
+                    dataGridView1.Rows.Add();
                     dataGridView1.Rows[i].Cells[1].Value = result[i].Id;
                     dataGridView1.Rows[i].Cells[2].Value = _book.BookName;
                     dataGridView1.Rows[i].Cells[3].Value = _book.AuthorName;
@@ -67,8 +69,21 @@ namespace LibraryProjectApp
             frmDeger.lblBookName.Text = _book.BookName;
             frmDeger.lblAuthorName.Text = _book.AuthorName;
             frmDeger.tbxAnaFikir.Text = detay.AnaFikir;
-            //frmDeger.tbxEtkiOlay.Text = detay.Ozet;
+            frmDeger.tbxKonu.Text = detay.Konu;
+            frmDeger.tbxAnlaticiTur.Text = detay.AnlaticiTuru;
+            frmDeger.tbxBegenildimi.Text = detay.KitapBegenildimi;
+            frmDeger.tbxEniyiIfade.Text = detay.EniyiIfade;
+            frmDeger.tbxKisiKadrosu.Text = detay.KisiKadrosu;
+            frmDeger.tbxZaman.Text = detay.Zaman;
+            frmDeger.tbxMekan.Text = detay.Mekan;
+            frmDeger.tbxTavsiye.Text = detay.Tavsiye;
+            frmDeger.tbxKitapSonu.Text = detay.SizceKitapSonu;
             frmDeger.Show();
+        }
+
+        private void frmTeacherScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

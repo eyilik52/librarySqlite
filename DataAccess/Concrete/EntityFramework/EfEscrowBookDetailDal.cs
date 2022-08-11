@@ -42,6 +42,30 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        
+        public List<EscrowBookDetail> GetKitapKurdu()
+        {
+            using (LibraryContext context = new LibraryContext())
+            {
+                var result = context.escrowBookDetails.Where(p => p.EkranId == 0)
+                   .GroupBy(p => p.ReaderId)
+                   .Select(g => new EscrowBookDetail { ReaderId = g.Key, BookId = g.Count() });
+
+                return result.ToList();
+
+
+            }
+        }
+
+        public int NotToplamlari(int readerıd)
+        {
+            using (LibraryContext context = new LibraryContext())
+            {
+                var result = context.escrowBookDetails.Where(p => p.ReaderId == readerıd && p.EkranId==0).Sum(p => p.Notu);
+                return result;
+
+            }
+        }
+
+
     }
 }

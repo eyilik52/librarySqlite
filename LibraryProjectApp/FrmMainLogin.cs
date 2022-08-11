@@ -44,10 +44,7 @@ namespace LibraryProjectApp
             this.Hide();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            veritabanıolustur();
-        }
+        
 
         private static void veritabanıolustur()
         {
@@ -62,10 +59,7 @@ namespace LibraryProjectApp
             MessageBox.Show("silindi");
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            veritabanıSil();
-        }
+       
 
         private void FrmMainLogin_Load(object sender, EventArgs e)
         {
@@ -82,6 +76,17 @@ namespace LibraryProjectApp
             Login.LoginTeacher loginTeacher = new Login.LoginTeacher();
             loginTeacher.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            veritabanıSil();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            veritabanıolustur();
+        }
+        
     }
 }
 

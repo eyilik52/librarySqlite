@@ -12,11 +12,9 @@ namespace Entities.DTOs
         public int ReaderId { get; set; }
         public string TCKN { get; set; }
         public string ReaderName { get; set; }
+        public string TelefonNO { get; set; }
         public string ReaderSurname { get; set; }
         public int ClassRoom { get; set; }
-        public char Branch { get; set; }
-        public string LastReadBook { get; set; }
-        public DateTime ReadingHistory { get; set; }
-        
+        public char Branch { get; set; }        
     }
 }

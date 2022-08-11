@@ -18,7 +18,9 @@ namespace LibraryProjectApp
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new Reports.FrmBookReports());
             Application.Run(new FrmMainLogin());
         }
     }
+    
 }

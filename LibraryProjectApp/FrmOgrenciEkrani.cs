@@ -40,7 +40,7 @@ namespace LibraryProjectApp
         
         private void FrmOgrenciEkrani_Load(object sender, EventArgs e)
         {
-            lblNameSurname.Text = _reader.Name + " " + _reader.Surname;         
+            lblNameSurname.Text = _reader.Name + " " + _reader.Surname;      
 
             BookInMemeber();
 
@@ -49,7 +49,12 @@ namespace LibraryProjectApp
 
         public void BookInMemeber()//üyelerin elindeki kitabı ekrana yazıdıryoruz.
         {
-            var result2 = _escrowBookDetailManager.GetBooksInMember(_reader.Id);         
+            var result2 = _escrowBookDetailManager.GetBooksInMember(_reader.Id); 
+            //for (int i = 0; i < result2.Data.Count; i++)
+            //{
+                
+            //    dataGridView1.Rows[i].Cells[0].Value = r
+            //} 
             dataGridView1.DataSource = result2.Data;
             _getBookInMember = result2.Data;
         }
@@ -64,7 +69,7 @@ namespace LibraryProjectApp
 
                 kitapDonut.lblReaderName.Text = _reader.Name + " " + _reader.Surname;
                 kitapDonut.lblBookName.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                kitapDonut.lblAuthorName.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                kitapDonut.lblAuthorName.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
                 int bookId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
                 var book = _bookManager.GetById(bookId).Data;
                 _book = book;
@@ -81,7 +86,17 @@ namespace LibraryProjectApp
                 {
                     kitapDonut.tbxAnaFikir.Text = result[0].AnaFikir;
                     kitapDonut.tbxKonu.Text = result[0].Konu;
-                    kitapDonut.Show();
+                kitapDonut.tbxAnaFikir.Text = result[0].AnaFikir;
+                kitapDonut.tbxKonu.Text = result[0].Konu;
+                kitapDonut.tbxAnlaticiTur.Text = result[0].AnlaticiTuru;
+                kitapDonut.tbxBegenildimi.Text = result[0].KitapBegenildimi;
+                kitapDonut.tbxEniyiIfade.Text = result[0].EniyiIfade;
+                kitapDonut.tbxKisiKadrosu.Text = result[0].KisiKadrosu;
+                kitapDonut.tbxZaman.Text = result[0].Zaman;
+                kitapDonut.tbxMekan.Text = result[0].Mekan;
+                kitapDonut.tbxTavsiye.Text = result[0].Tavsiye;
+                kitapDonut.tbxKitapSonu.Text = result[0].SizceKitapSonu;
+                kitapDonut.Show();                
                 }
             //}
             //catch 
@@ -96,6 +111,12 @@ namespace LibraryProjectApp
         private void yenileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BookInMemeber();
+        }
+
+        private void kitapKurduSıralamamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports.FrmBookReports frmBook = new Reports.FrmBookReports();
+            frmBook.ShowDialog();
         }
     }
 }

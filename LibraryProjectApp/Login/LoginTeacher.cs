@@ -83,5 +83,12 @@ namespace LibraryProjectApp.Login
         {
             tbxPassword.Focus();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMainLogin frmMainLogin = new FrmMainLogin();
+            frmMainLogin.Show();
+            this.Hide();
+        }
     }
 }

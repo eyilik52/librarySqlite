@@ -57,5 +57,17 @@ namespace Business.Concrete
         {
             _escrowBookDetailDal.Update(escrow);
         }
+
+        public List<EscrowBookDetail> GetKitapKurdu()
+        {
+            return _escrowBookDetailDal.GetKitapKurdu();
+
+
+        }
+        public int Notlar(int ıd)
+        {
+            return _escrowBookDetailDal.NotToplamlari(ıd);
+        }
+
     }
 }

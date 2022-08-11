@@ -24,6 +24,8 @@ namespace LibraryProjectApp.FileBook
         }
         IEscrowBookService _escrowBookService;
         EscrowBookManager _escBookManager = new EscrowBookManager(new EfEscrowBookDal());
+        FrmMain frmMain= (FrmMain)Application.OpenForms["FrmMain"];
+
         private void FrmTakeBackBook_Load(object sender, EventArgs e)
         {
             LoadGrid();
@@ -44,10 +46,16 @@ namespace LibraryProjectApp.FileBook
 
         private void button1_Click(object sender, EventArgs e)
         {
+            TeslimAl();
+        }
+
+        private void TeslimAl()
+        {
             var result = _escrowBookService.GetById(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
             result.Data.IsActive = false;
             _escBookManager.Update(result.Data);
             LoadGrid();
+            frmMain.LoadDatagrid();
             MessageBox.Show("Kitap teslim alma işlemi başarı ile sonuçlandı.");
         }
 
@@ -111,6 +119,11 @@ namespace LibraryProjectApp.FileBook
             {
                 MessageBox.Show(result.Message);
             }
+        }
+
+        private void kitapTeslimAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TeslimAl();
         }
     }
 }

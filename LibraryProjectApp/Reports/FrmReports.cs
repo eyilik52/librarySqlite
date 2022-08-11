@@ -20,6 +20,7 @@ namespace LibraryProjectApp.Reports
         }
 
         EscrowBookManager _escBookManager = new EscrowBookManager(new EfEscrowBookDal());
+       
         private void btnBring_Click(object sender, EventArgs e)
         {
             var result = _escBookManager.GetEscrowBookSearchDate(dtFirstDate.Value,dtSecondDate.Value);
@@ -43,12 +44,22 @@ namespace LibraryProjectApp.Reports
                                      .Select(Kitap => new { Sinif = Kitap.Key, OkunmaSayisi = Kitap.Count() });//seç
 
             Console.WriteLine("Sınıf öğrenci sayıları :");
-
             foreach (var Satir in Kitaplar)
             {                
                 MessageBox.Show(Satir.Sinif + " İsimli Kitap "+ Satir.OkunmaSayisi + " kez okunmuş..." );
             }
 
+        }
+
+        private void FrmReports_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmBookReports frmBookReports = new FrmBookReports();
+            frmBookReports.Show();
         }
     }
 }

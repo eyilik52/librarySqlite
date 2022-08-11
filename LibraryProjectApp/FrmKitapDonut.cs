@@ -41,7 +41,8 @@ namespace LibraryProjectApp
                     Mekan=tbxMekan.Text,
                     SizceKitapSonu=tbxKitapSonu.Text,
                     Tavsiye=tbxTavsiye.Text,
-                    Zaman=tbxZaman.Text 
+                    Zaman=tbxZaman.Text
+                    
                 });
                 MessageBox.Show("Yeni kayıt oluşturuldu.");
             }
@@ -53,48 +54,43 @@ namespace LibraryProjectApp
                     AnaFikir = tbxAnaFikir.Text,
                     Konu = tbxKonu.Text,
                     ReaderId = frmOgrenciEkrani._reader.Id,
-                    BookId = frmOgrenciEkrani._escrowBookDetail[0].BookId,
+                    BookId = frmOgrenciEkrani._book.Id,
+                    AnlaticiTuru = tbxAnlaticiTur.Text,
+                    EniyiIfade = tbxEniyiIfade.Text,
+                    KisiKadrosu = tbxKisiKadrosu.Text,
+                    KitapBegenildimi = tbxBegenildimi.Text,
+                    Mekan = tbxMekan.Text,
+                    SizceKitapSonu = tbxKitapSonu.Text,
+                    Tavsiye = tbxTavsiye.Text,
+                    Zaman = tbxZaman.Text,
                     EkranId = 1
 
-                }) ;
+                });
                 MessageBox.Show("Güncelleme Yapıldı.");
             }
-            
-
-            MessageBox.Show("Bilgiler kaydedildi. İncelenmesi için ilgili butona tıklayarak bilgileri gönderebilirsiniz.");
+            MessageBox.Show("Bilgiler kaydedildi. İncelenmesi için ilgili butona tıklayarak bilgileri gönderebilirsiniz.", "Uyarı", MessageBoxButtons.OK);
         }
 
         private void btnSend_Click(object sender, EventArgs e)
         {
             try//bookId kısmı arada gelmiyor. 
             {
-                _escrowBookDetail.Update(new EscrowBookDetail
+                DialogResult resultOnay = MessageBox.Show("Girdiğiniz bilgiler değerlendirici öğretmen ekranına düşecektir. Bu işlem geri alınamaz. Yine de bilgileri göndermek istiyor musunuz?", "Uyarı", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question,MessageBoxDefaultButton.Button3 );
+                if (resultOnay==DialogResult.Yes)
                 {
-                    Id = frmOgrenciEkrani._escrowBookDetail[0].Id,
-                    AnaFikir = tbxAnaFikir.Text,
-                    Konu = tbxKonu.Text,
-                    ReaderId = frmOgrenciEkrani._reader.Id,
-                    BookId = frmOgrenciEkrani._escrowBookDetail[0].BookId,// hatalı satır
-                    EkranId = 2
-
-                });
-                //_escrowBookManager.Update(new EscrowBook
-                //{
-                //    Id = frmOgrenciEkrani._getBookInMember[0].EscBookId,
-                //    EkranId = 2
-                //});
-                //EscrowBook escrow = new EscrowBook();
-                //escrow.Id = frmOgrenciEkrani._getBookInMember[0].EscBookId;
-                //escrow.EkranId = 2;
-                //_escrowBookManager.Update(escrow);
-
-
-
-                frmOgrenciEkrani.BookInMemeber();
-                btnSave.Enabled = false;
-                btnSend.Enabled = false;
-
-                MessageBox.Show("Güncelleme Yapıldı.");
+                    var result = _escrowBookDetail.GetById(frmOgrenciEkrani._escrowBookDetail[0].Id);
+                    result.EkranId = 2;
+                    _escrowBookDetail.Update(result);
+                    frmOgrenciEkrani.BookInMemeber();
+                    btnSave.Enabled = false;
+                    btnSend.Enabled = false;
+                    MessageBox.Show("Güncelleme Yapıldı.");
+                }
+                else
+                {
+                    MessageBox.Show("Gönderim işlemi iptal edildi.");
+                }
+                
             }
             catch 
             {
@@ -103,5 +99,7 @@ namespace LibraryProjectApp
             }
             
         }
+
+        
     }
 }

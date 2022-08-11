@@ -29,6 +29,7 @@ namespace LibraryProjectApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDegerlendir));
             this.label3 = new System.Windows.Forms.Label();
             this.lblReaderName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,10 +42,10 @@ namespace LibraryProjectApp
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabKisivarlik = new System.Windows.Forms.TabControl();
             this.tabKunye = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxZaman = new System.Windows.Forms.TextBox();
+            this.tbxKisiKadrosu = new System.Windows.Forms.TextBox();
+            this.tbxAnlaticiTur = new System.Windows.Forms.TextBox();
+            this.tbxMekan = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,16 +61,19 @@ namespace LibraryProjectApp
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tabKitapGorus = new System.Windows.Forms.TabPage();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbxTavsiye = new System.Windows.Forms.TextBox();
+            this.tbxBegenildimi = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.kitapSonu = new System.Windows.Forms.TabPage();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbxEniyiIfade = new System.Windows.Forms.TextBox();
+            this.tbxKitapSonu = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.cmbDegerlendir = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.tabKisivarlik.SuspendLayout();
             this.tabKunye.SuspendLayout();
@@ -77,13 +81,15 @@ namespace LibraryProjectApp
             this.groupBox2.SuspendLayout();
             this.tabKitapGorus.SuspendLayout();
             this.kitapSonu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(316, 9);
+            this.label3.Location = new System.Drawing.Point(535, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 28);
             this.label3.TabIndex = 8;
@@ -94,17 +100,17 @@ namespace LibraryProjectApp
             this.lblReaderName.AutoSize = true;
             this.lblReaderName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblReaderName.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblReaderName.Location = new System.Drawing.Point(94, 9);
+            this.lblReaderName.Location = new System.Drawing.Point(338, 9);
             this.lblReaderName.Name = "lblReaderName";
-            this.lblReaderName.Size = new System.Drawing.Size(171, 28);
+            this.lblReaderName.Size = new System.Drawing.Size(191, 28);
             this.lblReaderName.TabIndex = 9;
-            this.lblReaderName.Text = "DEĞERLENDİRİCİ";
+            this.lblReaderName.Text = "CANAN AKDOĞAN";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(23, 9);
+            this.label1.Location = new System.Drawing.Point(257, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 28);
             this.label1.TabIndex = 10;
@@ -154,21 +160,29 @@ namespace LibraryProjectApp
             // 
             // btnOnayla
             // 
-            this.btnOnayla.Location = new System.Drawing.Point(872, 212);
+            this.btnOnayla.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnOnayla.Image = ((System.Drawing.Image)(resources.GetObject("btnOnayla.Image")));
+            this.btnOnayla.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOnayla.Location = new System.Drawing.Point(859, 254);
             this.btnOnayla.Name = "btnOnayla";
-            this.btnOnayla.Size = new System.Drawing.Size(82, 128);
+            this.btnOnayla.Size = new System.Drawing.Size(95, 108);
             this.btnOnayla.TabIndex = 14;
             this.btnOnayla.Text = "ONAYLA";
+            this.btnOnayla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOnayla.UseVisualStyleBackColor = true;
             this.btnOnayla.Click += new System.EventHandler(this.btnOnayla_Click);
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(872, 357);
+            this.btnSend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
+            this.btnSend.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSend.Location = new System.Drawing.Point(859, 387);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(82, 161);
+            this.btnSend.Size = new System.Drawing.Size(95, 108);
             this.btnSend.TabIndex = 13;
             this.btnSend.Text = "REDDET";
+            this.btnSend.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
@@ -179,7 +193,7 @@ namespace LibraryProjectApp
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblBookName);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(23, 61);
+            this.groupBox1.Location = new System.Drawing.Point(295, 51);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(350, 96);
             this.groupBox1.TabIndex = 11;
@@ -201,10 +215,10 @@ namespace LibraryProjectApp
             // 
             // tabKunye
             // 
-            this.tabKunye.Controls.Add(this.textBox2);
-            this.tabKunye.Controls.Add(this.textBox4);
-            this.tabKunye.Controls.Add(this.textBox3);
-            this.tabKunye.Controls.Add(this.textBox1);
+            this.tabKunye.Controls.Add(this.tbxZaman);
+            this.tabKunye.Controls.Add(this.tbxKisiKadrosu);
+            this.tabKunye.Controls.Add(this.tbxAnlaticiTur);
+            this.tabKunye.Controls.Add(this.tbxMekan);
             this.tabKunye.Controls.Add(this.label11);
             this.tabKunye.Controls.Add(this.label5);
             this.tabKunye.Controls.Add(this.label10);
@@ -218,34 +232,34 @@ namespace LibraryProjectApp
             this.tabKunye.Text = "Kitap Künye Bilgileri";
             this.tabKunye.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbxZaman
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(629, 27);
-            this.textBox2.TabIndex = 3;
+            this.tbxZaman.Location = new System.Drawing.Point(132, 105);
+            this.tbxZaman.Name = "tbxZaman";
+            this.tbxZaman.Size = new System.Drawing.Size(629, 27);
+            this.tbxZaman.TabIndex = 3;
             // 
-            // textBox4
+            // tbxKisiKadrosu
             // 
-            this.textBox4.Location = new System.Drawing.Point(173, 239);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(588, 93);
-            this.textBox4.TabIndex = 3;
+            this.tbxKisiKadrosu.Location = new System.Drawing.Point(173, 239);
+            this.tbxKisiKadrosu.Multiline = true;
+            this.tbxKisiKadrosu.Name = "tbxKisiKadrosu";
+            this.tbxKisiKadrosu.Size = new System.Drawing.Size(588, 93);
+            this.tbxKisiKadrosu.TabIndex = 3;
             // 
-            // textBox3
+            // tbxAnlaticiTur
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(629, 27);
-            this.textBox3.TabIndex = 3;
+            this.tbxAnlaticiTur.Location = new System.Drawing.Point(132, 181);
+            this.tbxAnlaticiTur.Name = "tbxAnlaticiTur";
+            this.tbxAnlaticiTur.Size = new System.Drawing.Size(629, 27);
+            this.tbxAnlaticiTur.TabIndex = 3;
             // 
-            // textBox1
+            // tbxMekan
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 143);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(629, 27);
-            this.textBox1.TabIndex = 3;
+            this.tbxMekan.Location = new System.Drawing.Point(132, 143);
+            this.tbxMekan.Name = "tbxMekan";
+            this.tbxMekan.Size = new System.Drawing.Size(629, 27);
+            this.tbxMekan.TabIndex = 3;
             // 
             // label11
             // 
@@ -390,8 +404,8 @@ namespace LibraryProjectApp
             // 
             // tabKitapGorus
             // 
-            this.tabKitapGorus.Controls.Add(this.textBox6);
-            this.tabKitapGorus.Controls.Add(this.textBox5);
+            this.tabKitapGorus.Controls.Add(this.tbxTavsiye);
+            this.tabKitapGorus.Controls.Add(this.tbxBegenildimi);
             this.tabKitapGorus.Controls.Add(this.label19);
             this.tabKitapGorus.Controls.Add(this.label15);
             this.tabKitapGorus.Controls.Add(this.label14);
@@ -402,21 +416,21 @@ namespace LibraryProjectApp
             this.tabKitapGorus.Text = "Beğeni/Tavsiye";
             this.tabKitapGorus.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // tbxTavsiye
             // 
-            this.textBox6.Location = new System.Drawing.Point(31, 237);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(778, 110);
-            this.textBox6.TabIndex = 2;
+            this.tbxTavsiye.Location = new System.Drawing.Point(31, 237);
+            this.tbxTavsiye.Multiline = true;
+            this.tbxTavsiye.Name = "tbxTavsiye";
+            this.tbxTavsiye.Size = new System.Drawing.Size(778, 110);
+            this.tbxTavsiye.TabIndex = 2;
             // 
-            // textBox5
+            // tbxBegenildimi
             // 
-            this.textBox5.Location = new System.Drawing.Point(31, 61);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(778, 110);
-            this.textBox5.TabIndex = 2;
+            this.tbxBegenildimi.Location = new System.Drawing.Point(31, 61);
+            this.tbxBegenildimi.Multiline = true;
+            this.tbxBegenildimi.Name = "tbxBegenildimi";
+            this.tbxBegenildimi.Size = new System.Drawing.Size(778, 110);
+            this.tbxBegenildimi.TabIndex = 2;
             // 
             // label19
             // 
@@ -448,8 +462,8 @@ namespace LibraryProjectApp
             // 
             // kitapSonu
             // 
-            this.kitapSonu.Controls.Add(this.textBox8);
-            this.kitapSonu.Controls.Add(this.textBox7);
+            this.kitapSonu.Controls.Add(this.tbxEniyiIfade);
+            this.kitapSonu.Controls.Add(this.tbxKitapSonu);
             this.kitapSonu.Controls.Add(this.label17);
             this.kitapSonu.Controls.Add(this.label16);
             this.kitapSonu.Location = new System.Drawing.Point(4, 29);
@@ -460,21 +474,21 @@ namespace LibraryProjectApp
             this.kitapSonu.Text = "Sen olsaydın...";
             this.kitapSonu.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // tbxEniyiIfade
             // 
-            this.textBox8.Location = new System.Drawing.Point(37, 211);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(756, 118);
-            this.textBox8.TabIndex = 2;
+            this.tbxEniyiIfade.Location = new System.Drawing.Point(37, 211);
+            this.tbxEniyiIfade.Multiline = true;
+            this.tbxEniyiIfade.Name = "tbxEniyiIfade";
+            this.tbxEniyiIfade.Size = new System.Drawing.Size(756, 118);
+            this.tbxEniyiIfade.TabIndex = 2;
             // 
-            // textBox7
+            // tbxKitapSonu
             // 
-            this.textBox7.Location = new System.Drawing.Point(37, 48);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(756, 118);
-            this.textBox7.TabIndex = 2;
+            this.tbxKitapSonu.Location = new System.Drawing.Point(37, 48);
+            this.tbxKitapSonu.Multiline = true;
+            this.tbxKitapSonu.Name = "tbxKitapSonu";
+            this.tbxKitapSonu.Size = new System.Drawing.Size(756, 118);
+            this.tbxKitapSonu.TabIndex = 2;
             // 
             // label17
             // 
@@ -495,12 +509,50 @@ namespace LibraryProjectApp
             this.label16.Text = "Kitabın sonunu bitirmek sizin elinizde olsa nasıl bir kurguyla bitirirdiniz? Bir " +
     "paragraf halinde kısaca yazınız.";
             // 
+            // cmbDegerlendir
+            // 
+            this.cmbDegerlendir.FormattingEnabled = true;
+            this.cmbDegerlendir.Items.AddRange(new object[] {
+            "*(1)",
+            "**(2)",
+            "***(3)",
+            "****(4)",
+            "*****(5)"});
+            this.cmbDegerlendir.Location = new System.Drawing.Point(858, 212);
+            this.cmbDegerlendir.Name = "cmbDegerlendir";
+            this.cmbDegerlendir.Size = new System.Drawing.Size(104, 23);
+            this.cmbDegerlendir.TabIndex = 16;
+            this.cmbDegerlendir.Text = "Onay derecesi";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(59, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(156, 150);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 17;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(757, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 150);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDegerlendir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(966, 551);
+            this.ClientSize = new System.Drawing.Size(974, 551);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.cmbDegerlendir);
             this.Controls.Add(this.tabKisivarlik);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblReaderName);
@@ -508,8 +560,9 @@ namespace LibraryProjectApp
             this.Controls.Add(this.btnOnayla);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDegerlendir";
-            this.Text = "frmDegerlendir";
+            this.Text = "KİTAP KURDU DEĞERLENDİRME EKRANI";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabKisivarlik.ResumeLayout(false);
@@ -522,6 +575,8 @@ namespace LibraryProjectApp
             this.tabKitapGorus.PerformLayout();
             this.kitapSonu.ResumeLayout(false);
             this.kitapSonu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,10 +595,10 @@ namespace LibraryProjectApp
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TabControl tabKisivarlik;
         private System.Windows.Forms.TabPage tabKunye;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox tbxZaman;
+        public System.Windows.Forms.TextBox tbxKisiKadrosu;
+        public System.Windows.Forms.TextBox tbxAnlaticiTur;
+        public System.Windows.Forms.TextBox tbxMekan;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label10;
@@ -559,15 +614,18 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage tabKitapGorus;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox tbxTavsiye;
+        public System.Windows.Forms.TextBox tbxBegenildimi;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TabPage kitapSonu;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox tbxEniyiIfade;
+        public System.Windows.Forms.TextBox tbxKitapSonu;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmbDegerlendir;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -278,6 +278,7 @@ namespace LibraryProjectApp
             this.Controls.Add(this.label1);
             this.Name = "frmTeacherScreen";
             this.Text = "frmTeacherScreen";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTeacherScreen_FormClosed);
             this.Load += new System.EventHandler(this.frmTeacherScreen_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

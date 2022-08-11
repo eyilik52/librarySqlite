@@ -42,10 +42,6 @@ namespace LibraryProjectApp
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,17 +51,29 @@ namespace LibraryProjectApp
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.özetGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.şifreİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.şifreDeğiştirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.raporlarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.okuduğumKitaplarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toplamOkunanSayfaSayısıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kitapKurduSıralamamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(22, 26);
+            this.label1.Location = new System.Drawing.Point(198, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 28);
             this.label1.TabIndex = 0;
@@ -76,7 +84,7 @@ namespace LibraryProjectApp
             this.lblNameSurname.AutoSize = true;
             this.lblNameSurname.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNameSurname.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblNameSurname.Location = new System.Drawing.Point(93, 26);
+            this.lblNameSurname.Location = new System.Drawing.Point(269, 40);
             this.lblNameSurname.Name = "lblNameSurname";
             this.lblNameSurname.Size = new System.Drawing.Size(226, 28);
             this.lblNameSurname.TabIndex = 0;
@@ -86,7 +94,7 @@ namespace LibraryProjectApp
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(315, 26);
+            this.label3.Location = new System.Drawing.Point(491, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 28);
             this.label3.TabIndex = 0;
@@ -202,35 +210,6 @@ namespace LibraryProjectApp
             this.dataGridView1.Size = new System.Drawing.Size(723, 268);
             this.dataGridView1.TabIndex = 0;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.özetGönderToolStripMenuItem,
-            this.yenileToolStripMenuItem,
-            this.kitapİçinNotGönderToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
-            // 
-            // özetGönderToolStripMenuItem
-            // 
-            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
-            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
-            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
-            // 
-            // yenileToolStripMenuItem
-            // 
-            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
-            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.yenileToolStripMenuItem.Text = "Yenile";
-            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
-            // 
-            // kitapİçinNotGönderToolStripMenuItem
-            // 
-            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
-            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "ReaderId";
@@ -293,17 +272,102 @@ namespace LibraryProjectApp
             this.Column6.Name = "Column6";
             this.Column6.Visible = false;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.özetGönderToolStripMenuItem,
+            this.yenileToolStripMenuItem,
+            this.kitapİçinNotGönderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(186, 70);
+            // 
+            // özetGönderToolStripMenuItem
+            // 
+            this.özetGönderToolStripMenuItem.Name = "özetGönderToolStripMenuItem";
+            this.özetGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.özetGönderToolStripMenuItem.Text = "Özet Gönder";
+            this.özetGönderToolStripMenuItem.Click += new System.EventHandler(this.özetGönderToolStripMenuItem_Click);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            this.yenileToolStripMenuItem.Click += new System.EventHandler(this.yenileToolStripMenuItem_Click);
+            // 
+            // kitapİçinNotGönderToolStripMenuItem
+            // 
+            this.kitapİçinNotGönderToolStripMenuItem.Name = "kitapİçinNotGönderToolStripMenuItem";
+            this.kitapİçinNotGönderToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.kitapİçinNotGönderToolStripMenuItem.Text = "Kitap için not gönder";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.şifreİşlemleriToolStripMenuItem,
+            this.raporlarToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // şifreİşlemleriToolStripMenuItem
+            // 
+            this.şifreİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.şifreDeğiştirToolStripMenuItem});
+            this.şifreİşlemleriToolStripMenuItem.Name = "şifreİşlemleriToolStripMenuItem";
+            this.şifreİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.şifreİşlemleriToolStripMenuItem.Text = "Şifre İşlemleri";
+            // 
+            // şifreDeğiştirToolStripMenuItem
+            // 
+            this.şifreDeğiştirToolStripMenuItem.Name = "şifreDeğiştirToolStripMenuItem";
+            this.şifreDeğiştirToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.şifreDeğiştirToolStripMenuItem.Text = "Şifre Değiştir";
+            // 
+            // raporlarToolStripMenuItem
+            // 
+            this.raporlarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.okuduğumKitaplarToolStripMenuItem,
+            this.toplamOkunanSayfaSayısıToolStripMenuItem,
+            this.kitapKurduSıralamamToolStripMenuItem});
+            this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.raporlarToolStripMenuItem.Text = "Raporlar";
+            // 
+            // okuduğumKitaplarToolStripMenuItem
+            // 
+            this.okuduğumKitaplarToolStripMenuItem.Name = "okuduğumKitaplarToolStripMenuItem";
+            this.okuduğumKitaplarToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.okuduğumKitaplarToolStripMenuItem.Text = "Okuduğum kitaplar";
+            // 
+            // toplamOkunanSayfaSayısıToolStripMenuItem
+            // 
+            this.toplamOkunanSayfaSayısıToolStripMenuItem.Name = "toplamOkunanSayfaSayısıToolStripMenuItem";
+            this.toplamOkunanSayfaSayısıToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.toplamOkunanSayfaSayısıToolStripMenuItem.Text = "Toplam okunan sayfa sayısı";
+            // 
+            // kitapKurduSıralamamToolStripMenuItem
+            // 
+            this.kitapKurduSıralamamToolStripMenuItem.Name = "kitapKurduSıralamamToolStripMenuItem";
+            this.kitapKurduSıralamamToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
+            this.kitapKurduSıralamamToolStripMenuItem.Text = "Kitap Kurdu Sıralamam";
+            this.kitapKurduSıralamamToolStripMenuItem.Click += new System.EventHandler(this.kitapKurduSıralamamToolStripMenuItem_Click);
+            // 
             // FrmOgrenciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNameSurname);
             this.Controls.Add(this.label1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmOgrenciEkrani";
             this.Text = "KÜTÜPHANEM GÜVENDE...";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmOgrenciEkrani_FormClosed);
@@ -313,6 +377,8 @@ namespace LibraryProjectApp
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +411,12 @@ namespace LibraryProjectApp
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem okuduğumKitaplarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toplamOkunanSayfaSayısıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem şifreİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kitapKurduSıralamamToolStripMenuItem;
     }
 }
