@@ -15,7 +15,7 @@ namespace Entities.Concrete
         public DateTime TransactionDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public bool IsActive { get; set; } = true;
-        public int EkranId { get; set; }
+        public int EkranId { get; set; }//SİLİNECEK
         //öğrenci:1,Öğretmen:2, pasif :0
     }
 }

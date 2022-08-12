@@ -25,10 +25,6 @@ namespace Entities.Concrete
         public string Tavsiye { get; set; }
         public string SizceKitapSonu { get; set; }
         public string EniyiIfade { get; set; }
-        public int Notu { get; set; }
-       
-
-
-
+        public int Notu { get; set; }  
     }
 }

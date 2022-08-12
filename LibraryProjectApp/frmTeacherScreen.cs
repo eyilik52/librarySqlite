@@ -53,6 +53,7 @@ namespace LibraryProjectApp
                     dataGridView1.Rows[i].Cells[2].Value = _book.BookName;
                     dataGridView1.Rows[i].Cells[3].Value = _book.AuthorName;
                     dataGridView1.Rows[i].Cells[4].Value = _reader.Name;
+                    dataGridView1.Rows[i].Cells[4].Value = _reader.Surname;
                 }
             }
             else

@@ -22,8 +22,8 @@ namespace DataAccess.Concrete.EntityFramework
                              on e.BookId equals b.Id
                              join r in context.Readers
                              on e.ReaderId equals r.Id
-                             join escr in context.EscrowBooks
-                             on e.ReaderId equals escr.ReaderId
+                             //join escr in context.EscrowBooks
+                             //on e.ReaderId equals escr.ReaderId
                              select new GetBooksInMember
                              {
                                  AuthorName = b.AuthorName,
@@ -31,8 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  ReaderId = r.Id,
                                  BookId = b.Id,
                                  EkranId = e.EkranId,
-                                 DeliveryDate = escr.DeliveryDate,
-                                 TransactionDate = escr.TransactionDate,
+                                 //DeliveryDate = escr.DeliveryDate,
+                                 //TransactionDate = escr.TransactionDate,
                                  EscBookId =e.Id
                              };
 
@@ -51,8 +51,6 @@ namespace DataAccess.Concrete.EntityFramework
                    .Select(g => new EscrowBookDetail { ReaderId = g.Key, BookId = g.Count() });
 
                 return result.ToList();
-
-
             }
         }
 
@@ -66,6 +64,6 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-
+        
     }
 }

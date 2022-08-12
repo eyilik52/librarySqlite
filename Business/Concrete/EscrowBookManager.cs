@@ -72,5 +72,15 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.BarkodNumber.ToLower().Contains(key.ToLower().Trim())).ToList());
         }
+
+        public IDataResult<List<BookDeliveredMember>> GetBookNameSearch(string key)
+        {
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.BookName.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
+
+        public IDataResult<List<BookDeliveredMember>> GetReaderNameSearch(string key)
+        {
+            return new SuccessDataResult<List<BookDeliveredMember>>(_escrowBookDal.GetBookDeliveredMembers().Where(p => p.ReaderName.ToLower().Contains(key.ToLower().Trim())).ToList());
+        }
     }
 }

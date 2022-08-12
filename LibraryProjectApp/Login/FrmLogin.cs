@@ -21,6 +21,36 @@ namespace LibraryProjectApp
         UserManager userManager = new UserManager(new EfUserDal());
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+            ToolTip Aciklama = new ToolTip();
+            Aciklama.ToolTipTitle = "Dikkat!";
+            Aciklama.ToolTipIcon = ToolTipIcon.Warning;
+            Aciklama.IsBalloon = true;
+
+            Aciklama.SetToolTip(btnLogin, "Büyük küçük harf duyarlılığı vardır.");
+            //Aciklama.SetToolTip(label1, "Şifrenizi unutmanız durumunda program yöneticiniz ile görüşünüz...");
+            Aciklama.SetToolTip(tbxPassword, "Büyük küçük harf duyarlılığı vardır.");
+
+            var userList = userManager.GetAll();
+            cmbUserName.DataSource = userList;
+            cmbUserName.DisplayMember = "UserName";
+            cmbUserName.ValueMember = "UserId";
+        }
+
+        
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            tbxPassword.Focus();
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
             if (tbxPassword.Text == "şifremibul52")
             {
                 FrmMain gorevli = new FrmMain();
@@ -61,62 +91,21 @@ namespace LibraryProjectApp
                         MessageBox.Show("Yetkisiz giriş yapıldı...");
                     }
                 }
-                //baslangic.btnPacketService.Enabled = (bool)result.Satis;
-                //baslangic.btnBackup.Enabled = (bool)result.Yedekleme;
-                //baslangic.btnPriceChange.Enabled = (bool)result.FiyatGuncelle;
-                //baslangic.btnProductPage.Enabled = (bool)result.UrunGiris;
-                //baslangic.btnReportPage.Enabled = (bool)result.Rapor;
-                //baslangic.btnSettingsPage.Enabled = (bool)result.Ayarlar;
-                //baslangic.btnStockPage.Enabled = (bool)result.Stok;
-                //baslangic.lblUserName.Text = result.Name + " " + result.Surname;
-
-
-                
-
-
-            else
+                      
+                else
                 {
-
-
                     MessageBox.Show("Hatalı Şifre Girdiniz");
-
-
                 }
 
                 Cursor.Current = Cursors.Default;
             }
         }
 
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
-            ToolTip Aciklama = new ToolTip();
-            Aciklama.ToolTipTitle = "Dikkat!";
-            Aciklama.ToolTipIcon = ToolTipIcon.Warning;
-            Aciklama.IsBalloon = true;
-
-            Aciklama.SetToolTip(btnLogin, "Büyük küçük harf duyarlılığı vardır.");
-            //Aciklama.SetToolTip(label1, "Şifrenizi unutmanız durumunda program yöneticiniz ile görüşünüz...");
-            Aciklama.SetToolTip(tbxPassword, "Büyük küçük harf duyarlılığı vardır.");
-
-            var userList = userManager.GetAll();
-            cmbUserName.DataSource = userList;
-            cmbUserName.DisplayMember = "UserName";
-            cmbUserName.ValueMember = "UserId";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             FrmMainLogin frmMainLogin = new FrmMainLogin();
             frmMainLogin.Show();
             this.Hide();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            tbxPassword.Focus();
-        }
-
-        
     }
 }

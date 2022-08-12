@@ -40,7 +40,7 @@ namespace LibraryProjectApp
         private void button2_Click(object sender, EventArgs e)
         {
             Login.LoginUser loginUser = new Login.LoginUser();
-            loginUser.Show();
+            loginUser.ShowDialog();
             this.Hide();
         }
 
@@ -74,7 +74,8 @@ namespace LibraryProjectApp
         private void button3_Click(object sender, EventArgs e)
         {
             Login.LoginTeacher loginTeacher = new Login.LoginTeacher();
-            loginTeacher.Show();
+            loginTeacher.ShowDialog();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)

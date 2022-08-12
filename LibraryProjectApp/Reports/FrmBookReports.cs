@@ -37,6 +37,7 @@ namespace LibraryProjectApp.Reports
 
             List<int> okunanKitap = new List<int>(); 
             List<int> ReaderId = new List<int>();
+            int ToplamNotu;
             var result = _escrowBookDetailManager.GetKitapKurdu();
             for (int i = 0; i < result.Count; i++)
             {
@@ -49,7 +50,7 @@ namespace LibraryProjectApp.Reports
 
                 var resultReader = Rmanager.GetById(ReaderId[i]);
                 int okuduguKitapSayisi= okunanKitap[i];
-                int ToplamNotu = _escrowBookDetailManager.Notlar(i+1);
+                ToplamNotu = _escrowBookDetailManager.Notlar(resultReader.Data.Id);
                 dataGridView1.ColumnCount = 5;
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[i].Cells[0].Value = i + 1;

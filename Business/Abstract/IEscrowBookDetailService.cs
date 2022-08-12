@@ -16,7 +16,7 @@ namespace Business.Abstract
         void Add(EscrowBookDetail escrow);
         void Update(EscrowBookDetail escrow);
         void Delete(EscrowBookDetail escrow);
-        IDataResult<List<GetBooksInMember>> GetBooksInMember(int ReaderId);
+        IDataResult<List<GetBooksInMember>> GetBooksInMember(int ReaderId);  
         List<EscrowBookDetail> GetTeacherScreen();
     }
 }

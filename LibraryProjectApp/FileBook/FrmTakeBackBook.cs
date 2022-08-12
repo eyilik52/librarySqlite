@@ -51,12 +51,20 @@ namespace LibraryProjectApp.FileBook
 
         private void TeslimAl()
         {
-            var result = _escrowBookService.GetById(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
-            result.Data.IsActive = false;
-            _escBookManager.Update(result.Data);
-            LoadGrid();
-            frmMain.LoadDatagrid();
-            MessageBox.Show("Kitap teslim alma işlemi başarı ile sonuçlandı.");
+            DialogResult dialogResult = MessageBox.Show("Okuyucudan kitabı teslim alıyorsunuz, devam etmek istiyor musunuz?", "Uyarı", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = _escrowBookService.GetById(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                result.Data.IsActive = false;
+                _escBookManager.Update(result.Data);
+                LoadGrid();
+                frmMain.LoadDatagrid();
+                MessageBox.Show("Kitap teslim alma işlemi başarı ile sonuçlandı.");
+            }
+            else
+            {
+                MessageBox.Show("Kitap teslim alma işlemi iptal edildi.","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -121,9 +129,60 @@ namespace LibraryProjectApp.FileBook
             }
         }
 
+        public void SearchBookName(string key)
+        {
+            var result = _escBookManager.GetBookNameSearch(key);
+            if (result.Success)
+            {
+                dataGridView1.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
+
+        public void SearchReaderName(string key)
+        {
+            var result = _escBookManager.GetReaderNameSearch(key);
+            if (result.Success)
+            {
+                dataGridView1.DataSource = result.Data;
+            }
+            else
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
+
+
         private void kitapTeslimAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TeslimAl();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox1.Text))
+            {
+                SearchBookName(textBox1.Text);
+            }
+            else
+            {
+                LoadGrid();
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBox3.Text))
+            {
+                SearchReaderName(textBox3.Text);
+            }
+            else
+            {
+                LoadGrid();
+            }
         }
     }
 }

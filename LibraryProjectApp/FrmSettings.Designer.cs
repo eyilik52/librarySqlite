@@ -71,6 +71,8 @@ namespace LibraryProjectApp
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.YedekIslemleri = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.Kullanici.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,6 +81,7 @@ namespace LibraryProjectApp
             this.SmsAyar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.YedekIslemleri.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -469,6 +472,8 @@ namespace LibraryProjectApp
             // 
             // YedekIslemleri
             // 
+            this.YedekIslemleri.Controls.Add(this.button5);
+            this.YedekIslemleri.Controls.Add(this.button4);
             this.YedekIslemleri.Location = new System.Drawing.Point(4, 24);
             this.YedekIslemleri.Name = "YedekIslemleri";
             this.YedekIslemleri.Padding = new System.Windows.Forms.Padding(3);
@@ -476,6 +481,26 @@ namespace LibraryProjectApp
             this.YedekIslemleri.TabIndex = 2;
             this.YedekIslemleri.Text = "Yedekleme İşlemleri";
             this.YedekIslemleri.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(32, 53);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(104, 43);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Veritabanı Oluştur";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(32, 116);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(104, 43);
+            this.button5.TabIndex = 0;
+            this.button5.Text = "Veritabanını sil";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // FrmSettings
             // 
@@ -498,6 +523,7 @@ namespace LibraryProjectApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.YedekIslemleri.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -545,5 +571,7 @@ namespace LibraryProjectApp
         public System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown nmrPozisyon;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }

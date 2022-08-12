@@ -74,6 +74,19 @@ namespace LibraryProjectApp
 
             
         }
+
+        private static void veritabanıolustur()
+        {
+            LibraryContext context = new LibraryContext();
+            context.Database.EnsureCreated();
+            MessageBox.Show("oluşturuldu");
+        }
+        private static void veritabanıSil()
+        {
+            LibraryContext context = new LibraryContext();
+            context.Database.EnsureDeleted();
+            MessageBox.Show("silindi");
+        }
         private void UserList()
         {
             var result = userManager.GetAll();
@@ -169,6 +182,16 @@ namespace LibraryProjectApp
             //checkRapor.Checked = (bool)result.Rapor;
             //checkAyarlar.Checked = (bool)result.Ayarlar;
             //checkStok.Checked = (bool)result.Stok;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            veritabanıolustur();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            veritabanıSil();
         }
     }
 }

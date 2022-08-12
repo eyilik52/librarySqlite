@@ -58,8 +58,18 @@ namespace LibraryProjectApp.Reports
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void kitapKurduSıralamasıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             FrmBookReports frmBookReports = new FrmBookReports();
             frmBookReports.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

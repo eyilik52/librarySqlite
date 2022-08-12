@@ -47,7 +47,7 @@ namespace LibraryProjectApp.Login
                     {
                         ogrenciEkrani._reader = reader;
                         ogrenciEkrani.Show();
-                        this.Close();
+                        this.Hide();
                     }
                     else
                     {
@@ -100,6 +100,11 @@ namespace LibraryProjectApp.Login
             //cmbUserName.DataSource = userList;
             //cmbUserName.DisplayMember = "Surname";
             //cmbUserName.ValueMember = "Id";
+        }
+
+        private void LoginUser_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
         }
     }
 }

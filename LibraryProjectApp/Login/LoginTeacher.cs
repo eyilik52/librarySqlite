@@ -20,7 +20,24 @@ namespace LibraryProjectApp.Login
         }
         UserManager userManager = new UserManager(new EfUserDal());
 
-        private void btnLogin_Click(object sender, EventArgs e)
+
+
+        private void LoginTeacher_Load(object sender, EventArgs e)
+        {
+            var userList = userManager.GetAll();
+            cmbUserName.DataSource = userList;
+            cmbUserName.DisplayMember = "UserName";
+            cmbUserName.ValueMember = "UserId";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            tbxPassword.Focus();
+        }
+
+        
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             if (tbxPassword.Text == "şifremibul52")
             {
@@ -61,7 +78,7 @@ namespace LibraryProjectApp.Login
                     {
                         MessageBox.Show("Yetkisiz giriş yapıldı...");
                     }
-                }            
+                }
 
                 else
                 {
@@ -71,24 +88,16 @@ namespace LibraryProjectApp.Login
             }
         }
 
-        private void LoginTeacher_Load(object sender, EventArgs e)
-        {
-            var userList = userManager.GetAll();
-            cmbUserName.DataSource = userList;
-            cmbUserName.DisplayMember = "UserName";
-            cmbUserName.ValueMember = "UserId";
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-            tbxPassword.Focus();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             FrmMainLogin frmMainLogin = new FrmMainLogin();
             frmMainLogin.Show();
             this.Hide();
+        }
+
+        private void LoginTeacher_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

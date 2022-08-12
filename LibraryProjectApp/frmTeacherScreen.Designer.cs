@@ -30,17 +30,18 @@ namespace LibraryProjectApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTeacherScreen));
             this.kitapİçinNotGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ozetdegerlendir = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TransActionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sira = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TransActionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -86,47 +87,6 @@ namespace LibraryProjectApp
             this.yenileToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.yenileToolStripMenuItem.Text = "Yenile";
             // 
-            // DeliveryDate
-            // 
-            this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.HeaderText = "İade Tarihi";
-            this.DeliveryDate.Name = "DeliveryDate";
-            this.DeliveryDate.Width = 150;
-            // 
-            // TransActionDate
-            // 
-            this.TransActionDate.DataPropertyName = "TransActionDate";
-            this.TransActionDate.HeaderText = "Teslim Tarihi";
-            this.TransActionDate.Name = "TransActionDate";
-            this.TransActionDate.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "AuthorName";
-            this.Column5.HeaderText = "Yazar Adı";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
-            // 
-            // BookName
-            // 
-            this.BookName.DataPropertyName = "BookName";
-            this.BookName.HeaderText = "Kitap Adı";
-            this.BookName.Name = "BookName";
-            this.BookName.Width = 180;
-            // 
-            // sira
-            // 
-            this.sira.HeaderText = "Sıra";
-            this.sira.Name = "sira";
-            this.sira.Width = 50;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "ReaderId";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -136,13 +96,52 @@ namespace LibraryProjectApp
             this.BookName,
             this.Column5,
             this.TransActionDate,
-            this.DeliveryDate});
+            this.Column1});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(7, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(723, 268);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "ReaderId";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // sira
+            // 
+            this.sira.HeaderText = "Sıra";
+            this.sira.Name = "sira";
+            this.sira.Width = 50;
+            // 
+            // BookName
+            // 
+            this.BookName.DataPropertyName = "BookName";
+            this.BookName.HeaderText = "Kitap Adı";
+            this.BookName.Name = "BookName";
+            this.BookName.Width = 180;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "AuthorName";
+            this.Column5.HeaderText = "Yazar Adı";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 150;
+            // 
+            // TransActionDate
+            // 
+            this.TransActionDate.HeaderText = "Okuyucu Adı";
+            this.TransActionDate.Name = "TransActionDate";
+            this.TransActionDate.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Soyadı";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
             // 
             // groupBox2
             // 
@@ -276,8 +275,9 @@ namespace LibraryProjectApp
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNameSurname);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTeacherScreen";
-            this.Text = "frmTeacherScreen";
+            this.Text = "DEĞERLENDİRME EKRANI";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTeacherScreen_FormClosed);
             this.Load += new System.EventHandler(this.frmTeacherScreen_Load);
             this.contextMenuStrip1.ResumeLayout(false);
@@ -296,12 +296,6 @@ namespace LibraryProjectApp
         private System.Windows.Forms.ToolStripMenuItem ozetdegerlendir;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TransActionDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sira;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label8;
@@ -314,5 +308,11 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblNameSurname;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sira;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransActionDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

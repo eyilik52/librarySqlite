@@ -36,16 +36,21 @@ namespace Business.Concrete
 
         public IDataResult<List<GetBooksInMember>> GetBooksInMember(int ReaderId)
         {
-            return new SuccessDataResult<List<GetBooksInMember>>(_escrowBookDetailDal.GetBooksInMember().Where(p => p.ReaderId == ReaderId & p.EkranId == 1).ToList());
+            return new SuccessDataResult<List<GetBooksInMember>>(_escrowBookDetailDal.GetBooksInMember().Where(p => p.ReaderId == ReaderId && p.EkranId == 1).ToList());
         }
 
+
+        public IDataResult<List<GetBooksInMember>> GetBooksInMemberKesin(int ReaderId, int BookId)
+        {
+            return new SuccessDataResult<List<GetBooksInMember>>(_escrowBookDetailDal.GetBooksInMember().Where(p => p.ReaderId == ReaderId &&p.BookId==BookId && p.EkranId == 1).ToList());
+        }
         public EscrowBookDetail GetById(int id)
         {
             return _escrowBookDetailDal.Get(p => p.Id == id);
         }
         public List< EscrowBookDetail> GetReaderandBookId(int readerId,int bookId)
         {
-            return _escrowBookDetailDal.GetAll().Where(p => p.ReaderId == readerId & p.BookId==bookId).ToList();
+            return _escrowBookDetailDal.GetAll().Where(p => p.ReaderId == readerId && p.BookId==bookId&&p.EkranId==1).ToList();
         }
 
         public List<EscrowBookDetail> GetTeacherScreen()
@@ -69,5 +74,6 @@ namespace Business.Concrete
             return _escrowBookDetailDal.NotToplamlari(ıd);
         }
 
+        
     }
 }

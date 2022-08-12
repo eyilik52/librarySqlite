@@ -92,15 +92,15 @@ namespace LibraryProjectApp.FileBook
                 }
                 if (IsThere == false)
                 {
-                    try
-                    {
+                    //try
+                    //{
                         _escrowBookService.Add(new EscrowBook
                         {
                             BookId = Convert.ToInt32(dgwBook.CurrentRow.Cells[0].Value),
                             ReaderId = Convert.ToInt32(dgwMember.CurrentRow.Cells[0].Value),
                             DeliveryDate = Convert.ToDateTime(lblDeliveryDate.Text),
                             TransactionDate = DateTime.Now,
-                             EkranId=1                              
+                             EkranId = 1
                         }
                         );
                       
@@ -116,11 +116,11 @@ namespace LibraryProjectApp.FileBook
 
 
                         MessageBox.Show("Kitap Teslim işlemi başarılı bir şekilde gerçekleştirildi.");
-                    }
-                    catch (Exception exception)
-                    {
-                        MessageBox.Show(exception.Message);
-                    }
+                    //}
+                    //catch (Exception exception)
+                    //{
+                    //    MessageBox.Show(exception.Message);
+                    //}
                 }
                 else
                 {

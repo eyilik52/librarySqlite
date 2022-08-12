@@ -40,26 +40,36 @@ namespace LibraryProjectApp
         
         private void FrmOgrenciEkrani_Load(object sender, EventArgs e)
         {
-            lblNameSurname.Text = _reader.Name + " " + _reader.Surname;      
+            lblNameSurname.Text = _reader.Name + " " + _reader.Surname;
 
             BookInMemeber();
+            //YENİLEMEYİDE AKTİF ET
 
-            
         }
 
         public void BookInMemeber()//üyelerin elindeki kitabı ekrana yazıdıryoruz.
         {
-            var result2 = _escrowBookDetailManager.GetBooksInMember(_reader.Id); 
+            var result2 = _escrowBookDetailManager.GetBooksInMember(_reader.Id);
             //for (int i = 0; i < result2.Data.Count; i++)
             //{
-                
+
             //    dataGridView1.Rows[i].Cells[0].Value = r
             //} 
-            dataGridView1.DataSource = result2.Data;
-            _getBookInMember = result2.Data;
-        }
 
-        
+            _getBookInMember = result2.Data;
+            dataGridView1.DataSource = result2.Data;
+            if (result2.Data.Count!=0)
+            {
+                //kİTAP BİLGİSİNİ DATAGRİDDEN ALIP TEKRAR DATAGRİD DOLDURUYORUM.
+                int bookId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[3].Value);
+                var book = _bookManager.GetById(bookId).Data;
+                _book = book;
+
+                var resultNew = _escrowBookDetailManager.GetBooksInMemberKesin(_reader.Id, _book.Id);
+                dataGridView1.DataSource = resultNew.Data;
+            }
+            
+        }       
 
         private void özetGönderToolStripMenuItem_Click(object sender, EventArgs e)
         {
