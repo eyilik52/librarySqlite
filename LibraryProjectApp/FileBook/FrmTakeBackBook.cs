@@ -49,7 +49,7 @@ namespace LibraryProjectApp.FileBook
             TeslimAl();
         }
 
-        private void TeslimAl()
+        public void TeslimAl()
         {
             DialogResult dialogResult = MessageBox.Show("Okuyucudan kitabı teslim alıyorsunuz, devam etmek istiyor musunuz?", "Uyarı", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)

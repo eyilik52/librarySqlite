@@ -135,11 +135,9 @@ C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\Librar
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\ref\LibraryProjectApp.dll
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.pdb
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.genruntimeconfig.cache
-C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmReportMember.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmSettings.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmMessageService.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmReports.resources
-C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmBookReports.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmOgrenciEkrani.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmKitapDonut.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.FrmMainLogin.resources
@@ -147,4 +145,6 @@ C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\Librar
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Login.LoginUser.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.frmTeacherScreen.resources
 C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.frmDegerlendir.resources
-C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.frmKitapKurdu.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmKitapKurduSiralama.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.frmOkunanKitaplar.resources
+C:\Users\eyili\Desktop\library\LibraryProjectApp\obj\Debug\net5.0-windows\LibraryProjectApp.Reports.FrmMesageSend.resources

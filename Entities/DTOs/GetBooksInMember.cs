@@ -18,6 +18,7 @@ namespace Entities.DTOs
         public DateTime TransactionDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public int EkranId { get; set; }
+        public int SayfaSayisi { get; set; }
         //öğrenci:1,Öğretmen:2, pasif :0
     }
 }

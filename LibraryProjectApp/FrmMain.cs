@@ -1,5 +1,7 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
+using Entities.DTOs;
 using LibraryProjectApp.FileBook;
 using LibraryProjectApp.FileReader;
 using LibraryProjectApp.Reports;
@@ -23,7 +25,7 @@ namespace LibraryProjectApp
         }
         EscrowBookManager _escBookManager = new EscrowBookManager(new EfEscrowBookDal());
 
-
+        List < BookDeliveredMember> Kullanici;
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadDatagrid();
@@ -32,6 +34,7 @@ namespace LibraryProjectApp
         public void LoadDatagrid()
         {
             var result = _escBookManager.NonDeliveredMember();
+            Kullanici = result.Data.ToList();
             if (result.Success)
             {
                 dataGridView1.DataSource = result.Data;
@@ -90,6 +93,41 @@ namespace LibraryProjectApp
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mesajGönderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMesageSend frmMesage = new FrmMesageSend();
+            frmMesage.ShowDialog();
+        }
+        EscrowBookManager _escBookManager2 = new EscrowBookManager(new EfEscrowBookDal());
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            BookTeslimAl();
+
+        }
+
+        private void BookTeslimAl()
+        {
+            DialogResult dialogResult = MessageBox.Show("Okuyucudan kitabı teslim alıyorsunuz, devam etmek istiyor musunuz?", "Uyarı", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                var result = _escBookManager2.GetById(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value));
+                result.Data.IsActive = false;
+                _escBookManager.Update(result.Data);
+
+                LoadDatagrid();
+                MessageBox.Show("Kitap teslim alma işlemi başarı ile sonuçlandı.");
+            }
+            else
+            {
+                MessageBox.Show("Kitap teslim alma işlemi iptal edildi.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void kitapTeslimAlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BookTeslimAl();
         }
     }
 }

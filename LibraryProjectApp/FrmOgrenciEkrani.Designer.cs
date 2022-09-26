@@ -30,9 +30,8 @@ namespace LibraryProjectApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOgrenciEkrani));
             this.lblNameSurname = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,6 +47,7 @@ namespace LibraryProjectApp
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TransActionDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,43 +62,29 @@ namespace LibraryProjectApp
             this.okuduğumKitaplarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toplamOkunanSayfaSayısıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kitapKurduSıralamamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(198, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "SAYIN ";
             // 
             // lblNameSurname
             // 
             this.lblNameSurname.AutoSize = true;
             this.lblNameSurname.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNameSurname.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblNameSurname.Location = new System.Drawing.Point(269, 40);
+            this.lblNameSurname.Location = new System.Drawing.Point(332, 45);
             this.lblNameSurname.Name = "lblNameSurname";
             this.lblNameSurname.Size = new System.Drawing.Size(226, 28);
             this.lblNameSurname.TabIndex = 0;
             this.lblNameSurname.Text = "MEHMET EREN EYİLİK ";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(491, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "HOŞ GELDİNİZ";
             // 
             // label4
             // 
@@ -130,7 +116,7 @@ namespace LibraryProjectApp
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 372);
+            this.groupBox1.Location = new System.Drawing.Point(12, 434);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(758, 66);
             this.groupBox1.TabIndex = 1;
@@ -183,7 +169,7 @@ namespace LibraryProjectApp
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(22, 71);
+            this.groupBox2.Location = new System.Drawing.Point(22, 133);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(748, 295);
             this.groupBox2.TabIndex = 2;
@@ -200,6 +186,7 @@ namespace LibraryProjectApp
             this.Column5,
             this.TransActionDate,
             this.DeliveryDate,
+            this.Column1,
             this.Column3,
             this.Column4,
             this.Column6});
@@ -235,21 +222,29 @@ namespace LibraryProjectApp
             this.Column5.DataPropertyName = "AuthorName";
             this.Column5.HeaderText = "Yazar";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.Column5.Width = 180;
             // 
             // TransActionDate
             // 
             this.TransActionDate.DataPropertyName = "TransActionDate";
             this.TransActionDate.HeaderText = "Teslim Tarihi";
             this.TransActionDate.Name = "TransActionDate";
+            this.TransActionDate.Visible = false;
             this.TransActionDate.Width = 150;
             // 
             // DeliveryDate
             // 
             this.DeliveryDate.DataPropertyName = "DeliveryDate";
-            this.DeliveryDate.HeaderText = "İade Tarihi";
+            this.DeliveryDate.HeaderText = "Özet Tarihi";
             this.DeliveryDate.Name = "DeliveryDate";
             this.DeliveryDate.Width = 150;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "SayfaSayisi";
+            this.Column1.HeaderText = "Sayfa Sayısı";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 150;
             // 
             // Column3
             // 
@@ -355,20 +350,63 @@ namespace LibraryProjectApp
             this.kitapKurduSıralamamToolStripMenuItem.Text = "Kitap Kurdu Sıralamam";
             this.kitapKurduSıralamamToolStripMenuItem.Click += new System.EventHandler(this.kitapKurduSıralamamToolStripMenuItem_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(222, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(369, 53);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "HOŞ GELDİNİZ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(246, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 28);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "SAYIN :";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(616, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(108, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(68, 28);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(108, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
             // FrmOgrenciEkrani
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 501);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNameSurname);
-            this.Controls.Add(this.label1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmOgrenciEkrani";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KÜTÜPHANEM GÜVENDE...";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmOgrenciEkrani_FormClosed);
             this.Load += new System.EventHandler(this.FrmOgrenciEkrani_Load);
@@ -379,15 +417,14 @@ namespace LibraryProjectApp
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -402,15 +439,6 @@ namespace LibraryProjectApp
         private System.Windows.Forms.ToolStripMenuItem kitapİçinNotGönderToolStripMenuItem;
         public System.Windows.Forms.Label lblNameSurname;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sira;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TransActionDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem raporlarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem okuduğumKitaplarToolStripMenuItem;
@@ -418,5 +446,19 @@ namespace LibraryProjectApp
         private System.Windows.Forms.ToolStripMenuItem şifreİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreDeğiştirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kitapKurduSıralamamToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sira;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TransActionDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

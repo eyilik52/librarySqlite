@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace LibraryProjectApp.Reports
 {
-    public partial class frmKitapKurdu : Form
+    public partial class frmOkunanKitaplar : Form
     {
-        public frmKitapKurdu()
+        public frmOkunanKitaplar()
         {
             InitializeComponent();
         }
@@ -23,11 +23,7 @@ namespace LibraryProjectApp.Reports
         
             
 
-        private void frmKitapKurdu_Load_1(object sender, EventArgs e)
-        {
-                
-           
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -43,6 +39,28 @@ namespace LibraryProjectApp.Reports
                 //    dataGridView1.Rows[0].Cells[0].Value = Satir.Sinif;
 
                 MessageBox.Show(Satir.Sinif + " İsimli Kitap " + Satir.OkunmaSayisi + " kez okunmuş...");
+            }
+        }
+
+        private void frmOkunanKitaplar_Load(object sender, EventArgs e)
+        {
+            
+            var result = _escBookDetailManager.GetAll().Where(p => p.ReaderId == 1).Select(satir => new
+            {
+                konu = satir.Konu,
+                ahmet = satir.ReaderId
+            });
+            foreach (var x in result)
+            {
+                
+                for (int i = 0; i < result.Count(); i++)
+                {
+                    
+                    dataGridView1.Rows[i].Cells[0].Value = x.ahmet;
+                    dataGridView1.Rows[i].Cells[1].Value = x.konu;
+                    
+                }
+                
             }
         }
     }

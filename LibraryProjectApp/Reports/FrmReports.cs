@@ -63,7 +63,7 @@ namespace LibraryProjectApp.Reports
 
         private void kitapKurduSıralamasıToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmBookReports frmBookReports = new FrmBookReports();
+            FrmKitapKurduSiralama frmBookReports = new FrmKitapKurduSiralama();
             frmBookReports.Show();
         }
 

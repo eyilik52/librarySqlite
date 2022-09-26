@@ -52,16 +52,16 @@
     <Compile Update="Login\LoginUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Reports\FrmBookReports.cs">
+    <Compile Update="Reports\FrmKitapKurduSiralama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Reports\frmKitapKurdu.cs">
+    <Compile Update="Reports\frmOkunanKitaplar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Reports\FrmMessageService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Reports\FrmReportMember.cs">
+    <Compile Update="Reports\FrmMesageSend.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Reports\FrmReports.cs">

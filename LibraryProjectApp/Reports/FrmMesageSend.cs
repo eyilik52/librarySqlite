@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace LibraryProjectApp.Reports
 {
-    public partial class FrmReportMember : Form
+    public partial class FrmMesageSend : Form
     {
-        public FrmReportMember()
+        public FrmMesageSend()
         {
             InitializeComponent();
         }

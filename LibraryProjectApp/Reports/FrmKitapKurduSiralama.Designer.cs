@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryProjectApp.Reports
 {
-    partial class FrmBookReports
+    partial class FrmKitapKurduSiralama
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace LibraryProjectApp.Reports
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBookReports));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKitapKurduSiralama));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();

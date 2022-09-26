@@ -1,7 +1,7 @@
 ﻿
 namespace LibraryProjectApp.Reports
 {
-    partial class FrmReportMember
+    partial class FrmMesageSend
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,27 @@ namespace LibraryProjectApp.Reports
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMesageSend));
             this.btnSend = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tbxTelephone = new System.Windows.Forms.MaskedTextBox();
             this.tbxMessage = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(157, 193);
+            this.btnSend.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSend.Image = ((System.Drawing.Image)(resources.GetObject("btnSend.Image")));
+            this.btnSend.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSend.Location = new System.Drawing.Point(148, 193);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(116, 47);
+            this.btnSend.Size = new System.Drawing.Size(100, 47);
             this.btnSend.TabIndex = 0;
             this.btnSend.Text = "Gönder";
+            this.btnSend.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -62,6 +67,20 @@ namespace LibraryProjectApp.Reports
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sms Ekranı :";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(21, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 47);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Kapat";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // tbxTelephone
             // 
             this.tbxTelephone.Location = new System.Drawing.Point(128, 25);
@@ -69,6 +88,7 @@ namespace LibraryProjectApp.Reports
             this.tbxTelephone.Name = "tbxTelephone";
             this.tbxTelephone.Size = new System.Drawing.Size(145, 23);
             this.tbxTelephone.TabIndex = 3;
+            this.tbxTelephone.Text = "5435124009";
             // 
             // tbxMessage
             // 
@@ -87,24 +107,15 @@ namespace LibraryProjectApp.Reports
             this.label1.TabIndex = 1;
             this.label1.Text = "Telefon Numarası :";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(20, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // FrmReportMember
+            // FrmMesageSend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(308, 271);
             this.Controls.Add(this.groupBox1);
-            this.Name = "FrmReportMember";
-            this.Text = "FrmReportMember";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmMesageSend";
+            this.Text = "Mesaj Gönderme Ekranı";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

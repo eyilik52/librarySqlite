@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace LibraryProjectApp.Reports
 {
-    public partial class FrmBookReports : Form
+    public partial class FrmKitapKurduSiralama : Form
     {
-        public FrmBookReports()
+        public FrmKitapKurduSiralama()
         {
             InitializeComponent();
         }

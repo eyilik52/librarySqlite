@@ -31,7 +31,8 @@ namespace DataAccess.Concrete.EntityFramework
                                  ReaderId = r.Id,
                                  BookId = b.Id,
                                  EkranId = e.EkranId,
-                                 //DeliveryDate = escr.DeliveryDate,
+                                 SayfaSayisi = b.NumberOfPages,
+                                 DeliveryDate = DateTime.Now,
                                  //TransactionDate = escr.TransactionDate,
                                  EscBookId =e.Id
                              };

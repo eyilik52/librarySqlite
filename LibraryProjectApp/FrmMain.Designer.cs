@@ -33,12 +33,16 @@ namespace LibraryProjectApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BarkodNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.yenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mesajGönderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbxBookBuyerList = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSetting = new System.Windows.Forms.Button();
@@ -49,7 +53,9 @@ namespace LibraryProjectApp
             this.button4 = new System.Windows.Forms.Button();
             this.btnBookOperations = new System.Windows.Forms.Button();
             this.btnmember = new System.Windows.Forms.Button();
+            this.kitapTeslimAlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.gbxBookBuyerList.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,12 +65,14 @@ namespace LibraryProjectApp
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
+            this.BarkodNumber,
             this.Column2,
             this.Column3,
             this.Column6,
             this.Column7,
             this.Column4,
             this.Column5});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 19);
             this.dataGridView1.Name = "dataGridView1";
@@ -72,6 +80,7 @@ namespace LibraryProjectApp
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(867, 258);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // Column1
             // 
@@ -80,30 +89,39 @@ namespace LibraryProjectApp
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
             // 
+            // BarkodNumber
+            // 
+            this.BarkodNumber.DataPropertyName = "BarkodNumber";
+            this.BarkodNumber.HeaderText = "BARKOD NO";
+            this.BarkodNumber.Name = "BarkodNumber";
+            // 
             // Column2
             // 
             this.Column2.DataPropertyName = "ReaderName";
             this.Column2.HeaderText = "ADI";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "ReaderSurname";
             this.Column3.HeaderText = "SOYADI";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // Column6
             // 
             this.Column6.DataPropertyName = "BookName";
             this.Column6.HeaderText = "KİTAP ADI";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 130;
+            this.Column6.Width = 125;
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "AuthorName";
             this.Column7.HeaderText = "YAZAR ADI";
             this.Column7.Name = "Column7";
+            this.Column7.Width = 130;
             // 
             // Column4
             // 
@@ -117,6 +135,28 @@ namespace LibraryProjectApp
             this.Column5.DataPropertyName = "DeliveryDate";
             this.Column5.HeaderText = "İADE TARİHİ";
             this.Column5.Name = "Column5";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yenileToolStripMenuItem,
+            this.mesajGönderToolStripMenuItem,
+            this.kitapTeslimAlToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            // 
+            // yenileToolStripMenuItem
+            // 
+            this.yenileToolStripMenuItem.Name = "yenileToolStripMenuItem";
+            this.yenileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yenileToolStripMenuItem.Text = "Yenile";
+            // 
+            // mesajGönderToolStripMenuItem
+            // 
+            this.mesajGönderToolStripMenuItem.Name = "mesajGönderToolStripMenuItem";
+            this.mesajGönderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mesajGönderToolStripMenuItem.Text = "Mesaj Gönder";
+            this.mesajGönderToolStripMenuItem.Click += new System.EventHandler(this.mesajGönderToolStripMenuItem_Click);
             // 
             // gbxBookBuyerList
             // 
@@ -252,6 +292,13 @@ namespace LibraryProjectApp
             this.btnmember.UseVisualStyleBackColor = true;
             this.btnmember.Click += new System.EventHandler(this.btnMember);
             // 
+            // kitapTeslimAlToolStripMenuItem
+            // 
+            this.kitapTeslimAlToolStripMenuItem.Name = "kitapTeslimAlToolStripMenuItem";
+            this.kitapTeslimAlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kitapTeslimAlToolStripMenuItem.Text = "Kitap Teslim Al";
+            this.kitapTeslimAlToolStripMenuItem.Click += new System.EventHandler(this.kitapTeslimAlToolStripMenuItem_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -268,6 +315,7 @@ namespace LibraryProjectApp
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.gbxBookBuyerList.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -286,14 +334,19 @@ namespace LibraryProjectApp
         private System.Windows.Forms.Button btnBookOperations;
         private System.Windows.Forms.Button btnmember;
         private System.Windows.Forms.ImageList ımgButon;
+        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem yenileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mesajGönderToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BarkodNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button btnSetting;
+        private System.Windows.Forms.ToolStripMenuItem kitapTeslimAlToolStripMenuItem;
     }
 }
 
